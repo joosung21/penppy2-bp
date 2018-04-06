@@ -1,0 +1,84 @@
+include ./includes/header.pug
+
+body
+  include ./includes/topper.pug
+
+  #bp-pc-body
+    h4.mt-4
+      | 예약 확인
+      small.text-muted.ml-2 내 예약을 확인합니다.
+
+    .py-4
+
+    .form-group.row
+      label.col-sm-2.pt-1 예약번호로 조회
+      .col-sm-10
+        .form-row
+          .col-sm-3.mb-2.mb-sm-0
+            input.form-control(type='text')
+          .col-sm-2
+            button.btn.btn-secondary.btn-block(type='button') 조회
+    .form-group.row
+      label.col-sm-2.pt-1 이메일 주소로 조회
+      .col-sm-10
+        .form-row
+          .col-sm-3.mb-2.mb-sm-0
+            input.form-control(type='email')
+          .col-sm-2
+            button.btn.btn-secondary.btn-block(type='button') 조회
+    .form-group.row
+      label.col-sm-2.pt-1 이름, 날짜로 조회
+      .col-sm-10
+        .form-row
+          .col-sm-3.mb-2.mb-sm-0
+            input.form-control(type='text', placeholder='예약자명')
+          .col-sm-3.mb-2.mb-sm-0
+            .input-group
+              .input-group-prepend
+                .input-group-text 체크인
+              input.form-control(type='text')
+          .col-sm-3.mb-2.mb-sm-0
+            .input-group
+              .input-group-prepend
+                .input-group-text 체크아웃
+              input.form-control(type='text')
+          .col-sm-2
+            button.btn.btn-secondary.btn-block(type='button') 조회
+
+    hr.my-5
+
+    h4.mb-4 예약 조회
+    .form-group.row
+      label.col-sm-2 예약번호
+      .col-sm-10 124555
+    .form-group.row
+      label.col-sm-2 예약상태
+      .col-sm-10.text-success
+        i.fa.fa-check.fa-lg.mr-1
+        | 예약완료
+    .form-group.row
+      label.col-sm-2 예약자명
+      .col-sm-10 김다솔
+    .form-group.row
+      label.col-sm-2 객실명
+      .col-sm-10 2A. POOL &amp; SPA
+    .form-group.row
+      label.col-sm-2 투숙일
+      .col-sm-10 2018-05-26(1박)
+    .form-group.row
+      label.col-sm-2 인원
+      .col-sm-10 어른 4, 아동 2, 유아 0
+    .form-group.row
+      label.col-sm-2 부가서비스
+      .col-sm-10 바베큐 1
+    .form-group.row
+      label.col-sm-2 예약 매모
+      .col-sm-10
+
+
+
+
+
+
+
+    include ./includes/footer.pug

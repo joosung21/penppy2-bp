@@ -1,13 +1,8 @@
 include ./includes/header.pug
 
 body
+  include ./includes/topper.pug
 
-  #bp-pc-header
-    .btn-group.ml-auto
-      a.btn.btn-white.active(href='#') 예약하기
-      a.btn.btn-white(href='#')
-        i.fa.fa-search.fa-lg.mr-1
-        | 내 예약확인
   #bp-pc-body
     h4.mt-4
       | 예약하기
@@ -204,7 +199,7 @@ body
 //- Slider
 .slider-ui.slider-top.text-center.hidden.pt-4
   .pt-3.row
-    .col-7.offset-1.text-left
+    .col-md-7.offset-1.text-left
       .d-flex
         h4
           | 맨하탄
@@ -213,7 +208,7 @@ body
           | 아스토리아
           small.ml-1 (어른 3, 아이 2)
 
-    .col-3.text-right
+    .col-md-3.text-right
       h4 숙박액 296,000 원
       button.btn.btn-secondary.btn-lg.mr-1(type='button', onclick='closeSlider()') 취소
       a.btn.btn-light.btn-lg(href='/bp-pc-book')
