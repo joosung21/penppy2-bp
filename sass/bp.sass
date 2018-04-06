@@ -242,12 +242,10 @@ input::placeholder, textarea::placeholder
         // .carousel-inner, .carousel-inner > .carousel-item, .carousel-inner > .carousel-item > img
         //   height: 15rem
       .content
+        display: table-cell
         @extend %display-flex
         flex-direction: column
         .room-panel
-          @extend %display-flex
-          align-items: center
-          justify-content: flex-end
           margin-top: 1rem
           .age
             @extend %display-flex
@@ -272,7 +270,7 @@ input::placeholder, textarea::placeholder
   padding: 2rem 0
   margin-top: 4rem
   border-top: 1px solid $border-color
-  font-size: .9rem
+  font-size: .8rem
   color: #bbb
   line-height: 1.5rem
   b
@@ -284,6 +282,6 @@ input::placeholder, textarea::placeholder
 //---------- Responsive: Smaller than 400px ----------//
 @media only screen and (max-width: 400px)
   body
-    padding: 0 1rem
+    padding: 0 .5rem
   #bp-pc-topper
     padding: 0 1rem

@@ -2,15 +2,8 @@ include ./includes/header.pug
 
 body
 
-  #bp-pc-topper
-    a.btn.btn-white(href='/')
-        i.fa.fa-arrow-left.fa-lg.mr-1
-        | 뒤로가기
-    .btn-group.ml-auto
-      a.btn.btn-white.active(href='/') 예약하기
-      a.btn.btn-white(href='#')
-        i.fa.fa-search.fa-lg.mr-1
-        | 내 예약확인
+  include ./includes/topper.pug
+
   #bp-pc-body
     h4.mt-4
       | 예약하기
