@@ -1,0 +1,240 @@
+$border-color: #E5E5E5
+$light: #C4C4C4
+$blue: #4B95FF
+$red: #F4516C
+$white-gray: #f8f9fb
+$washed-navy: #7D90A8
+$border-color: #e5e5e5
+
+$available: #BDDDFF
+$waiting: $blue
+$complete: $red
+$callonly: #FFB822
+$blocked: $light
+
+%display-flex
+  display: table-cell // ie9
+  display: -ms-flexbox // ie10
+  display: -webkit-box
+  display: flex
+
+html
+  font-size: 14px
+
+body
+  background-color: white
+  padding: 0 1rem
+
+.btn-white
+  border-color: $border-color
+  color: #4F4F4F
+  background-color: white
+  &:hover
+    color: #4F4F4F
+  i.fa
+    color: #999999
+  &.active
+    background-color: $washed-navy
+    border-color: $washed-navy
+    color: white
+  &.focus
+    outline: none !important
+    box-shadow: none
+
+input::placeholder, textarea::placeholder
+  color: #bbb !important
+
+table
+  border-collapse: collapse
+
+
+// Slider ui
+.slider-ui
+  box-sizing: border-box
+  color: white
+  width: 100vw
+  z-index: 15
+  position: fixed
+  bottom: 0
+  left: 0
+  background-color: #53627E
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem
+  height: fit-content
+  white-space: nowrap
+  color: white
+  transition: all .5s
+  .close
+    position: absolute
+    right: 1rem
+    top: 1.5rem
+    transition: all .3s
+    &:hover
+      filter: brightness(1)
+  &.show
+    bottom: 0
+  &.hidden
+    bottom: -10rem
+  table
+    th
+      font-weight: 300
+  &.slider-ui-white
+    background-color: rgba(white, .8)
+
+.slider-ui.slider-top
+  top: 0
+  &.show
+    top: 0
+  &.hidden
+    top: -100%
+
+.form-control-datepicker
+  background: url('/assets/images/ic-calendar-gray.svg') center right .5rem no-repeat
+
+.info
+  color: $blue
+  font-size: .85rem
+  font-weight: 400
+  padding: .5rem 0
+
+// Custom Checkbox & Radio
+.custom-control
+  margin-left: .25rem
+  .custom-control-label
+    font-weight: 300
+    padding-left: 1px
+  &.custom-checkbox
+    margin-left: .2em
+    .custom-control-label
+      &:after
+        width: 1.43em
+        height: 1.43em
+        background-color: white
+        border: 1px solid #bbb
+        border-radius: 3px
+        left: -.2em
+        top: .05em
+    .custom-control-input:checked
+      + .custom-control-label
+        &:after
+          background: $blue url('/assets/images/checkbox_check.svg') center center no-repeat
+          border-color: $blue
+  &.custom-radio
+    .custom-control-label
+      &:after
+        width: 20px
+        height: 20px
+        background-color: white
+        border: 1px solid #bbb
+        border-radius: 1.4rem
+        left: -3px
+        top: 1px
+    .custom-control-input:checked
+      + .custom-control-label
+        &:after
+          background: $blue url('/assets/images/Oval.svg') center center no-repeat
+          border-color: $blue
+
+// Checkbox group
+.check-group
+  .custom-checkbox
+    display: inline-block
+    width: 128px
+    margin: .4rem 0 .4rem .2rem
+    font-size: .9rem
+    .custom-control-label
+      padding-top: 1px
+
+// Datepicker
+.theme-onda
+  &.bs-datepicker
+    .bs-datepicker-container
+      padding: 0
+      .bs-datepicker-head
+        height: 60px
+        padding: 15px 0
+        background-color: #fff
+        text-align: center
+        button
+          font-size: 14px
+        .previous
+          > span
+            color: $blue
+        .next
+          > span
+            color: $blue
+        .current
+          > span
+            color: #222
+      .bs-datepicker-body
+        border: 0
+        padding: 0
+        margin: 0 20px 20px
+        table
+          border-collapse: collapse
+          thead
+            border-top: 1px solid #000
+            border-bottom: 1px solid #000
+          th
+            padding: 8px 0
+            color: #222
+            font-size: 12px
+            font-weight: 300
+          th.saturday
+            color: #157FFC
+          th.holiday
+            color: #d0021b
+        td
+          &.selected
+            span
+              background-color: $blue
+          span
+            display: inline-block
+            width: 100%
+            height: 100%
+            -webkit-border-radius: 0
+            -moz-border-radius: 0
+            border-radius: 0
+            text-align: center
+            line-height: 40px
+            &:not(.is-other-month, .selected)
+              color: #222
+          span.disabled
+            background-color: #efefef
+          span.selected
+            background-color: $blue
+          span.today
+            &:after
+              content: ""
+              position: absolute
+              top: 6px
+              left: 18px
+              width: 4px
+              height: 4px
+              border-radius: 2px
+              background-color: #222
+            &.is-other-month
+              &:after
+                background-color: #bfbfbf
+            &.selected
+              &:after
+                background-color: #fff
+          span.saturday:not(.is-other-month)
+            color: #157FFC
+          span.holiday:not(.is-other-month)
+            color: #d0021b
+        td.week
+          span
+            color: $blue
+
+.bp-footer
+  padding: 2rem 0
+  margin-top: 4rem
+  border-top: 1px solid $border-color
+  font-size: .8rem
+  color: #bbb
+  line-height: 1.5rem
+  b
+    color: #929292
+  h6
+    color: #929292 !important
+    margin-bottom: 1rem !important
