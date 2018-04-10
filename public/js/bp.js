@@ -13,5 +13,10 @@ function closeSlider(){
 // Document Ready
 $( document ).ready(function() {
 
+  // DEMO ONLY: Calendar Click Event Listner
+  $('.table-calendar .room').click(function(){
+    location.href='/bp-calendar-select'
+  });
 
 });
+

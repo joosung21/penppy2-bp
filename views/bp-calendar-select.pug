@@ -1,0 +1,177 @@
+include ./includes/header2.pug
+
+body
+  include ./includes/topper2.pug
+
+  .pc-bp-body
+    .calendar-controler
+      .form-inline.justify-content-center
+        .year-month 2018년 1월
+        .btn-group.mx-3
+          button.btn.btn-white.border-right-0(type='button')
+            i.fa.fa-angle-left.fa-lg.text-dark
+          button.btn.btn-white.border-left-0(type='button')
+            i.fa.fa-angle-right.fa-lg.text-dark
+    .row.mt-5
+      .col-md-6
+        table.table-bordered.table-calendar-small.w-100.align-middle.text-center
+          tbody
+            tr
+              td.text-red 일
+              td 월
+              td 화
+              td 수
+              td 목
+              td 금
+              td.text-blue 토
+            tr
+              td.text-red.dimed 12/31
+              td.text-red 1
+              td 2
+              td 3
+              td 4
+              td 5
+              td.text-blue 6
+            tr
+              td.text-red 7
+              td 8
+              td 9
+              td 10
+              td 11
+              td 12
+              td.text-blue 13
+            tr
+              td.text-red 14
+              td 15
+              td 16
+              td 17
+              td 18
+              td 19
+              td.text-blue 20
+            tr
+              td.text-red 21
+              td 22
+              td 23
+              td 24
+              td 25
+              td 26
+              td.text-blue 27
+            tr
+              td.text-red 28
+              td.active 29
+              td 30
+              td 31
+              td.dimed 2/1
+              td.dimed 2
+              td.text-blue.dimed 3
+
+      .col-md-6.mt-4.mt-md-0
+        h3.text-blue 선택일 2018.01.29(금)
+        p.mt-4(style='white-space: pre-wrap').
+          [추가요금]
+          - 기준인원에서 1인 추가시 1만원의 추가요금 발생
+          [가격정보]
+          - 여름성수기:07-17~08-15까지
+          - 주말요금:금,토요일, 공휴일 전날
+          [예약안내]
+          - 펜션연락처는 예약과 동시에 고객님의 휴대폰으로 자동발송됩니다.
+          - 예약 전 취소수수료를 꼭 확인바랍니다.
+
+    .py-5
+    .row
+      .col-3
+        h4 객실선택
+      .col-9
+        .status-model.d-flex.justify-content-end
+          .status-badge.available
+          | 예약가능
+          //- .status-badge.waiting
+          //- | 입금대기
+          .status-badge.complete
+          | 예약완료
+          .status-badge.callonly
+          | 전화문의
+          //- .status-badge.blocked
+          //- | 예약불가
+
+    table.table.table-room-select.align-middle.text-center.mt-2
+      thead.bg-light
+        tr
+          th(style='width: 2rem')
+          th
+          th.text-left 객실명
+          th 기간
+          th 인원설정
+          th 금액
+      tbody
+        tr
+          td
+            label.custom-control.custom-checkbox.ml-4
+              input.custom-control-input(type='checkbox')
+              span.custom-control-label
+          td
+            img.img-fluid.thumbnail(src='/assets/images/sample/2A-01.jpg')
+          td.room-info
+            .room-title
+              .status-badge.available
+              span.name 사랑채 하늘방(패밀리스파)
+            .size.text-muted 16평
+            .capacity 기준 2명/최대 4명
+          td
+            select.custom-select.inline
+              option 1박
+              option 2박
+              option 3박
+              option 4박
+              option 5박
+              option 6박
+              option 7박
+              option 8박
+              option 9박
+              option 10박
+          td
+            .form-inline.number
+              span.mr-2 성인
+              input.form-control.mr-3(type='number', min='1', max='6', value='2')
+              span.mr-2 아동
+              input.form-control.mr-3(type='number', min='1', max='6', value='2')
+              span.mr-2 유아
+              input.form-control(type='number', min='1', max='6', value='2')
+          td
+            | 120,000
+            .small.text-muted 추가인원 +10,000
+        tr
+          td
+          td
+            img.img-fluid.thumbnail(src='/assets/images/sample/2A-01.jpg')
+          td.room-info
+            .room-title
+              .status-badge.callonly
+              span.name 사랑채
+            .size.text-muted 16평
+            .capacity 기준 2명/최대 4명
+          td(colspan='2')
+            | 전화 예약만 가능합니다.
+          td
+            | 120,000
+            .small.text-muted 추가인원 +10,000
+        tr.dimed
+          td
+          td
+            img.img-fluid.thumbnail(src='/assets/images/sample/2A-01.jpg')
+          td.room-info
+            .room-title
+              .status-badge.complete
+              span.name 사랑채
+            .size.text-muted 16평
+            .capacity 기준 2명/최대 4명
+          td
+          td
+          td
+            | 120,000
+            .small.text-muted 추가인원 +10,000
+
+    .text-center.pt-4
+      a.btn.btn-primary.btn-lg(href='/bp-book') 예약하기
+
+    include ./includes/footer.pug

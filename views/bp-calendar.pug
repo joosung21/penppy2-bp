@@ -16,17 +16,17 @@ body
       .col-md-3
         button.btn.btn-white(type='button') 요금보기
       .col-md-9
-        .status-model.d-flex.justify-content-end.mt-2
+        .status-model.d-flex.justify-content-end.mt-3
           .status-badge.available
           | 예약가능
-          .status-badge.waiting
-          | 입금대기
+          //- .status-badge.waiting
+          //- | 입금대기
           .status-badge.complete
           | 예약완료
           .status-badge.callonly
           | 전화문의
-          .status-badge.blocked
-          | 예약불가
+          //- .status-badge.blocked
+          //- | 예약불가
 
     .table-responsive.mt-3
         table.table-bordered.table-calendar
@@ -468,7 +468,7 @@ body
                   .name.dimed B(테라스)
                   .stock.dimed 4/5
                 .room
-                  .status-badge.blocked
+                  .status-badge.complete
                   .name.dimed S(복층스파)
                   .stock.dimed 2/2
               td
@@ -476,15 +476,15 @@ body
                   .date.text-blue 27
                   .season 비수기
                 .room
-                  .status-badge.waiting
+                  .status-badge.available
                   .name A
                   .stock 1/6
                 .room
-                  .status-badge.waiting
+                  .status-badge.available
                   .name B(테라스)
                   .stock 4/5
                 .room
-                  .status-badge.blocked
+                  .status-badge.complete
                   .name.dimed S(복층스파)
                   .stock.dimed 2/2
             tr

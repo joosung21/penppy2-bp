@@ -18,12 +18,20 @@ $blocked: $light
   display: -webkit-box
   display: flex
 
+// Quick Styles
+.text-red
+  color: $red
+.text-blue
+  color: $blue
+.text-muted
+  color: #bbb !important
+
 html
   font-size: 14px
 
 body
   background-color: white
-  padding: 0 1rem
+  padding: 0
 
 .btn-white
   border-color: $border-color
@@ -41,12 +49,58 @@ body
     outline: none !important
     box-shadow: none
 
+.btn
+  &.btn-primary, &.btn-secondary
+    color: white
+
 input::placeholder, textarea::placeholder
   color: #bbb !important
 
 table
   border-collapse: collapse
 
+.form-inline
+  .custom-select
+    width: auto
+
+.custom-select.inline
+  width: auto
+
+// Table
+.table
+  td
+    padding: 1rem .25rem
+  thead th
+    border: 0
+    padding: 1rem .25rem
+    font-weight: 600
+  tbody
+    td, th
+      border-top: 0
+      border-bottom: 1px solid $border-color
+  &.align-middle
+    td, th
+      vertical-align: middle
+  tr.dimed
+    td
+      opacity: .4
+  .checkbox
+    .custom-control
+      width: 1rem
+      padding: 0 .2rem
+      margin: 0 auto
+      .custom-control-label
+        &:after
+  tr.link
+    cursor: pointer
+
+.table.table-hover
+  tbody
+    tr
+      &:hover
+        td
+          background-color: #FBFBFC
+          cursor: pointer
 
 // Slider ui
 .slider-ui
@@ -226,6 +280,10 @@ table
           span
             color: $blue
 
+.pc-bp-body
+  max-width: 1200px
+  margin: 0 auto
+
 .bp-footer
   padding: 2rem 0
   margin-top: 4rem
@@ -238,3 +296,4 @@ table
   h6
     color: #929292 !important
     margin-bottom: 1rem !important
+

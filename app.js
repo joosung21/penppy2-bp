@@ -13,6 +13,7 @@ app.get('/bp-calendar', function (req, res){res.render('bp-calendar')})
 app.get('/bp-pc-book', function (req, res){res.render('bp-pc-book')})
 app.get('/bp-mailform', function (req, res){res.render('bp-mailform')})
 app.get('/bp-find', function (req, res){res.render('bp-find')})
+app.get('/bp-calendar-select', function (req, res){res.render('bp-calendar-select')})
 
 app.listen(3400, function () {
   console.log('App listening on port 3400!')
