@@ -2,5 +2,16 @@
   h3.title  데이먼 해달별 펜션
   a.tab.active(href='#') 예약달력
   a.tab(href='#') 예약하기
-  a.tab(href='#') 예약확인
+  a.tab(href='#', data-toggle='modal', data-target='#findReservationModal') 예약확인
   a.btn.btn-white.ml-4(href='#', target='_blank') 사장님 페이지
+
+//- Find Reservation Modal
+#findReservationModal.modal.fade(tabindex='-1')
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        h5.modal-title 예약확인
+        a.close(data-dismiss='modal')
+          img(src='/images/close.svg')
+      .modal-body
+        .p-5.text-center test
