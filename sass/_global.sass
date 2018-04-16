@@ -6,7 +6,7 @@ $white-gray: #f8f9fb
 $washed-navy: #7D90A8
 $border-color: #e5e5e5
 
-$available: #BDDDFF
+$available: #A1CFFF
 $waiting: $blue
 $complete: $red
 $callonly: #FFB822
@@ -25,6 +25,8 @@ $blocked: $light
   color: $blue
 .text-muted
   color: #bbb !important
+.text-info
+  color: #64C2D0 !important
 
 html
   font-size: 14px
@@ -59,12 +61,28 @@ input::placeholder, textarea::placeholder
 table
   border-collapse: collapse
 
+label
+  font-weight: 600
+
 .form-inline
   .custom-select
     width: auto
 
+label.label-necessary
+  &:after
+    content: '*'
+    color: $red
+    padding-left: .4rem
+    position: relative
+    top: .4rem
+    font-size: 1.2rem
+    line-height: 1rem
+
 .custom-select.inline
   width: auto
+
+.bg-light
+  background-color: #F5F5F5 !important
 
 // Table
 .table
@@ -86,11 +104,10 @@ table
       opacity: .4
   .checkbox
     .custom-control
-      width: 1rem
+      display: inline-block
+      width: 2.5rem
       padding: 0 .2rem
       margin: 0 auto
-      .custom-control-label
-        &:after
   tr.link
     cursor: pointer
 
@@ -101,6 +118,9 @@ table
         td
           background-color: #FBFBFC
           cursor: pointer
+
+hr.dark
+  border-color: #929292
 
 // Slider ui
 .slider-ui
@@ -170,8 +190,8 @@ table
     .custom-control-input:checked
       + .custom-control-label
         &:after
-          background: $blue url('/assets/images/checkbox_check.svg') center center no-repeat
-          border-color: $blue
+          background: #56627B url('/assets/images/checkbox_check.svg') center center no-repeat
+          border-color: #56627B
   &.custom-radio
     .custom-control-label
       &:after
@@ -185,8 +205,8 @@ table
     .custom-control-input:checked
       + .custom-control-label
         &:after
-          background: $blue url('/assets/images/Oval.svg') center center no-repeat
-          border-color: $blue
+          background: #56627B url('/assets/images/Oval.svg') center center no-repeat
+          border-color: #56627B
 
 // Checkbox group
 .check-group
@@ -280,13 +300,32 @@ table
           span
             color: $blue
 
+.purchase-box
+  border: 1px solid #222
+  .table
+    background-color: $white-gray
+    border-bottom: 1px solid $border-color
+    th:last-child, td:last-child
+      padding-right: 3rem
+    thead
+      th
+        font-weight: 400
+        border-bottom: 1px solid $border-color
+    tbody
+      td
+        border-bottom: none
+
+
+// BP Global Body
 .pc-bp-body
   max-width: 1200px
   margin: 0 auto
+  padding: 0 1rem
 
+// BP Global Footer
 .bp-footer
   padding: 2rem 0
-  margin-top: 4rem
+  margin-top: 8rem
   border-top: 1px solid $border-color
   font-size: .8rem
   color: #bbb

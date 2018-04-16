@@ -22,6 +22,7 @@
     background-color: $available
     &:before
       content: '가'
+      text-shadow: 0 0 2px #4B95FF
   &.complete
     background-color: $complete
     &:before
@@ -37,12 +38,12 @@
     background: $blocked url('/assets/images/blocked.svg') center no-repeat
     background-size: 13px
 
-
 //- Topper --//
 .pc-bp-topper
   @extend %display-flex
   align-items: center
   border-bottom: 1px solid $border-color
+  padding: 0 1rem
   .title
     margin: 0
     margin-right: auto
@@ -55,7 +56,7 @@
     line-height: 1rem
     text-decoration: none
     &.active
-      border-bottom: 3px solid #67ABFF
+      border-bottom: 3px solid #4F4F4F
   .btn-primary
     background-color: #4275C4
 
