@@ -1,0 +1,684 @@
+$border-color: #E5E5E5
+$light: #C4C4C4
+$blue: #4B95FF
+$red: #F4516C
+$white-gray: #f8f9fb
+$washed-navy: #7D90A8
+$dark: #56627B
+$border-color: #e5e5e5
+
+$available: #A1CFFF
+$waiting: $blue
+$complete: $red
+$callonly: #FFB822
+$blocked: $light
+
+%display-flex
+  display: table-cell // ie9
+  display: -ms-flexbox // ie10
+  display: -webkit-box
+  display: flex
+
+.text-red
+  color: $red
+.text-blue
+  color: $blue
+.text-muted
+  color: #bbb !important
+.text-info
+  color: #64C2D0 !important
+
+html
+  font-size: 14px
+
+body
+  background-color: white
+  padding: 0
+
+.btn-white
+  border-color: $border-color
+  color: #4F4F4F
+  background-color: white
+  &:hover
+    color: #4F4F4F
+  i.fa
+    color: #999999
+  &.active
+    background-color: $washed-navy
+    border-color: $washed-navy
+    color: white
+  &.focus
+    outline: none !important
+    box-shadow: none
+
+a:focus, a:active, .btn:focus, .btn:active
+  outline: none !important
+  box-shadow: none
+
+.btn
+  &.btn-primary, &.btn-secondary
+    color: white
+
+input::placeholder, textarea::placeholder
+  color: #bbb !important
+
+table
+  border-collapse: collapse
+
+label
+  font-weight: 400
+
+.form-inline
+  .custom-select
+    width: auto
+
+label.label-necessary
+  &:after
+    content: '*'
+    color: $red
+    padding-left: .4rem
+    position: relative
+    top: .4rem
+    font-size: 1.2rem
+    line-height: 1rem
+
+.custom-select.inline
+  width: auto
+
+.bg-light
+  background-color: #F5F5F5 !important
+
+hr.dark
+  border-color: #929292
+
+.form-control-datepicker
+  background: url('/assets/images/ic-calendar-gray.svg') center right .5rem no-repeat
+
+.info
+  color: $blue
+  font-size: .85rem
+  font-weight: 400
+  padding: .5rem 0
+
+// Table
+.table
+  td
+    padding: 1rem .25rem
+  thead th
+    border: 0
+    padding: 1rem .25rem
+    font-weight: 600
+  tbody
+    td, th
+      border-top: 0
+      border-bottom: 1px solid $border-color
+  &.align-middle
+    td, th
+      vertical-align: middle
+  tr.dimed
+    td
+      opacity: .4
+  .checkbox
+    .custom-control
+      display: inline-block
+      width: 2.5rem
+      padding: 0 .2rem
+      margin: 0 auto
+  tr.link
+    cursor: pointer
+
+.table.table-hover
+  tbody
+    tr
+      &:hover
+        td
+          background-color: #FBFBFC
+          cursor: pointer
+
+// Custom Checkbox & Radio
+.custom-control
+  margin-left: .25rem
+  .custom-control-label
+    font-weight: 300
+    padding-left: 1px
+  &.custom-checkbox
+    margin-left: .2em
+    .custom-control-label
+      &:after
+        width: 1.43em
+        height: 1.43em
+        background-color: white
+        border: 1px solid #bbb
+        border-radius: 3px
+        left: -.2em
+        top: .05em
+    .custom-control-input:checked
+      + .custom-control-label
+        &:after
+          background: $dark url('/assets/images/checkbox_check.svg') center center no-repeat
+          border-color: $dark
+  &.custom-radio
+    .custom-control-label
+      &:after
+        width: 20px
+        height: 20px
+        background-color: white
+        border: 1px solid #bbb
+        border-radius: 1.4rem
+        left: -3px
+        top: 1px
+    .custom-control-input:checked
+      + .custom-control-label
+        &:after
+          background: $dark url('/assets/images/Oval.svg') center center no-repeat
+          border-color: $dark
+
+// Datepicker
+.theme-onda
+  &.bs-datepicker
+    .bs-datepicker-container
+      padding: 0
+      .bs-datepicker-head
+        height: 60px
+        padding: 15px 0
+        background-color: #fff
+        text-align: center
+        button
+          font-size: 14px
+        .previous
+          > span
+            color: $blue
+        .next
+          > span
+            color: $blue
+        .current
+          > span
+            color: #222
+      .bs-datepicker-body
+        border: 0
+        padding: 0
+        margin: 0 20px 20px
+        table
+          border-collapse: collapse
+          thead
+            border-top: 1px solid #000
+            border-bottom: 1px solid #000
+          th
+            padding: 8px 0
+            color: #222
+            font-size: 12px
+            font-weight: 300
+          th.saturday
+            color: #157FFC
+          th.holiday
+            color: #d0021b
+        td
+          &.selected
+            span
+              background-color: $blue
+          span
+            display: inline-block
+            width: 100%
+            height: 100%
+            -webkit-border-radius: 0
+            -moz-border-radius: 0
+            border-radius: 0
+            text-align: center
+            line-height: 40px
+            &:not(.is-other-month, .selected)
+              color: #222
+          span.disabled
+            background-color: #efefef
+          span.selected
+            background-color: $blue
+          span.today
+            &:after
+              content: ""
+              position: absolute
+              top: 6px
+              left: 18px
+              width: 4px
+              height: 4px
+              border-radius: 2px
+              background-color: #222
+            &.is-other-month
+              &:after
+                background-color: #bfbfbf
+            &.selected
+              &:after
+                background-color: #fff
+          span.saturday:not(.is-other-month)
+            color: #157FFC
+          span.holiday:not(.is-other-month)
+            color: #d0021b
+        td.week
+          span
+            color: $blue
+
+.purchase-box
+  border: 1px solid #222
+  .table
+    background-color: $white-gray
+    border-bottom: 1px solid $border-color
+    th:last-child, td:last-child
+      padding-right: 3rem
+    thead
+      th
+        font-weight: 400
+        border-bottom: 1px solid $border-color
+    tbody
+      td
+        border-bottom: none
+
+// PC Body
+.pc-body
+  max-width: 1200px
+  margin: 0 auto
+  padding: 0 1rem
+
+.find-ui
+  max-width: 300px
+  margin: 5rem auto 0 auto
+
+.responsive-body
+  max-width: 1200px
+  margin: 0 auto
+  padding: 0 1rem
+
+// Global Footer
+.bp-footer
+  padding: 2rem 0
+  margin-top: 8rem
+  border-top: 1px solid $border-color
+  font-size: .8rem
+  color: #bbb
+  line-height: 1.5rem
+  b
+    color: #929292
+    margin-right: .25rem
+  h6
+    color: #929292 !important
+    margin-bottom: 1rem !important
+  .col-sm
+    .mr-3
+      float: left
+
+//- Status Badge
+.status-badge
+  position: relative
+  display: inline-block
+  flex-shrink: 0
+  background-color: $available
+  color: white
+  width: 12px
+  height: 12px
+  box-sizing: content-box
+  padding: 5px
+  &:before
+    position: absolute
+    left: center
+    top: center
+    font-size: 12px
+    line-height: 12px
+    font-weight: 400
+  &.available
+    background-color: $available
+    &:before
+      content: '가'
+      text-shadow: 0 0 2px #4B95FF
+  &.complete
+    background-color: $complete
+    &:before
+      content: '완'
+  &.waiting
+    background-color: $waiting
+    &:before
+      content: '대'
+  &.callonly
+    background: $callonly url('/assets/images/callonly.svg') center no-repeat
+    background-size: 11px
+  &.blocked
+    background: $blocked url('/assets/images/blocked.svg') center no-repeat
+    background-size: 13px
+
+//- Topper --//
+.bp-topper
+  @extend %display-flex
+  align-items: center
+  border-bottom: 1px solid $border-color
+  padding: 0 1rem
+  .title
+    margin: 0
+    margin-right: auto
+  .tab
+    border-top: 3px solid white
+    border-bottom: 3px solid white
+    color: #4c4c4c
+    font-size: 1rem
+    padding: 1.5rem
+    line-height: 1rem
+    text-decoration: none
+    &.active
+      border-bottom: 3px solid #4F4F4F
+  .btn-primary
+    background-color: #4275C4
+
+//- Calendar Control
+.calendar-controler
+  margin-top: 3.5rem
+  .year-month
+    font-size: 2rem
+    font-weight: 400
+  .btn-white
+    padding-bottom: .5rem
+
+//- Status Model
+.status-model
+  align-items: flex-end
+  font-size: 0.85rem
+  .status-badge
+    padding: .15rem
+    margin-left: 1.5rem
+    margin-right: .3rem
+    flex-shrink: 0
+    &.callonly
+      background-position: 3px 3px
+    &.blocked
+      background-position: 2px 2px
+
+//- 객실달력
+.table-calendar
+  width: 100%
+  min-width: 900px
+  th, td
+    padding: .8rem
+    width: calc(100% / 7)
+    vertical-align: top
+  .dimed
+      opacity: .4
+  .today
+    box-shadow: inset 0 0 0 1px #222222
+    .room
+      margin: 0 -.7rem
+      padding: .25rem .7rem
+  thead
+    th
+      text-align: center
+      font-weight: 400
+  tbody
+    td.other-month
+      background-color: $white-gray
+    .day-header
+      @extend %display-flex
+      align-items: center
+      margin-bottom: .5rem
+      .season
+        margin-left: auto
+        color: $light
+        font-size: .9rem
+    .room
+      @extend %display-flex
+      align-items: center
+      margin: 0 -.8rem
+      padding: .25rem .8rem
+      cursor: pointer
+      .name
+        padding: 0 5px
+        line-height: 1rem
+      .stock
+        margin-left: auto
+        font-size: .85rem
+      &.dimed
+        color: $light
+    .price
+      padding-left: 2rem
+      margin-top: -.4rem
+
+.table-calendar-small
+  td
+    padding: 1rem 0
+    cursor: pointer
+    width: calc(100% / 7)
+    &.dimed
+      background-color: $white-gray
+      opacity: .5
+    &.active
+      box-shadow: inset 0 0 0 1px #222222
+
+.table-room-select
+  .room-info
+    text-align: left
+    .room-title
+      white-space: nowrap
+      *
+        vertical-align: middle
+      .name
+        padding-left: .5rem
+        white-space: nowrap
+        text-overflow: ellipsis
+    .size
+      font-size: .85rem
+      padding: .25rem 0 .25rem 1.7rem
+    .capacity
+      padding-left: 1.7rem
+  .thumbnail
+    width: 100%
+    min-width: 100px
+    max-width: 240px
+  .number
+    width: 21rem
+    margin: 0 auto
+  .status-badge
+    padding: .15rem
+    &.callonly
+      background-position: 3px 3px
+    &.blocked
+      background-position: 2px 2px
+
+// Bootstrap Carousel Cover Image
+.carousel-item
+  min-height: 200px
+  background: no-repeat center center scroll
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+
+//- Mobile View Only --//
+.mobile-body
+  display: none
+.mobile-calendar-controler
+  padding: 2rem 0
+  .date
+    text-align: center
+    font-size: 1.3rem
+    img
+      vertical-align: middle
+      margin-left: .5rem
+      position: relative
+      top: -2px
+  button.pre
+    padding: .15rem .8rem .4rem .7rem
+  button.next
+    padding: .15rem .7rem .4rem .8rem
+.table-mobile-calendar
+  width: 100%
+  border-top: 1px solid #929292
+  th,td
+    border-right: 1px inset $border-color
+    border-bottom: 1px solid $border-color
+    width: 20%
+    padding: 0 .25rem
+  th:last-child, td:last-child
+    border-right: none
+  td.title
+    background-color: $white-gray
+  thead
+    th,td
+      border-bottom: 1px solid #929292
+    th
+      padding: 1rem 0
+      .day
+        font-weight: normal
+      .date
+        font-size: 1.3rem
+        font-weight: normal
+  tbody
+    td
+      height: 7.5rem
+      &.dimed
+        opacity: .4
+      &.selected
+        background-color: #ecf5ff
+      .price
+        @extend %display-flex
+        flex-direction: column
+        justify-content: space-around
+        height: 4.5rem
+        padding-top: 1rem
+      .status
+        @extend %display-flex
+        align-items: center
+        justify-content: center
+        height: 3rem
+        font-size: .85rem
+        line-height: .85rem
+        .status-badge
+          margin-right: .25rem
+          padding: .25rem
+
+.mobile-footbutton
+  border-radius: 0
+  font-size: 1.1rem
+  padding: 1rem 0
+#bookSelectedBtn
+  display: none
+  position: fixed
+  bottom: 0
+
+#viewPictureModal
+  .modal-dialog
+    margin: 0
+    .modal-content
+      background-color: $dark
+      height: 100vh
+      .modal-header
+        border-bottom: none
+      .modal-body
+        color: white
+        padding: 0
+        &.d-flex
+          flex-direction: column
+          justify-content: flex-end
+        .carousel
+          .carousel-item
+            height: calc(33vh + 1rem)
+          .carousel-indicators
+            top: -1.5rem
+        .detail
+          height: calc(33vh + 1rem)
+          padding: 1.5rem
+          font-weight: lighter
+          font-size: .85rem
+          word-break: keep-all
+          .room-name
+            font-size: 1.2rem
+            margin-bottom: .5rem
+
+.mobile-container
+  background-color: $white-gray
+  .board
+    background-color: white
+    margin-bottom: 1rem
+    padding: 1.5rem
+    p
+      line-height: 1.5rem
+    hr
+      margin-top: 1.8rem
+      margin-bottom: 1.8rem
+    .form-row
+      margin-bottom: .5rem
+    .room-title
+      @extend %display-flex
+      align-items: flex-start
+      margin-bottom: 1.5rem
+      .name
+        font-size: 1.3rem
+    .group-wrapper
+      @extend %display-flex
+      .group-label
+        line-height: 1em
+      .group-content
+        margin-left: auto
+        > .wrapper
+          @extend %display-flex
+          justify-content: flex-end
+          align-items: center
+          margin-bottom: .5rem
+          &:last-child
+            margin-bottom: 0
+      .value-coloumn
+        min-width: 6rem
+        padding-left: 1rem
+        text-align: right
+        line-height: 1em
+        .custom-select
+          width: calc(100% - 1rem)
+    .agreement-box
+      border: none
+      background-color: $white-gray
+      font-size: .85rem
+      padding: .25rem
+
+
+.btn-x
+  box-sizing: content-box
+  padding: .35rem
+  line-height: 0
+
+
+
+//-------- Responsive: Mobile(xs) --------//
+@media screen and (max-width: 575px)
+  html
+    font-size: 14px
+  .bp-topper
+    padding: 0
+    .tab
+      width: 50vw
+      text-align: center
+  .pc-body
+    display: none
+  .mobile-body
+    display: block
+
+//---------- Responsive: sm ----------//
+@media only screen and (min-width: 576px)
+  html
+    font-size: 12px
+
+//---------- Responsive: md ----------//
+@media only screen and (min-width: 768px)
+  html
+    font-size: 13px
+
+//---------- Responsive: lg ----------//
+@media only screen and (min-width: 992px)
+  html
+    font-size: 14px
+
+//---------- Responsive: xl ----------//
+@media only screen and (min-width: 1200px)
+  html
+    font-size: 15px
+
+
+
+
+
+
+
+
+
+
+

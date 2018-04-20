@@ -18,5 +18,15 @@ $( document ).ready(function() {
     location.href='/bp-calendar-select'
   });
 
+  // 모바일 달력 선택 Toggle
+  $('td.selectable').click(function(){
+    $(this).toggleClass('selected');
+    $('#bookSelectedBtn').hide();
+    $('td.selectable.selected').each(function(){
+      $('#bookSelectedBtn').show();
+    });
+
+  });
+
 });
 
