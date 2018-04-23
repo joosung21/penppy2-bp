@@ -28,12 +28,12 @@ $( document ).ready(function() {
   });
 
   // Carousel Swipe on Mobile
-  $(".carousel").swiperight(function() {
-    $(this).carousel('prev');
-  });
-  $(".carousel").swipeleft(function() {
-      $(this).carousel('next');
-  });
+  // $(".carousel").swiperight(function() {
+  //   $(this).carousel('prev');
+  // });
+  // $(".carousel").swipeleft(function() {
+  //   $(this).carousel('next');
+  // });
 
 
 });
