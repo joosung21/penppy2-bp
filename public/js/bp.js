@@ -25,8 +25,17 @@ $( document ).ready(function() {
     $('td.selectable.selected').each(function(){
       $('#bookSelectedBtn').show();
     });
-
   });
+
+  // Carousel Swipe on Mobile
+  $(".carousel").swipe({
+    swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+      if (direction == 'left') $(this).carousel('next');
+      if (direction == 'right') $(this).carousel('prev');
+    },
+    allowPageScroll:"vertical"
+  });
+
 
 });
 

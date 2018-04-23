@@ -475,7 +475,18 @@ hr.dark
     &.blocked
       background-position: 2px 2px
 
-// Bootstrap Carousel Cover Image
+
+
+// Bootstrap Carousel
+.carousel-indicators
+  bottom: -3px
+  li
+    width: 5px
+    height: 5px
+    border-radius: 5px !important
+    margin-right: 3px
+    margin-left: 3px
+
 .carousel-item
   min-height: 200px
   background: no-repeat center center scroll
@@ -514,6 +525,9 @@ hr.dark
     border-right: none
   td.title
     background-color: $white-gray
+    a
+      text-decoration: none
+      color: #4c4c4c
   thead
     th,td
       border-bottom: 1px solid #929292
@@ -548,6 +562,10 @@ hr.dark
         .status-badge
           margin-right: .25rem
           padding: .25rem
+      a
+        text-decoration: none
+        color: #4c4c4c
+
 
 .mobile-footbutton
   border-radius: 0
