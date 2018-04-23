@@ -100,7 +100,7 @@
               del 240,000원
             | 181,000원
           .status 예약가능
-        td
+        td(data-toggle='modal', data-target='#callonlyModal')
           .price
             .small.text-red 25%
             .small.text-muted
@@ -181,7 +181,7 @@
               del 240,000원
             | 181,000원
           .status 예약가능
-        td
+        td(data-toggle='modal', data-target='#callonlyModal')
           .price
             .small.text-red 25%
             .small.text-muted
@@ -190,7 +190,7 @@
           .status
             .status-badge.callonly
             span 전화문의
-        td.xxsm-hidden
+        td.xxsm-hidden(data-toggle='modal', data-target='#callonlyModal')
           .price
             .small.text-red 25%
             .small.text-muted
@@ -244,3 +244,16 @@
             br
             | 냉장고, 다리미, 드라이기, 쇼파, 스파/월풀, 에어컨, 욕실용품, 전기밥솥, 커피포트, TV
 
+
+//- 전화문의 모달
+#callonlyModal.modal(tabindex='-1')
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        a.close(data-dismiss='modal')
+          i.fa.fa-times.fa-lg
+      .modal-body
+        .text-center.py-5
+          h5 전화문의하기
+          h2
+            a(href='tel:010-2268-5000') 010-2268-5000
