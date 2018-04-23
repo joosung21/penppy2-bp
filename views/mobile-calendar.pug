@@ -247,7 +247,8 @@
 
 //- 전화문의 모달
 #callonlyModal.modal(tabindex='-1')
-  .modal-dialog.modal-lg(style='top: 46%; left: 49%; width: 84%; transform: translate(-50%, -50%);')
+  //- .modal-dialog.modal-lg
+  .modal-dialog.modal-lg(style='margin-top: calc(50vh - 10rem);')
     .modal-content
       .modal-header
         a.close(data-dismiss='modal')
