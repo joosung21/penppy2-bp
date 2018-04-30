@@ -3,7 +3,7 @@ include ./includes/header.pug
 body
   include ./includes/topper.pug
 
-  .pc-body
+  .container
     .calendar-controler
       .form-inline.justify-content-center
         .year-month 2018년 1월
@@ -78,100 +78,237 @@ body
           - 예약 전 취소수수료를 꼭 확인바랍니다.
 
     .py-5
-    .row
-      .col-3
-        h4 객실선택
-      .col-9
-        .status-model.d-flex.justify-content-end
-          .status-badge.available
-          | 예약가능
-          //- .status-badge.waiting
-          //- | 입금대기
-          .status-badge.complete
-          | 예약완료
-          .status-badge.callonly
-          | 전화문의
-          //- .status-badge.blocked
-          //- | 예약불가
-
+    h4 객실선택
     table.table.table-room-select.align-middle.text-center.mt-3
-      thead.bg-light
-        tr
-          th(style='width: 2rem')
-          th
-          th.text-left 객실명
-          th 기간
-          th 인원설정
-          th 금액
       tbody
         tr
           td
             label.custom-control.custom-checkbox.ml-4
               input.custom-control-input(type='checkbox')
               span.custom-control-label
-          td
-            img.img-fluid.thumbnail(src='/assets/images/sample/2A-01.jpg')
+          td(style='width: 11rem')
+            .thumbnail(style="background-image: url('/assets/images/sample/2B-01.jpg')", data-toggle='modal', data-target='#viewPictureModal-pc')
           td.room-info
-            .room-title
-              .status-badge.available
-              span.name 사랑채 하늘방(패밀리스파)
+            .room-title 사랑채 하늘방(패밀리스파)
             .size.text-muted 16평
-            .capacity 기준 2명/최대 4명
+            .capacity.small 기준 2명/최대 4명
+            p.small 동해물과 백두산이 마르고 닳도록 펜션 소개글 자리
           td
+            .mb-2 객실수
             select.custom-select.inline
-              option 1박
-              option 2박
-              option 3박
-              option 4박
-              option 5박
-              option 6박
-              option 7박
-              option 8박
-              option 9박
-              option 10박
+              option 1개
+              option 2개
+              option 3개
+              option 4개
           td
-            .form-inline.number
-              span.mr-2 성인
-              input.form-control.mr-3(type='number', min='1', max='6', value='2')
-              span.mr-2 아동
-              input.form-control.mr-3(type='number', min='1', max='6', value='2')
-              span.mr-2 유아
-              input.form-control(type='number', min='1', max='6', value='2')
-          td
-            | 120,000
-            .small.text-muted 추가인원 +10,000
+            .unit-wrapper
+              .room-id 방1
+              .value
+                .mb-2 기간
+                select.custom-select.inline
+                  option 1박
+                  option 2박
+                  option 3박
+                  option 4박
+                  option 5박
+                  option 6박
+                  option 7박
+                  option 8박
+                  option 9박
+                  option 10박
+              .value
+                .mb-2 성인
+                input.form-control.mr-3(type='number', min='1', max='6', value='6')
+              .value
+                .mb-2 아동
+                input.form-control.mr-3(type='number', min='0', max='6', value='1')
+              .value
+                .mb-2 유아
+                input.form-control.mr-3(type='number', min='0', max='6', value='0')
+              .price
+                .small
+                  del.text-muted 68,000원
+                  span.text-red.ml-1 25%
+                | 55,000원
+                .small.text-muted 추가인원 +10,000
+            .unit-wrapper.added
+              .room-id 방1
+              .value
+                select.custom-select.inline
+                  option 1박
+                  option 2박
+                  option 3박
+                  option 4박
+                  option 5박
+                  option 6박
+                  option 7박
+                  option 8박
+                  option 9박
+                  option 10박
+              .value
+                input.form-control.mr-3(type='number', min='1', max='6', value='2')
+              .value
+                input.form-control.mr-3(type='number', min='0', max='6', value='0')
+              .value
+                input.form-control.mr-3(type='number', min='0', max='6', value='0')
+              .price
+                .small
+                | 14,000원
+            .unit-wrapper.added
+              .room-id 방1
+              .value
+                select.custom-select.inline
+                  option 1박
+                  option 2박
+                  option 3박
+                  option 4박
+                  option 5박
+                  option 6박
+                  option 7박
+                  option 8박
+                  option 9박
+                  option 10박
+              .value
+                input.form-control.mr-3(type='number', min='1', max='6', value='2')
+              .value
+                input.form-control.mr-3(type='number', min='0', max='6', value='0')
+              .value
+                input.form-control.mr-3(type='number', min='0', max='6', value='1')
+              .price
+                | 22,000원
+                .small.text-muted 추가인원 +10,000
         tr
           td
-          td
-            img.img-fluid.thumbnail(src='/assets/images/sample/2A-01.jpg')
+            label.custom-control.custom-checkbox.ml-4
+              input.custom-control-input(type='checkbox')
+              span.custom-control-label
+          td(style='width: 11rem')
+            .thumbnail(style="background-image: url('/assets/images/sample/2A-01.jpg')", data-toggle='modal', data-target='#viewPictureModal-pc')
           td.room-info
-            .room-title
-              .status-badge.callonly
-              span.name 사랑채
+            .room-title 두번째방
             .size.text-muted 16평
-            .capacity 기준 2명/최대 4명
-          td(colspan='2')
-            | 전화 예약만 가능합니다.
+            .capacity.small 기준 2명/최대 4명
           td
-            | 120,000
-            .small.text-muted 추가인원 +10,000
-        tr.dimed
+            .mb-2 객실수
+            select.custom-select.inline
+              option 1개
+              option 2개
+              option 3개
+              option 4개
           td
+            .unit-wrapper
+              .room-id 방1
+              .value
+                .mb-2 기간
+                select.custom-select.inline
+                  option 1박
+                  option 2박
+                  option 3박
+                  option 4박
+                  option 5박
+                  option 6박
+                  option 7박
+                  option 8박
+                  option 9박
+                  option 10박
+              .value
+                .mb-2 성인
+                input.form-control.mr-3(type='number', min='1', max='6', value='6')
+              .value
+                .mb-2 아동
+                input.form-control.mr-3(type='number', min='0', max='6', value='1')
+              .value
+                .mb-2 유아
+                input.form-control.mr-3(type='number', min='0', max='6', value='0')
+              .price
+                .small
+                  del.text-muted 68,000원
+                  span.text-red.ml-1 25%
+                | 55,000원
+                .small.text-muted 추가인원 +10,000
+        tr
           td
-            img.img-fluid.thumbnail(src='/assets/images/sample/2A-01.jpg')
+            label.custom-control.custom-checkbox.ml-4
+              input.custom-control-input(type='checkbox')
+              span.custom-control-label
+          td(style='width: 11rem')
+            .thumbnail(style="background-image: url('/assets/images/noimage.png')", data-toggle='modal', data-target='#viewPictureModal-pc')
           td.room-info
-            .room-title
-              .status-badge.complete
-              span.name 사랑채
+            .room-title 세번째방
             .size.text-muted 16평
-            .capacity 기준 2명/최대 4명
+            .capacity.small 기준 2명/최대 4명
           td
           td
+            .unit-wrapper.justify-content-end
+              .price
+                button.btn.btn-secondary(type='button', style='width: 7rem', disabled) 만실
+        tr
           td
-            | 120,000
-            .small.text-muted 추가인원 +10,000
+            label.custom-control.custom-checkbox.ml-4
+              input.custom-control-input(type='checkbox')
+              span.custom-control-label
+          td(style='width: 11rem')
+            .thumbnail(style="background-image: url('/assets/images/sample/3A-01.jpg')", data-toggle='modal', data-target='#viewPictureModal-pc')
+          td.room-info
+            .room-title 네번째방
+            .size.text-muted 16평
+            .capacity.small 기준 2명/최대 4명
+          td
+          td
+            .unit-wrapper.justify-content-end
+              .price
+                button.btn.btn-warning.btn-callonly.px-4(type='button', style='width: 7rem') 전화문의
+                .small.mt-2
+                  del.text-muted 68,000원
+                  span.text-red.ml-1 25%
+                | 55,000원
+                .call-info2
+                  h6 전화문의
+                  | 032-1111-2871
 
     .text-center.pt-4
-      a.btn.btn-primary.btn-lg(href='/bp-book') 예약하기
+      a.btn.btn-dark.btn-lg(href='/bp-book') 예약하기
 
     include ./includes/footer.pug
+
+
+//- 객실사진 모달
+#viewPictureModal-pc.modal(tabindex='-1')
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        a.close(data-dismiss='modal')
+          img(src='/assets/images/close-white.svg')
+      .modal-body.d-flex
+        #roomPicture1.carousel.slide(data-ride='carousel')
+          ol.carousel-indicators
+            li.active(data-target='#roomPicture1', data-slide-to='0')
+            li(data-target='#roomPicture1', data-slide-to='1')
+            li(data-target='#roomPicture1', data-slide-to='2')
+            li(data-target='#roomPicture1', data-slide-to='3')
+            li(data-target='#roomPicture1', data-slide-to='4')
+            li(data-target='#roomPicture1', data-slide-to='5')
+            li(data-target='#roomPicture1', data-slide-to='6')
+            li(data-target='#roomPicture1', data-slide-to='7')
+            li(data-target='#roomPicture1', data-slide-to='8')
+          .carousel-inner
+            .carousel-item.active(style="background-image: url('/assets/images/sample/2A-01.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-02.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-03.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-04.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-05.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-06.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-07.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-08.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-09.jpg')")
+          a.carousel-control-prev(href='#roomPicture1', role='button', data-slide='prev')
+            span.carousel-control-prev-icon(aria-hidden='true')
+          a.carousel-control-next(href='#roomPicture1', role='button', data-slide='next')
+            span.carousel-control-next-icon(aria-hidden='true')
+        .detail
+          .room-name 온돌
+          .text-muted.mb-2 16평형
+          p
+            | 기준 2명/최대 4명
+            br
+            | 냉장고, 다리미, 드라이기, 쇼파, 스파/월풀, 에어컨, 욕실용품, 전기밥솥, 커피포트, TV

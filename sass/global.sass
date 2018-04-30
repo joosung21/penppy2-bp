@@ -280,11 +280,6 @@ hr.dark
   max-width: 300px
   margin: 5rem auto 0 auto
 
-.responsive-body
-  max-width: 1200px
-  margin: 0 auto
-  padding: 0 1rem
-
 // Global Footer
 .bp-footer
   padding: 2rem 0
@@ -395,12 +390,14 @@ hr.dark
     width: calc(100% / 7)
     vertical-align: top
   .dimed
-      opacity: .4
+    opacity: .4
   .today
     box-shadow: inset 0 0 0 1px #222222
     .room
-      margin: 0 -.7rem
-      padding: .25rem .7rem
+      margin-left: -.7rem
+      margin-right: -.7rem
+      padding-left: .7rem
+      padding-right: .7rem
   thead
     th
       text-align: center
@@ -411,16 +408,17 @@ hr.dark
     .day-header
       @extend %display-flex
       align-items: center
-      margin-bottom: .5rem
+      margin-bottom: 19px
       .season
         margin-left: auto
         color: $light
         font-size: .9rem
     .room
+      position: relative
       @extend %display-flex
       align-items: center
       margin: 0 -.8rem
-      padding: .25rem .8rem
+      padding: 5px .8rem
       cursor: pointer
       .name
         padding: 0 5px
@@ -433,6 +431,20 @@ hr.dark
     .price
       padding-left: 2rem
       margin-top: -.4rem
+    .call-info
+      display: none
+      position: absolute
+      top: 2rem
+      left: 0
+      width: 100%
+      background-color: white
+      border: 1px solid #929292
+      z-index: 10
+      padding: 1.2rem
+      h6
+        margin-bottom: 1rem
+      &.show
+        display: block
 
 .table-calendar-small
   td
@@ -446,35 +458,82 @@ hr.dark
       box-shadow: inset 0 0 0 1px #222222
 
 .table-room-select
+  border-top: 1px solid #929292
   .room-info
+    width: 10rem
     text-align: left
+    padding-left: 1rem
+    padding-right: 2rem
     .room-title
       white-space: nowrap
-      *
-        vertical-align: middle
-      .name
-        padding-left: .5rem
-        white-space: nowrap
-        text-overflow: ellipsis
+      text-overflow: ellipsis
     .size
       font-size: .85rem
-      padding: .25rem 0 .25rem 1.7rem
-    .capacity
-      padding-left: 1.7rem
+      padding: .25rem 0 .25rem 0
+    p
+      margin-bottom: 0
   .thumbnail
+    position: relative
+    width: 10rem
+    height: 6rem
+    background: no-repeat center center scroll
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+    cursor: pointer
+    &:after
+      position: absolute
+      right: 0
+      bottom: 0
+      content: ''
+      width: 27px
+      height: 27px
+      background: $washed-navy url('/assets/images/search-w.svg') center no-repeat
+      border-radius: 2px
+  .btn-callonly
+    background-color: #FFB822
+    color: white
+  .call-info2
+    display: none
+    position: absolute
+    top: 0
+    right: 9rem
     width: 100%
-    min-width: 100px
-    max-width: 240px
-  .number
-    width: 21rem
-    margin: 0 auto
-  .status-badge
-    padding: .15rem
-    &.callonly
-      background-position: 3px 3px
-    &.blocked
-      background-position: 2px 2px
+    background-color: white
+    border: 1px solid #929292
+    z-index: 10
+    padding: 1.2rem
+    h6
+      margin-bottom: 1rem
+    &.show
+      display: block
 
+  .unit-wrapper
+    @extend %display-flex
+    justify-content: space-between
+    padding-left: 2rem
+    .room-id
+      width: 2rem
+      font-size: .85rem
+      color: #bbb
+      align-self: flex-end
+      padding-bottom: .5rem
+    .value
+      align-self: center
+      input[type='number']
+        text-align: center
+    .price
+      position: relative
+      width: 10rem
+      padding-left: 2rem
+      text-align: left
+      align-self: center
+    &.added
+      margin-top: 1rem
+      .room-id
+        align-self: center
+        padding-bottom: 0
 
 
 // Bootstrap Carousel
@@ -580,7 +639,6 @@ hr.dark
   overflow-y: hidden
   .modal-dialog
     margin: 0
-    scroll
     .modal-content
       background-color: $dark
       height: 100vh
@@ -602,6 +660,34 @@ hr.dark
           font-size: .85rem
           word-break: keep-all
           .room-name
+            font-size: 1.2rem
+            margin-bottom: .5rem
+
+#viewPictureModal-pc
+  .modal-dialog
+    margin-top: 0
+    margin-bottom: 0
+    .modal-content
+      background-color: $dark
+      height: 100vh
+      .modal-header
+        border-bottom: none
+      .modal-body
+        color: white
+        padding: 0
+        &.d-flex
+          flex-direction: column
+          justify-content: flex-end
+        .carousel
+          .carousel-item
+            height: 35rem
+        .detail
+          height: 15rem
+          padding: 1.5rem
+          font-weight: lighter
+          font-size: .85rem
+          word-break: keep-all
+          .room-name.btn-callonly
             font-size: 1.2rem
             margin-bottom: .5rem
 
