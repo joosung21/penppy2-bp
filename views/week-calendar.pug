@@ -1,0 +1,417 @@
+include ./includes/header.pug
+
+body
+
+//- Break Point
+//-
+  viewpoint width < 400px : 3일
+  viewpoint width < 450px : 4일
+  viewpoint width < 520px : 5일
+  viewpoint width < 600px : 6일
+  viewpoint width >= 600px : 7일
+
+
+.calendar-controler.d-flex.justify-content-center.mb-4.mt-4
+  .form-inline
+    .year-month 05월 15일 ~ 05월 21일
+    .btn-group.ml-3.mr-2
+      button.btn.btn-white.border-right-0(type='button')
+        img(src='/assets/images/go-pre.svg')
+      button.btn.btn-white.border-left-0(type='button')
+        img(src='/assets/images/go-next.svg')
+    button.btn.btn-white 오늘
+table.table-mobile-calendar.text-center
+  thead
+    tr
+      td.title
+        | 객실
+        .small.text-muted (기준.최대)
+      th
+        .day 목
+        .date 4/19
+        .small.text-muted 비수기
+      th
+        .day 금
+        .date 4/20
+        .small.text-muted 비수기
+      th
+        .day.text-blue 토
+        .date.text-blue 4/21
+        .small.text-muted 비수기
+      th.xxsm-hidden
+        .day.text-red 일
+        .date.text-red 4/22
+        .small.text-muted 비수기
+      th
+        .day 월
+        .date 4/23
+        .small.text-muted 비수기
+      th
+        .day 화
+        .date 4/24
+        .small.text-muted 비수기
+      th
+        .day 수
+        .date 4/25
+        .small.text-muted 비수기
+  tbody
+    tr
+      td.title
+        a(href='#', data-toggle='modal', data-target='#viewPictureModal')
+          .room-img
+            img(src='/assets/images/picture.svg')
+          | 사랑채 하늘방(패밀리스파)
+          .small.text-muted (2명/4명)
+      td.selectable
+        .price
+          .small.text-red 30%
+          .small.text-muted
+            del 240,000원
+          | 176,000원
+        .status 예약가능
+      td.selectable
+        .price
+          | 220,000원
+        .status 예약가능
+      td.selectable
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+      td.selectable.xxsm-hidden
+        .price
+          | 220,000원
+        .status 예약가능
+      td.selectable.xxsm-hidden
+        .price
+          | 220,000원
+        .status 예약가능
+      td.selectable.xxsm-hidden
+        .price
+          | 220,000원
+        .status 예약가능
+      td.selectable.xxsm-hidden
+        .price
+          | 220,000원
+        .status 예약가능
+    tr
+      td.title
+        a(href='#', data-toggle='modal', data-target='#viewPictureModal')
+          .room-img
+            img(src='/assets/images/picture.svg')
+          | 온돌
+          .small.text-muted (4명/6명)
+      td.dimed
+        small 예약완료
+      td.dimed
+        small 예약완료
+      td.selectable
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+      td.selectable
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+      td.selectable
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+      td.selectable
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+      td.selectable
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+    tr
+      td.title
+        a(href='#', data-toggle='modal', data-target='#viewPictureModal')
+          .room-img
+            img(src='/assets/images/picture.svg')
+          | 정원테라스(스파)
+          .small.text-muted (2명/4명)
+      td.selectable
+        .price
+          | 240,000원
+        .status 예약가능
+      td.selectable
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+      td
+        a(href='#', data-toggle='modal', data-target='#callonlyModal')
+          .price
+            .small.text-red 25%
+            .small.text-muted
+              del 240,000원
+            | 181,000원
+          .status
+            .status-badge.callonly
+            span 전화문의
+      td.selectable.xxsm-hidden
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+      td.selectable.xxsm-hidden
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+      td.selectable.xxsm-hidden
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+      td.selectable.xxsm-hidden
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+    tr
+      td.title
+        a(href='#', data-toggle='modal', data-target='#viewPictureModal')
+          .room-img
+            img(src='/assets/images/picture.svg')
+          | 사랑채 하늘방(패밀리스파)
+          .small.text-muted (2명/4명)
+      td.dimed
+        small 예약완료
+      td.dimed
+        small 예약완료
+      td.selectable
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+      td.selectable.xxsm-hidden
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+      td.selectable.xxsm-hidden
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+      td.selectable.xxsm-hidden
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+      td.selectable.xxsm-hidden
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+    tr
+      td.title
+        a(href='#', data-toggle='modal', data-target='#viewPictureModal')
+          .room-img
+            img(src='/assets/images/picture.svg')
+          | 온돌
+          .small.text-muted (4명/6명)
+      td.dimed
+        small 예약완료
+      td.dimed
+        small 예약완료
+      td.selectable
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+      td.selectable.xxsm-hidden
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+      td.selectable.xxsm-hidden
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+      td.selectable.xxsm-hidden
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+      td.selectable.xxsm-hidden
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+    tr
+      td.title
+        a(href='#', data-toggle='modal', data-target='#viewPictureModal')
+          .room-img
+            img(src='/assets/images/picture.svg')
+          | 정원테라스(스파)
+          .small.text-muted (2명/4명)
+      td.selectable
+        .price
+          | 240,000원
+        .status 예약가능
+      td.selectable
+        .price
+          .small.text-red 25%
+          .small.text-muted
+            del 240,000원
+          | 181,000원
+        .status 예약가능
+      td
+        a(href='#', data-toggle='modal', data-target='#callonlyModal')
+          .price
+            .small.text-red 25%
+            .small.text-muted
+              del 240,000원
+            | 181,000원
+          .status
+            .status-badge.callonly
+            span 전화문의
+      td.xxsm-hidden
+        a(href='#', data-toggle='modal', data-target='#callonlyModal')
+          .price
+            .small.text-red 25%
+            .small.text-muted
+              del 240,000원
+            | 181,000원
+          .status
+            .status-badge.callonly
+            span 전화문의
+      td.xxsm-hidden
+        a(href='#', data-toggle='modal', data-target='#callonlyModal')
+          .price
+            .small.text-red 25%
+            .small.text-muted
+              del 240,000원
+            | 181,000원
+          .status
+            .status-badge.callonly
+            span 전화문의
+      td.xxsm-hidden
+        a(href='#', data-toggle='modal', data-target='#callonlyModal')
+          .price
+            .small.text-red 25%
+            .small.text-muted
+              del 240,000원
+            | 181,000원
+          .status
+            .status-badge.callonly
+            span 전화문의
+      td.xxsm-hidden
+        a(href='#', data-toggle='modal', data-target='#callonlyModal')
+          .price
+            .small.text-red 25%
+            .small.text-muted
+              del 240,000원
+            | 181,000원
+          .status
+            .status-badge.callonly
+            span 전화문의
+
+a#bookSelectedBtn.mobile-footbutton.btn.btn-dark.btn-block(href='/bp-mobile-summary') 선택한 객실 예약하기
+
+//- 객실사진 모달
+#viewPictureModal.modal(tabindex='-1')
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        a.close(data-dismiss='modal')
+          img(src='/assets/images/close-white.svg')
+      .modal-body.d-flex
+        #roomPicture1.carousel.slide(data-ride='carousel')
+          ol.carousel-indicators
+            li.active(data-target='#roomPicture1', data-slide-to='0')
+            li(data-target='#roomPicture1', data-slide-to='1')
+            li(data-target='#roomPicture1', data-slide-to='2')
+            li(data-target='#roomPicture1', data-slide-to='3')
+            li(data-target='#roomPicture1', data-slide-to='4')
+            li(data-target='#roomPicture1', data-slide-to='5')
+            li(data-target='#roomPicture1', data-slide-to='6')
+            li(data-target='#roomPicture1', data-slide-to='7')
+            li(data-target='#roomPicture1', data-slide-to='8')
+          .carousel-inner
+            .carousel-item.active(style="background-image: url('/assets/images/sample/2A-01.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-02.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-03.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-04.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-05.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-06.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-07.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-08.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-09.jpg')")
+          a.carousel-control-prev(href='#roomPicture1', role='button', data-slide='prev')
+            span.carousel-control-prev-icon(aria-hidden='true')
+          a.carousel-control-next(href='#roomPicture1', role='button', data-slide='next')
+            span.carousel-control-next-icon(aria-hidden='true')
+        .detail
+          .room-name 온돌
+          .text-muted.mb-2 16평형
+          p
+            | 기준 2명/최대 4명
+            br
+            | 냉장고, 다리미, 드라이기, 쇼파, 스파/월풀, 에어컨, 욕실용품, 전기밥솥, 커피포트, TV
+
+
+//- 전화문의 모달
+#callonlyModal.modal(tabindex='-1', style='margin-top: calc(50vh - 10rem)')
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        a.close(data-dismiss='modal')
+          i.fa.fa-times.fa-lg
+      .modal-body
+        .text-center.py-5
+          h5 전화문의하기
+          h2
+            a(href='tel:010-2268-5000') 010-2268-5000

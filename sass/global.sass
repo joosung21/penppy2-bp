@@ -80,6 +80,12 @@ a:focus, a:active, .btn:focus, .btn:active
   &.btn-primary, &.btn-secondary, &.btn-warning
     color: white
 
+.btn-close
+  font-size: .9rem
+  height: 1.6rem
+  line-height: 1rem
+  padding: .1rem .1rem
+
 small, .small
   font-size: 85%
 
@@ -669,12 +675,13 @@ hr.dark
   th,td
     border-right: 1px inset $border-color
     border-bottom: 1px inset $border-color
-    width: 20%
     padding: 0 .25rem
+    width: 5rem
   th:last-child, td:last-child
     border-right: none
   td.title
     background-color: $white-gray
+    width: 5rem
     a
       text-decoration: none
       color: #4c4c4c
@@ -881,7 +888,6 @@ hr.dark
         font-size: .85rem
         margin: .25rem 0
       .price
-        font-size: .85rem
         margin-bottom: .5rem
         .number
           font-size: 1.3rem

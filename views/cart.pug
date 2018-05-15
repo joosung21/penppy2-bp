@@ -19,18 +19,144 @@ body
           p.pre-wrap.
             오션뷰이며 복층형으로 이루진 객실입니다.
             2층은 온돌형태의 룸이며 테라스에서 바베큐 가능합니다.
-          .price
-            div
-              del.text-muted 240,000원
-              span.text-red.ml-1 25%
-            span.number 120,000원
-            span.text-muted.mr-3 /1박
-            | 잔여객실
-            span.text-blue.ml-1 3
-            | 개
-          button.btn.btn-dark.foot-btn(type='button', data-toggle='modal', data-target='#middleModal') 예약하기
+          table.table.table-room-select.align-middle.text-center.mt-3.mb-0.border-0
+            tbody
+              tr
+                td.border-0
+                  .row
+                    .col-md-2
+                      .row
+                        .col-2.col-md-12
+                          .mb-2 객실수
+                        .col-10.col-md-12
+                          select.custom-select
+                            option 1개
+                            option 2개
+                            option 3개
+                            option 4개
+                    .col-md-10
+                      .unit-wrapper.pl-0
+                        .room-id 방1
+                        .value
+                          .mb-2 기간
+                          select.custom-select.inline
+                            option 1박
+                            option 2박
+                            option 3박
+                            option 4박
+                            option 5박
+                            option 6박
+                            option 7박
+                            option 8박
+                            option 9박
+                            option 10박
+                        .value
+                          .mb-2 성인
+                          input.form-control(type='number', min='0', max='6', value='6')
+                        .value
+                          .mb-2 아동
+                          input.form-control(type='number', min='0', max='6', value='1')
+                        .value
+                          .mb-2 유아
+                          input.form-control(type='number', min='0', max='6', value='0')
+                        .price
+                          .small
+                            del.text-muted 68,000원
+                            span.text-red.ml-1 25%
+                          .text-blue 55,000원
+                          .small.text-muted 추가인원 +10,000
+                      .unit-wrapper.added
+                        .room-id 방1
+                        .value
+                          select.custom-select.inline
+                            option 1박
+                            option 2박
+                            option 3박
+                            option 4박
+                            option 5박
+                            option 6박
+                            option 7박
+                            option 8박
+                            option 9박
+                            option 10박
+                        .value
+                          input.form-control(type='number', min='0', max='6', value='2')
+                        .value
+                          input.form-control(type='number', min='0', max='6', value='0')
+                        .value
+                          input.form-control(type='number', min='0', max='6', value='0')
+                        .price
+                          .small
+                          .text-blue 14,000원
+                      .unit-wrapper.added
+                        .room-id 방1
+                        .value
+                          select.custom-select.inline
+                            option 1박
+                            option 2박
+                            option 3박
+                            option 4박
+                            option 5박
+                            option 6박
+                            option 7박
+                            option 8박
+                            option 9박
+                            option 10박
+                        .value
+                          input.form-control(type='number', min='0', max='6', value='2')
+                        .value
+                          input.form-control(type='number', min='0', max='6', value='0')
+                        .value
+                          input.form-control(type='number', min='0', max='6', value='1')
+                        .price
+                          .text-blue 22,000원
+                          .small.text-muted 추가인원 +10,000
+
         .col-md-1.text-right
-          button.btn.btn-white.btn-close.ml-2(type='button', data-placement='right', data-toggle='tooltip', title='삭제')
+          button.btn.btn-white.btn-close.ml-2(type='button', data-placement='right', data-toggle='tooltip', title='장바구니에서 삭제')
             i.fa.fa-times.fa-lg
 
       hr
+
+
+
+//- 객실사진 모달
+#viewPictureModal-responsive.modal(tabindex='-1')
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        a.close.ml-auto(data-dismiss='modal')
+          img(src='/assets/images/close-white.svg')
+      .modal-body.d-flex
+        #roomPicture1.carousel.slide(data-ride='carousel')
+          ol.carousel-indicators
+            li.active(data-target='#roomPicture1', data-slide-to='0')
+            li(data-target='#roomPicture1', data-slide-to='1')
+            li(data-target='#roomPicture1', data-slide-to='2')
+            li(data-target='#roomPicture1', data-slide-to='3')
+            li(data-target='#roomPicture1', data-slide-to='4')
+            li(data-target='#roomPicture1', data-slide-to='5')
+            li(data-target='#roomPicture1', data-slide-to='6')
+            li(data-target='#roomPicture1', data-slide-to='7')
+            li(data-target='#roomPicture1', data-slide-to='8')
+          .carousel-inner
+            .carousel-item.active(style="background-image: url('/assets/images/sample/2A-01.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-02.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-03.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-04.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-05.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-06.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-07.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-08.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-09.jpg')")
+          a.carousel-control-prev(href='#roomPicture1', role='button', data-slide='prev')
+            span.carousel-control-prev-icon(aria-hidden='true')
+          a.carousel-control-next(href='#roomPicture1', role='button', data-slide='next')
+            span.carousel-control-next-icon(aria-hidden='true')
+        .detail
+          .room-name 온돌
+          .text-muted.mb-2 16평형
+          p
+            | 기준 2명/최대 4명
+            br
+            | 냉장고, 다리미, 드라이기, 쇼파, 스파/월풀, 에어컨, 욕실용품, 전기밥솥, 커피포트, TV

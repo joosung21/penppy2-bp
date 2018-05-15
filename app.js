@@ -25,12 +25,13 @@ app.get('/bp-book', function (req, res){res.render('bp-book')})
 app.get('/bp-find', function (req, res){res.render('bp-find')})
 app.get('/bp-find-result', function (req, res){res.render('bp-find-result')})
 
-//- 모바일 결제
+//- 모바일
 app.get('/bp-mobile-summary', function (req, res){res.render('bp-mobile-summary')})
 app.get('/bp-mobile-purchase', function (req, res){res.render('bp-mobile-purchase')})
 
 //- 객실가격테이블
-app.get('/price-table', function (req, res){res.render('price-table')})
+// app.get('/price-table', function (req, res){res.render('price-table')})
+app.get('/week-calendar', function (req, res){res.render('week-calendar')})
 
 app.listen(3400, function () {
   console.log('App listening on port 3400!')

@@ -1,3 +1,7 @@
+// Init Bootstrap Tooltip
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 // Slider Open & Close
 function openSlider(){
