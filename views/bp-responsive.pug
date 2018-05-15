@@ -1,0 +1,307 @@
+include ./includes/header.pug
+
+body
+  include ./includes/topper2.pug
+
+  .bp-responsive-body
+    h4 예약하기
+    .row.mt-4
+      .col-lg-3.col-md-4.left-side
+        .form-row
+          .col-md-12.col-sm-6.col-12
+            .input-group.daterange
+              .input-group-prepend
+                .input-group-text(style='width: 5rem') 체크인
+              input.form-control.form-control-datepicker(type='text', value='2017.07.16(수)')
+              .daterange-layer
+                .period 2박
+                .datepicker.row.no-gutters
+                  .col-sm-6
+                    img.w-100(src='/assets/images/temp-datepicker1.png')
+                  .col-sm-6
+                    img.w-100(src='/assets/images/temp-datepicker2.png')
+                .buttons
+                  button.btn.btn-secondary.btn-lg.px-5(type='button', onclick='closeDatepicker()') 취소
+                  button.btn.btn-dark.btn-lg.px-5(type='button', onclick='closeDatepicker()') 확인
+          .col-md-12.col-sm-6.col-12
+            .input-group.daterange.mt-md-3.mt-sm-0.mt-3
+              .input-group-prepend
+                .input-group-text(style='width: 5rem') 체크아웃
+              input.form-control.form-control-datepicker(type='text', value='2017.08.20(목)')
+              .daterange-layer
+                .period 2박
+                .datepicker.row.no-gutters
+                  .col-sm-6
+                    img.w-100(src='/assets/images/temp-datepicker1.png')
+                  .col-sm-6
+                    img.w-100(src='/assets/images/temp-datepicker2.png')
+                .buttons
+                  button.btn.btn-secondary.btn-lg.px-5(type='button', onclick='closeDatepicker()') 취소
+                  button.btn.btn-dark.btn-lg.px-5(type='button', onclick='closeDatepicker()') 확인
+        .mt-4.small
+          P.pre-wrap.
+            [추가요금]
+            - 기준인원에서 1인 추가시 1만원의 추가요금
+            발생
+            [가격정보]
+            - 여름성수기:07-17~08-15까지
+            - 주말요금:금,토요일, 공휴일 전날
+            [예약안내]
+            - 펜션연락처는 예약과 동시에 고객님의 휴대
+              폰으로 자동발송됩니다.
+            - 예약전 취소수수료를 확인바랍니다.
+      .col-lg-9.col-md-8
+        .bp-room-list
+
+          .room-wrapper.row
+            .col-md-5
+              .thumbnail(style="background-image: url('/assets/images/sample/2A-01.jpg')", data-toggle='modal', data-target='#viewPictureModal-responsive')
+            .col-md-7.content.mt-4.mt-md-0
+              .title 온돌
+              .summary
+                span.text-muted.mr-1 [16평]
+                | 기준 2명/최대 4명
+              p.pre-wrap.
+                오션뷰이며 복층형으로 이루진 객실입니다.
+                2층은 온돌형태의 룸이며 테라스에서 바베큐 가능합니다.
+              .price
+                div
+                  del.text-muted 240,000원
+                  span.text-red.ml-1 25%
+                span.number 120,000원
+                span.text-muted.mr-3 /1박
+                | 잔여객실
+                span.text-blue.ml-1 3
+                | 개
+              button.btn.btn-dark.foot-btn(type='button', data-toggle='modal', data-target='#middleModal') 예약하기
+
+          hr
+
+          .room-wrapper.row
+            .col-md-5
+              .thumbnail(style="background-image: url('/assets/images/sample/2B-07.jpg')", data-toggle='modal', data-target='#viewPictureModal-responsive')
+            .col-md-7.content.mt-4.mt-md-0
+              .title 2B. POOL &amp; SPA
+              .summary
+                span.text-muted.mr-1 [16평]
+                | 기준 2명/최대 4명
+              p.pre-wrap.
+                복층형으로 이루진 객실입니다.
+                2층은 온돌형태의 룸입니다.
+              .price
+                span.number 120,000원
+                span.text-muted.mr-3 /1박
+                | 잔여객실
+                span.text-blue.ml-1 1
+                | 개
+              button.btn.btn-dark.foot-btn(type='button', data-toggle='modal', data-target='#middleModal') 예약하기
+
+          hr
+
+          .room-wrapper.row
+            .col-md-5
+              .thumbnail(style="background-image: url('/assets/images/sample/3A-07.jpg')", data-toggle='modal', data-target='#viewPictureModal-responsive')
+            .col-md-7.content.mt-4.mt-md-0
+              .title 스카이풀 스파
+              .summary
+                span.text-muted.mr-1 [16평]
+                | 기준 2명/최대 4명
+              p.pre-wrap.
+                오션뷰이며 복층형으로 이루진 객실입니다.
+                2층은 온돌형태의 룸이며 테라스에서 바베큐 가능합니다.
+              button.btn.btn-secondary.foot-btn(type='button', disabled) 만실
+              .around-day
+                div
+                  | 2018.05.02(화)
+                  span.text-red.ml-2 예약완료
+                div
+                  | 2018.05.03(수)
+                  span.text-red.ml-2 예약완료
+                div
+                  | 2018.05.04(목)
+                  span.text-red.ml-2 예약완료
+                div
+                  | 2018.05.05(금)
+                  span.text-blue.ml-2 가능
+                div
+                  | 2018.05.06(토)
+                  span.text-blue.ml-2 가능
+                div
+                  | 2018.05.07(일)
+                  span.ml-2 전화문의
+                div
+                  | 2018.05.08(월)
+                  span.text-blue.ml-2 가능
+
+          hr
+
+          .room-wrapper.row
+            .col-md-5
+              .thumbnail(style="background-image: url('/assets/images/sample/2B-09.jpg')", data-toggle='modal', data-target='#viewPictureModal-responsive')
+            .col-md-7.content.mt-4.mt-md-0
+              .title 사랑채 하늘방(패밀리스파)
+              .summary
+                span.text-muted.mr-1 [16평]
+                | 기준 2명/최대 4명
+              p.pre-wrap.
+                오션뷰이며 복층형으로 이루진 객실입니다.
+                2층은 온돌형태의 룸이며 테라스에서 바베큐 가능합니다.
+              .price
+                div
+                  del.text-muted 240,000원
+                  span.text-red.ml-1 25%
+                span.number 120,000원
+                span.text-muted.mr-3 /1박
+                | 잔여객실
+                span.text-blue.ml-1 3
+                | 개
+              div(style='position: relative')
+                button.btn.btn-warning.btn-callonly-click.foot-btn(type='button') 전화문의
+                .call-info-click
+                  h6 전화문의
+                  a(href='tel:032-1111-2871') 032-1111-2871
+
+
+    include ./includes/footer.pug
+
+
+//- 예약하기 모달
+#middleModal.modal(tabindex='-1')
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header
+        h5.modal-title 예약확인
+        a.close(data-dismiss='modal')
+          img(src='/assets/images/close.svg')
+      .modal-body
+        .text-center.my-4
+          h4.font-weight-normal 사랑채 하늘방(패밀리스파)
+          .small 기준 2명/최대 4명
+          .form-inline.d-inline-block.mt-4
+            .input-group
+              .input-group-prepend
+                .input-group-text 객실수
+              select.custom-select
+                option 1
+                option 2
+                option(selected) 3
+        table.table.text-center.align-middle.mt-5
+          thead.bg-light
+            tr
+              th 기간
+              th 성인
+              th 아동
+              th 유아
+              th 금액
+          tbody
+            tr
+              td
+                select.custom-select.inline
+                  option 1박
+                  option 2박
+                  option 3박
+                  option 4박
+                  option 5박
+                  option 6박
+                  option 7박
+              td
+                input.form-control(type='number', min='1', value='2')
+              td
+                input.form-control(type='number', min='0', value='0')
+              td
+                input.form-control(type='number', min='0', value='0')
+              td(style='width: 35%')
+                .small
+                  del.text-muted 68,000원
+                  span.text-red.ml-1 25%
+                .text-blue 55,000원
+                .small 추가인원 +10,000
+            tr
+              td
+                select.custom-select.inline
+                  option 1박
+                  option 2박
+                  option 3박
+                  option 4박
+                  option 5박
+                  option 6박
+                  option 7박
+              td
+                input.form-control(type='number', min='1', value='2')
+              td
+                input.form-control(type='number', min='0', value='0')
+              td
+                input.form-control(type='number', min='0', value='0')
+              td(style='width: 35%')
+                .small
+                  del.text-muted 68,000원
+                  span.text-red.ml-1 25%
+                .text-blue 55,000원
+                .small 추가인원 +10,000
+            tr
+              td
+                select.custom-select.inline
+                  option 1박
+                  option 2박
+                  option 3박
+                  option 4박
+                  option 5박
+                  option 6박
+                  option 7박
+              td
+                input.form-control(type='number', min='1', value='2')
+              td
+                input.form-control(type='number', min='0', value='0')
+              td
+                input.form-control(type='number', min='0', value='0')
+              td(style='width: 35%')
+                .small
+                  del.text-muted 68,000원
+                  span.text-red.ml-1 25%
+                .text-blue 55,000원
+                .small 추가인원 +10,000
+
+        .text-center.mt-4
+          button.btn.btn-outline-dark.btn-lg.mr-1.px-4(type='button', data-dismiss='modal') 장바구니 담기
+          button.btn.btn-dark.btn-lg.px-5(type='button', data-dismiss='modal') 예약하기
+
+//- 객실사진 모달
+#viewPictureModal-responsive.modal(tabindex='-1')
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        a.close.ml-auto(data-dismiss='modal')
+          img(src='/assets/images/close-white.svg')
+      .modal-body.d-flex
+        #roomPicture1.carousel.slide(data-ride='carousel')
+          ol.carousel-indicators
+            li.active(data-target='#roomPicture1', data-slide-to='0')
+            li(data-target='#roomPicture1', data-slide-to='1')
+            li(data-target='#roomPicture1', data-slide-to='2')
+            li(data-target='#roomPicture1', data-slide-to='3')
+            li(data-target='#roomPicture1', data-slide-to='4')
+            li(data-target='#roomPicture1', data-slide-to='5')
+            li(data-target='#roomPicture1', data-slide-to='6')
+            li(data-target='#roomPicture1', data-slide-to='7')
+            li(data-target='#roomPicture1', data-slide-to='8')
+          .carousel-inner
+            .carousel-item.active(style="background-image: url('/assets/images/sample/2A-01.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-02.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-03.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-04.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-05.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-06.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-07.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-08.jpg')")
+            .carousel-item(style="background-image: url('/assets/images/sample/2A-09.jpg')")
+          a.carousel-control-prev(href='#roomPicture1', role='button', data-slide='prev')
+            span.carousel-control-prev-icon(aria-hidden='true')
+          a.carousel-control-next(href='#roomPicture1', role='button', data-slide='next')
+            span.carousel-control-next-icon(aria-hidden='true')
+        .detail
+          .room-name 온돌
+          .text-muted.mb-2 16평형
+          p
+            | 기준 2명/최대 4명
+            br
+            | 냉장고, 다리미, 드라이기, 쇼파, 스파/월풀, 에어컨, 욕실용품, 전기밥솥, 커피포트, TV

@@ -10,6 +10,11 @@ function closeSlider(){
   $('.room-line.assign-ui').removeClass('show')
 }
 
+// Close Datepicker
+function closeDatepicker(){
+  $('.daterange-layer').removeClass('show');
+}
+
 // Document Ready
 $( document ).ready(function() {
 
@@ -41,6 +46,11 @@ $( document ).ready(function() {
     });
   });
 
+  // 달력검색형 전화문의 Click
+  $('.btn-callonly-click').click(function(){
+    $(this).parent().children($('.call-info-click')).toggleClass('show');
+  });
+
   // 모바일 달력 선택 Toggle
   $('td.selectable').click(function(){
     $(this).toggleClass('selected');
@@ -48,6 +58,12 @@ $( document ).ready(function() {
     $('td.selectable.selected').each(function(){
       $('#bookSelectedBtn').show();
     });
+  });
+
+  // 달력검색형 Daterange-Picker Layer Show/Hide
+  $('.daterange input').focus(function(){
+    console.log('what?');
+    $(this).parent().children('.daterange-layer').addClass('show');
   });
 
 });

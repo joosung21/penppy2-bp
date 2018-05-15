@@ -1,0 +1,143 @@
+include ./includes/header.pug
+
+body
+
+  .calendar-controler.d-flex.justify-content-center.mb-4.mt-4
+    .form-inline
+      .year-month 05월 15일 ~ 05월 21일
+      .btn-group.ml-3.mr-2
+        button.btn.btn-white.border-right-0(type='button')
+          img(src='/assets/images/go-pre.svg')
+        button.btn.btn-white.border-left-0(type='button')
+          img(src='/assets/images/go-next.svg')
+      button.btn.btn-white 오늘
+
+  table.table.table-comfort.table-room-select.align-middle.text-center.mt-3
+    thead.bg-light
+      tr.border-bottom
+        th.font-weight-normal
+          | 객실명
+          br
+          | (기준/최대)
+        th
+          .font-weight-normal 비수기
+          | 05/15(화)
+        th
+          .font-weight-normal 비수기
+          | 05/15(수)
+        th
+          .font-weight-normal 비수기
+          | 05/15(목)
+        th
+          .font-weight-normal 비수기
+          | 05/15(금)
+        th
+          .font-weight-normal 비수기
+          .text-blue 05/15(토)
+        th
+          .font-weight-normal 비수기
+          .text-red 05/15(일)
+        th
+          .font-weight-normal 공휴일 전날
+          | 05/15(월)
+    tbody
+      tr
+        th.bg-light
+          | 해
+          .small 기준 6/최대 8
+        td
+          b 10,000
+          .text-blue 가능
+        td
+          b 10,000
+          .text-blue 가능
+        td
+          b 10,000
+          .text-blue 가능
+        td
+          b 10,000
+          .text-blue 가능
+        td
+          b 10,000
+          .text-blue 가능
+        td
+          b 10,000
+          .text-blue 가능
+        td
+          b 10,000
+          .text-blue 가능
+      tr
+        th.bg-light
+          | 달
+          .small 기준 8/최대 9
+        td
+          b 370,000
+          .text-blue 가능
+        td
+          b 370,000
+          .text-blue 가능
+        td
+          b 370,000
+          .text-muted 불가능
+        td
+          b 370,000
+          .text-muted 불가능
+        td
+          b 370,000
+          .text-muted 불가능
+        td
+          b 370,000
+          .text-muted 불가능
+        td
+          b 370,000
+          .text-muted 불가능
+      tr
+        th.bg-light
+          | 별
+          .small 기준 8/최대 9
+        td
+          b 370,000
+          .text-red 전화예약
+        td
+          b 370,000
+          .text-red 전화예약
+        td
+          b 370,000
+          .text-red 전화예약
+        td
+          b 370,000
+          .text-red 전화예약
+        td
+          b 370,000
+          .text-muted 불가능
+        td
+          b 370,000
+          .text-muted 불가능
+        td
+          b 370,000
+          .text-muted 불가능
+      tr
+        th.bg-light
+          | 지구
+          .small 기준 8/최대 9
+        td
+          b 370,000
+          .text-blue 가능
+        td
+          b 370,000
+          .text-blue 가능
+        td
+          b 370,000
+          .text-muted 불가능
+        td
+          b 370,000
+          .text-muted 불가능
+        td
+          b 370,000
+          .text-muted 불가능
+        td
+          b 370,000
+          .text-muted 불가능
+        td
+          b 370,000
+          .text-muted 불가능

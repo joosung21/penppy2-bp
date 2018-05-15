@@ -1,0 +1,20 @@
+.bp-topper
+  h3.title  데이먼 해달별 펜션
+  .d-none.d-sm-block
+    .d-md-flex.align-items-center
+      a.tab.active(href='/bp-responsive') 예약하기
+      a.tab(href='/bp-find') 예약확인
+      a.tab(href='/cart')
+        | 장바구니
+        .badge.badge-pill.badge-primary.ml-2 3
+      a.btn.btn-white.ml-4.d-none.d-sm-block(href='http://13.125.138.100:3200/login', target='_blank') 사장님 페이지
+  .d-block.d-sm-none
+    a(href='/cart')
+      img(src='/assets/images/cart.svg')
+      .badge.badge-pill.badge-primary 3
+    a(data-toggle='collapse', href='#menu')
+      img(src='/assets/images/hamburger.svg')
+#menu.collapse.border-bottom
+  .text-center
+    a.d-block.py-4.bg-dark(href='/bp-responsive') 예약하기
+    a.d-block.py-4.bg-dark(href='/bp-find') 예약확인

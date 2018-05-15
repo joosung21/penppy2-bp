@@ -1,3 +1,4 @@
+// Variables
 $border-color: #E5E5E5
 $light: #C4C4C4
 $blue: #4B95FF
@@ -13,12 +14,31 @@ $complete: $red
 $callonly: #FFB822
 $blocked: $light
 
+// Extends
 %display-flex
   display: table-cell // ie9
   display: -ms-flexbox // ie10
   display: -webkit-box
   display: flex
 
+%thumbnail-image
+  position: relative
+  background: no-repeat center center scroll
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+  cursor: pointer
+  &:after
+    position: absolute
+    right: 0
+    bottom: 0
+    content: ''
+    width: 27px
+    height: 27px
+    background: rgba(black, .2) url('/assets/images/search-w.svg') center no-repeat
+
+// Utilities
 .text-red
   color: $red
 .text-blue
@@ -28,6 +48,7 @@ $blocked: $light
 .text-info
   color: #64C2D0 !important
 
+// Initiates
 html
   font-size: 14px
 
@@ -56,8 +77,19 @@ a:focus, a:active, .btn:focus, .btn:active
   box-shadow: none
 
 .btn
-  &.btn-primary, &.btn-secondary
+  &.btn-primary, &.btn-secondary, &.btn-warning
     color: white
+
+small, .small
+  font-size: 85%
+
+.modal-header .close
+  padding: 0 1.5rem
+  opacity: 1
+  margin: -.12rem 0
+
+.pre-wrap
+  white-space: pre-wrap
 
 .cursor-pointer
   cursor: pointer
@@ -91,17 +123,38 @@ label.label-necessary
 .bg-light
   background-color: #F5F5F5 !important
 
+.badge-primary
+  background: #4b95ff
+  color: white
+
 hr.dark
   border-color: #929292
 
 .form-control-datepicker
   background: url('/assets/images/ic-calendar-gray.svg') center right .5rem no-repeat
 
+.input-group-text
+  color: #929292
+  background-color: #f8f9fb
+
 .info
   color: $blue
   font-size: .85rem
   font-weight: 400
   padding: .5rem 0
+
+// Swal Popup 스타일 수정
+.swal2-container
+  .swal2-actions.swal2-loading
+    margin-top: -2.5em !important
+    .swal2-confirm
+      width: 100px !important
+      height: 100px !important
+      -webkit-animation-duration: .85s !important
+      animation-duration: .85s !important
+      background: red url('/assets/images/Rolling.png') center center no-repeat !important
+      margin: 0 !important
+      border: 0 !important
 
 // Table
 .table
@@ -121,6 +174,9 @@ hr.dark
   tr.dimed
     td
       opacity: .4
+  tr.border-bottom
+    th, td
+      border-bottom: 1px solid $border-color !important
   .checkbox
     .custom-control
       display: inline-block
@@ -137,6 +193,10 @@ hr.dark
         td
           background-color: #FBFBFC
           cursor: pointer
+
+.table.table-comfort
+  td, th
+    padding: 1.5rem 0
 
 // Custom Checkbox & Radio
 .custom-control
@@ -258,6 +318,7 @@ hr.dark
           span
             color: $blue
 
+// Purshase Box
 .purchase-box
   border: 1px solid #222
   .table
@@ -348,18 +409,30 @@ hr.dark
   .title
     margin: 0
     margin-right: auto
+    font-weight: 400
   .tab
-    border-top: 3px solid white
-    border-bottom: 3px solid white
     color: #4c4c4c
     font-size: 1rem
     padding: 1.5rem
     line-height: 1rem
     text-decoration: none
     &.active
-      border-bottom: 3px solid #4F4F4F
+      // border-bottom: 3px solid #4F4F4F
+      box-shadow: inset 0 -3px 0 0 #4f4f4f
+    .badge
+      font-size: 1rem
+      line-height: 1.1rem
+      padding: .3rem .6rem
+      margin: -.3rem 0
+      font-weight: normal
   .btn-primary
     background-color: #4275C4
+
+#menu
+  a
+    color: white
+    border-bottom: 1px solid $washed-navy
+    text-decoration: none
 
 //- Calendar Control
 .calendar-controler
@@ -434,20 +507,20 @@ hr.dark
     .price
       padding-left: 1.8rem
       margin-top: -.4rem
-    .call-info
-      display: none
-      position: absolute
-      top: 2rem
-      left: 0
-      width: 100%
-      background-color: white
-      border: 1px solid #929292
-      z-index: 10
-      padding: 1.2rem
-      h6
-        margin-bottom: 1rem
-      &.show
-        display: block
+  .call-info
+    display: none
+    position: absolute
+    top: 2rem
+    left: 0
+    width: 100%
+    background-color: white
+    border: 1px solid #929292
+    z-index: 10
+    padding: 1.2rem
+    h6
+      margin-bottom: 1rem
+    &.show
+      display: block
 
 .table-calendar-small
   td
@@ -474,24 +547,9 @@ hr.dark
     p
       margin-bottom: 0
   .thumbnail
-    position: relative
     width: 10rem
     height: 6rem
-    background: no-repeat center center scroll
-    -webkit-background-size: cover
-    -moz-background-size: cover
-    -o-background-size: cover
-    background-size: cover
-    cursor: pointer
-    &:after
-      position: absolute
-      right: 0
-      bottom: 0
-      content: ''
-      width: 27px
-      height: 27px
-      background: $washed-navy url('/assets/images/search-w.svg') center no-repeat
-      border-radius: 2px
+    @extend %thumbnail-image
   .btn-callonly
     background-color: #FFB822
     color: white
@@ -556,6 +614,36 @@ hr.dark
   -moz-background-size: cover
   -o-background-size: cover
   background-size: cover
+
+
+//- Daterange Layer
+.daterange
+  position: relative
+  .daterange-layer
+    display: none
+    padding: 2rem 1.5rem
+    position: absolute
+    left: 0
+    top: 2.35rem
+    z-index: 900
+    background: white
+    border: 1px solid $border-color
+    text-align: center
+    width: 550px
+    box-shadow: 0 .3rem 1rem 0 rgba(black, .2)
+    .period
+      font-size: 1.2rem
+      margin-bottom: 1rem
+    .datepicker
+    .buttons
+      margin-top: 2rem
+      .btn
+        font-size: 1.2rem
+        font-weight: normal
+        margin: 0 1px
+    &.show
+      display: block
+
 
 //- Mobile View Only --//
 .mobile-body
@@ -690,7 +778,35 @@ hr.dark
           font-weight: lighter
           font-size: .85rem
           word-break: keep-all
-          .room-name.btn-callonly
+          .room-name
+            font-size: 1.2rem
+            margin-bottom: .5rem
+
+#viewPictureModal-responsive
+  .modal-dialog
+    margin-top: 0
+    margin-bottom: 0
+    .modal-content
+      background-color: $dark
+      height: 100vh
+      .modal-header
+        border-bottom: none
+      .modal-body
+        color: white
+        padding: 0
+        &.d-flex
+          flex-direction: column
+          justify-content: flex-end
+        .carousel
+          .carousel-item
+            height: 35rem
+        .detail
+          height: 15rem
+          padding: 1.5rem
+          font-weight: lighter
+          font-size: .85rem
+          word-break: keep-all
+          .room-name
             font-size: 1.2rem
             margin-bottom: .5rem
 
@@ -744,41 +860,142 @@ hr.dark
   padding: .35rem
   line-height: 0
 
+// 날짜 겸색형(반응형)
+.bp-responsive-body
+  max-width: 1000px
+  margin: 0 auto
+  padding: 4rem 1rem 0 1rem
+.bp-room-list
+  .room-wrapper
+    .thumbnail
+      width: 100%
+      height: 14rem
+      @extend %thumbnail-image
+    .content
+      position: relative
+      .title
+        font-size: 1.6rem
+        line-height: 1.6rem
+        margin-bottom: .75rem
+      .summary
+        font-size: .85rem
+        margin: .25rem 0
+      .price
+        font-size: .85rem
+        margin-bottom: .5rem
+        .number
+          font-size: 1.3rem
+          color: $blue
+      .foot-btn
+        width: 8rem
+        &:disabled
+          opacity: 1
+      .around-day
+        font-size: .85rem
+        margin-top: .5rem
+        line-height: 1.5rem
+      .call-info-click
+        display: none
+        position: absolute
+        top: 1rem
+        left: 7rem
+        background-color: white
+        border: 1px solid #929292
+        z-index: 10
+        padding: 1.2rem
+        h6
+          margin-bottom: 1rem
+        &.show
+          display: block
+  hr
+    margin: 2.5rem 0
+
 
 
 //-------- Responsive: Mobile(xs) --------//
 @media screen and (max-width: 575px)
-  html
-    font-size: 14px
   .bp-topper
-    padding: 0
+    height: 5rem
+    .title
+      font-size: 1.5rem
     .tab
       width: 50vw
       text-align: center
+    .badge
+      font-size: .9rem
+      line-height: 1.1rem
+      padding: .15rem .6rem .3rem .6rem
+      margin: -.3rem .8rem -.3rem -.8rem
+      font-weight: normal
   .pc-body
     display: none
   .mobile-body
     display: block
+  .bp-room-list
+    .room-wrapper
+      .content
+        .call-info-click
+          width: 100%
+          left: 0
+          top: 2.3rem
+          text-align: center
+  .modal-header
+    padding-left: 1rem
+  .modal-body
+    padding: 1rem
+
+  #viewPictureModal-responsive
+    overflow-y: hidden
+    .modal-dialog
+      margin: 0
+      .modal-content
+        background-color: $dark
+        height: 100vh
+        .modal-header
+          border-bottom: none
+        .modal-body
+          color: white
+          padding: 0
+          &.d-flex
+            flex-direction: column
+            justify-content: flex-end
+          .carousel
+            .carousel-item
+              height: 33vh
+          .detail
+            height: 33vh
+            padding: 1.5rem
+            font-weight: lighter
+            font-size: .85rem
+            word-break: keep-all
+            .room-name
+              margin-bottom: .5rem
+  .daterange
+    .daterange-layer
+      width: 100%
+      padding: 1rem 0
 
 //---------- Responsive: sm ----------//
 @media only screen and (min-width: 576px)
-  html
-    font-size: 12px
+  .bp-room-list
+    .room-wrapper
+      .thumbnail
+        height: 30rem
 
 //---------- Responsive: md ----------//
 @media only screen and (min-width: 768px)
-  html
-    font-size: 13px
+  .bp-room-list
+    .room-wrapper
+      .thumbnail
+        height: 14rem
 
 //---------- Responsive: lg ----------//
 @media only screen and (min-width: 992px)
   html
-    font-size: 14px
 
 //---------- Responsive: xl ----------//
 @media only screen and (min-width: 1200px)
   html
-    font-size: 15px
 
 
 
