@@ -12,6 +12,7 @@ body
         .col-md-4
           .thumbnail(style="background-image: url('/assets/images/sample/2A-01.jpg')", data-toggle='modal', data-target='#viewPictureModal-responsive')
         .col-md-7.content.mt-4.mt-md-0
+          .mb-2 입실일 : 2017.07.16(수)
           .title 온돌
           .summary
             span.text-muted.mr-1 [16평]
@@ -26,91 +27,100 @@ body
                   .row
                     .col-md-2
                       .row
-                        .col-2.col-md-12
+                        .col-3.col-md-12.pt-1.pt-md-0
                           .mb-2 객실수
-                        .col-10.col-md-12
+                        .col-9.col-md-12
                           select.custom-select
                             option 1개
                             option 2개
                             option 3개
                             option 4개
                     .col-md-10
-                      .unit-wrapper.pl-0
-                        .room-id 방1
-                        .value
-                          .mb-2 기간
-                          select.custom-select.inline
-                            option 1박
-                            option 2박
-                            option 3박
-                            option 4박
-                            option 5박
-                            option 6박
-                            option 7박
-                            option 8박
-                            option 9박
-                            option 10박
-                        .value
-                          .mb-2 성인
-                          input.form-control(type='number', min='0', max='6', value='6')
-                        .value
-                          .mb-2 아동
-                          input.form-control(type='number', min='0', max='6', value='1')
-                        .value
-                          .mb-2 유아
-                          input.form-control(type='number', min='0', max='6', value='0')
-                        .price
-                          .small
-                            del.text-muted 68,000원
-                            span.text-red.ml-1 25%
-                          .text-blue 55,000원
-                          .small.text-muted 추가인원 +10,000
-                      .unit-wrapper.added
-                        .room-id 방1
-                        .value
-                          select.custom-select.inline
-                            option 1박
-                            option 2박
-                            option 3박
-                            option 4박
-                            option 5박
-                            option 6박
-                            option 7박
-                            option 8박
-                            option 9박
-                            option 10박
-                        .value
-                          input.form-control(type='number', min='0', max='6', value='2')
-                        .value
-                          input.form-control(type='number', min='0', max='6', value='0')
-                        .value
-                          input.form-control(type='number', min='0', max='6', value='0')
-                        .price
-                          .small
-                          .text-blue 14,000원
-                      .unit-wrapper.added
-                        .room-id 방1
-                        .value
-                          select.custom-select.inline
-                            option 1박
-                            option 2박
-                            option 3박
-                            option 4박
-                            option 5박
-                            option 6박
-                            option 7박
-                            option 8박
-                            option 9박
-                            option 10박
-                        .value
-                          input.form-control(type='number', min='0', max='6', value='2')
-                        .value
-                          input.form-control(type='number', min='0', max='6', value='0')
-                        .value
-                          input.form-control(type='number', min='0', max='6', value='1')
-                        .price
-                          .text-blue 22,000원
-                          .small.text-muted 추가인원 +10,000
+                      .row.no-gutters
+                        .col-md-1.text-left.pt-4
+                          .small.text-muted.pt-3 방1
+                        .col-md-11
+                          .form-row
+                            .col-3
+                              .mb-2 기간
+                              select.custom-select
+                                option 1박
+                                option 2박
+                                option 3박
+                                option 4박
+                                option 5박
+                                option 6박
+                                option 7박
+                                option 8박
+                                option 9박
+                                option 10박
+                            .col-2
+                              .mb-2 성인
+                              input.form-control(type='number', min='0', max='6', value='6')
+                            .col-2
+                              .mb-2 아동
+                              input.form-control(type='number', min='0', max='6', value='1')
+                            .col-2
+                              .mb-2 유아
+                              input.form-control(type='number', min='0', max='6', value='0')
+                            .col-3
+                              .small
+                                del.text-muted 68,000원
+                                span.text-red.ml-1 25%
+                              .text-blue 55,000원
+                              .small.text-muted 추가인원 +10,000
+                      .row.no-gutters.mt-4
+                        .col-md-1.text-left.pt-2.mb-2
+                          .small.text-muted 방2
+                        .col-md-11
+                          .form-row
+                            .col-3
+                              select.custom-select
+                                option 1박
+                                option 2박
+                                option 3박
+                                option 4박
+                                option 5박
+                                option 6박
+                                option 7박
+                                option 8박
+                                option 9박
+                                option 10박
+                            .col-2
+                              input.form-control(type='number', min='0', max='6', value='6')
+                            .col-2
+                              input.form-control(type='number', min='0', max='6', value='1')
+                            .col-2
+                              input.form-control(type='number', min='0', max='6', value='0')
+                            .col-3
+                              .text-blue 68,000원
+                              .small.text-muted 추가인원 +10,000
+                      .row.no-gutters.mt-4
+                        .col-md-1.text-left.pt-2.mb-2
+                          .small.text-muted 방3
+                        .col-md-11
+                          .form-row
+                            .col-3
+                              select.custom-select
+                                option 1박
+                                option 2박
+                                option 3박
+                                option 4박
+                                option 5박
+                                option 6박
+                                option 7박
+                                option 8박
+                                option 9박
+                                option 10박
+                            .col-2
+                              input.form-control(type='number', min='0', max='6', value='6')
+                            .col-2
+                              input.form-control(type='number', min='0', max='6', value='1')
+                            .col-2
+                              input.form-control(type='number', min='0', max='6', value='0')
+                            .col-3
+                              .text-blue 68,000원
+                              .small.text-muted 추가인원 +10,000
 
         .col-md-1.text-right
           button.btn.btn-white.btn-close.ml-2(type='button', data-placement='right', data-toggle='tooltip', title='장바구니에서 삭제')
@@ -118,7 +128,144 @@ body
 
       hr
 
+      .room-wrapper.row
+        .col-md-4
+          .thumbnail(style="background-image: url('/assets/images/sample/3B-07.jpg')", data-toggle='modal', data-target='#viewPictureModal-responsive')
+        .col-md-7.content.mt-4.mt-md-0
+          .mb-2 입실일 : 2017.07.16(수)
+          .title 2B. POOL &amp; SPA
+          .summary
+            span.text-muted.mr-1 [16평]
+            | 기준 2명/최대 4명
+          p.pre-wrap.
+            오션뷰이며 복층형으로 이루진 객실입니다.
+            2층은 온돌형태의 룸이며 테라스에서 바베큐 가능합니다.
+          table.table.table-room-select.align-middle.text-center.mt-3.mb-0.border-0
+            tbody
+              tr
+                td.border-0
+                  .row
+                    .col-md-2
+                      .row
+                        .col-3.col-md-12.pt-1.pt-md-0
+                          .mb-2 객실수
+                        .col-9.col-md-12
+                          select.custom-select
+                            option 1개
+                            option 2개
+                            option 3개
+                            option 4개
+                    .col-md-10
+                      .row.no-gutters
+                        .col-md-1.text-left.pt-4
+                          .small.text-muted.pt-3
+                        .col-md-11
+                          .form-row
+                            .col-3
+                              .mb-2 기간
+                              select.custom-select
+                                option 1박
+                                option 2박
+                                option 3박
+                                option 4박
+                                option 5박
+                                option 6박
+                                option 7박
+                                option 8박
+                                option 9박
+                                option 10박
+                            .col-2
+                              .mb-2 성인
+                              input.form-control(type='number', min='0', max='6', value='6')
+                            .col-2
+                              .mb-2 아동
+                              input.form-control(type='number', min='0', max='6', value='1')
+                            .col-2
+                              .mb-2 유아
+                              input.form-control(type='number', min='0', max='6', value='0')
+                            .col-3
+                              .small
+                                del.text-muted 68,000원
+                                span.text-red.ml-1 25%
+                              .text-blue 55,000원
+                              .small.text-muted 추가인원 +10,000
 
+        .col-md-1.text-right
+          button.btn.btn-white.btn-close.ml-2(type='button', data-placement='right', data-toggle='tooltip', title='장바구니에서 삭제')
+            i.fa.fa-times.fa-lg
+      hr
+
+      .room-wrapper.row
+        .col-md-4
+          .thumbnail(style="background-image: url('/assets/images/sample/3B-10.jpg')", data-toggle='modal', data-target='#viewPictureModal-responsive')
+        .col-md-7.content.mt-4.mt-md-0
+          .mb-2 입실일 : 2017.07.16(수)
+          .title 사랑채 하늘방
+          .summary
+            span.text-muted.mr-1 [16평]
+            | 기준 2명/최대 4명
+          p.pre-wrap.
+            오션뷰이며 복층형으로 이루진 객실입니다.
+            2층은 온돌형태의 룸이며 테라스에서 바베큐 가능합니다.
+          table.table.table-room-select.align-middle.text-center.mt-3.mb-0.border-0
+            tbody
+              tr
+                td.border-0
+                  .row
+                    .col-md-2
+                      .row
+                        .col-3.col-md-12.pt-1.pt-md-0
+                          .mb-2 객실수
+                        .col-9.col-md-12
+                          select.custom-select
+                            option 1개
+                            option 2개
+                            option 3개
+                            option 4개
+                    .col-md-10
+                      .row.no-gutters
+                        .col-md-1.text-left.pt-4
+                          .small.text-muted.pt-3
+                        .col-md-11
+                          .form-row
+                            .col-3
+                              .mb-2 기간
+                              select.custom-select
+                                option 1박
+                                option 2박
+                                option 3박
+                                option 4박
+                                option 5박
+                                option 6박
+                                option 7박
+                                option 8박
+                                option 9박
+                                option 10박
+                            .col-2
+                              .mb-2 성인
+                              input.form-control(type='number', min='0', max='6', value='6')
+                            .col-2
+                              .mb-2 아동
+                              input.form-control(type='number', min='0', max='6', value='1')
+                            .col-2
+                              .mb-2 유아
+                              input.form-control(type='number', min='0', max='6', value='0')
+                            .col-3
+                              .small
+                                del.text-muted 68,000원
+                                span.text-red.ml-1 25%
+                              .text-blue 55,000원
+                              .small.text-muted 추가인원 +10,000
+
+        .col-md-1.text-right
+          button.btn.btn-white.btn-close.ml-2(type='button', data-placement='right', data-toggle='tooltip', title='장바구니에서 삭제')
+            i.fa.fa-times.fa-lg
+
+    .text-center.mt-5
+      a.btn.btn-dark.btn-lg.px-5(href='/bp-book') 예약하기
+
+
+    include ./includes/footer.pug
 
 //- 객실사진 모달
 #viewPictureModal-responsive.modal(tabindex='-1')
