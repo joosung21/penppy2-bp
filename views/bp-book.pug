@@ -39,11 +39,14 @@ body
       thead.bg-light
         tr
           th 부가서비스명
+          th 설명
           th 개당 가격
           th(style='width: 10rem') 수량
       tbody
         tr
           td.text-left.pl-4 조식
+          td.text-left
+            | 조식은 매일아침 계절반찬으로 한정식으로 정성들여 준비합니다.
           td 8,000
           td
             select.custom-select.inline
@@ -55,6 +58,7 @@ body
               option 5
         tr
           td.text-left.pl-4 부가서비스2
+          td.text-left
           td 5,000
           td
             select.custom-select.inline
