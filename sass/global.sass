@@ -999,7 +999,7 @@ hr.dark
       margin: -.3rem .8rem -.3rem -.8rem
       font-weight: normal
   .pc-body
-    // 모바일 UI 개발전에는 숨김
+    // 모바일 UI 개발전에는 PC 뷰로 렌더링
     // display: none
   .mobile-body
     display: block
@@ -1015,6 +1015,10 @@ hr.dark
     padding-left: 1rem
   .modal-body
     padding: 1rem
+
+  .bp-responsive-body
+    padding-left: 1rem
+    padding-right: 1rem
 
   #viewPictureModal-responsive
     overflow-y: hidden
@@ -1065,6 +1069,9 @@ hr.dark
     .room-wrapper
       .thumbnail
         height: 14rem
+  .bp-responsive-body
+    padding-left: 0
+    padding-right: 0
 
 //---------- Responsive: lg ----------//
 @media only screen and (min-width: 992px)
