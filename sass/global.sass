@@ -932,6 +932,24 @@ hr.dark
   padding: .35rem
   line-height: 0
 
+#book-description
+  position: relative
+  border-bottom: 1px solid $border-color
+  p
+    height: 16.8rem
+    overflow: hidden
+  .btn
+    position: absolute
+    right: 0
+    bottom: -1rem
+    border: none
+  &.show
+    p
+      height: auto
+    .btn
+      img
+        transform: rotate(180deg)
+
 // 날짜 겸색형(반응형)
 .bp-responsive-body
   max-width: 1000px

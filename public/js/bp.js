@@ -72,3 +72,8 @@ $( document ).ready(function() {
 
 });
 
+// 예약안내 펼침
+$(document).on('click', '#book-description .btn', function(){
+  $('#book-description').toggleClass('show');
+});
+
