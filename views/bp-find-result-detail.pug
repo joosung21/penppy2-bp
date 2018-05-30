@@ -1,0 +1,291 @@
+include ./includes/header.pug
+
+body
+  include ./includes/topper.pug
+
+  .container
+    .py-4.mb-4
+    h5.mb-3 예약정보
+    table.table.table-dl
+      tbody
+        tr
+          td.title 예약상태
+          td
+            .text-blue 입금대기
+            //- | 입금완료
+            //- .text-red 미입금 취소
+            //- .text-red 예약 취소
+        tr
+          td.title 예약번호
+          td FJ!2344235
+        tr
+          td.title 예약일시
+          td 2018-04-25 12:07
+        tr
+          td.title 예약자명
+          td 이용훈 010-3817-4375
+        tr
+          td.title 도착예정시간
+          td 15:30
+        tr
+          td.title 고객요청사항
+          td 아이에게 좋은 추억 남겨주고 싶습니다. 깨끗한 방 준비해주시고, 숯불바베큐는 20시까지 준비해주세요~
+
+    .py-5
+
+    h5.mb-3 상품정보
+    table.table.table.table-bordered-list.text-center.align-middle
+      thead.bg-light
+        tr
+          th 이용일
+          th 객실명
+          th 인원
+          th 객실금액
+          th 추가금액
+      tbody
+        tr
+          td 2018-05-24~2018-05-26(2박)
+          td 라일락
+          td 성인 2명, 아동 2명
+          td
+            | 100,000원
+            .small.text-muted 무통장입금
+          td
+            | 10,000원
+            .small
+              .text-muted 현장결제
+              .text-muted 성인 1명, 아동 1명
+        tr
+          td 2018-05-24~2018-05-26(2박)
+          td 해바라기
+          td 성인 2명, 아동 2명
+          td
+            | 100,000원
+            .small.text-muted 카드(6078)
+          td
+            | 10,000원
+        tr
+          td 2018-05-24~2018-05-26(2박)
+          td 해바라기
+          td 성인 2명, 아동 2명
+          td
+            | 100,000원
+            .small.text-muted 카드(6078)
+          td
+            | 10,000원
+
+    .py-5
+
+    h5.mb-3 부가서비스
+    table.table.table.table-bordered-list.text-center.align-middle
+      thead.bg-light
+        tr
+          th 부가서비스
+          th 결제방식
+          th 수량
+          th 금액
+      tbody
+        tr
+          td 숯,그릴대여
+          td 현장결제
+          td 2개
+          td
+            | 50,000원
+            .small.text-muted 현장결제
+        tr
+          td 미온수
+          td 현장결제
+          td 1개
+          td
+            | 50,000원
+            .small.text-muted 현장결제
+
+    .py-5
+
+    //-- 입금대기
+    .purchase-box
+      h5.px-4.py-3 결제 정보
+      table.table.text-center.mb-0
+        thead
+          tr
+            th 객실
+            th
+            th 추가인원
+            th
+            th 부가서비스
+            th
+            th(style='width: 13rem')
+            th.text-right(style='width: 13rem') 최종 이용금액
+        tbody
+          tr
+            td(rowspan='3') 300,000
+            td(rowspan='3')
+              img(src='/assets/images/plus.svg')
+            td(rowspan='3') 30,000
+            td(rowspan='3')
+              img(src='/assets/images/plus.svg')
+            td(rowspan='3') 150,000
+            td(rowspan='3')
+              img(src='/assets/images/equal.svg')
+            td.text-left
+              .text-muted 총 금액
+            td.text-right
+              | 480,000
+          tr
+            td.text-left
+              .text-muted 현장결제(부가서비스)
+            td.text-right
+              .text-green 150,000
+          tr
+            td.text-left
+              .text-muted 즉시결제(객실)
+            td.text-right
+              h5.text-blue 330,000
+      .px-2.py-4
+        .row
+          .col-md-5.offset-md-3
+            | 436902-04-039112, 국민은행, 조영수
+            p
+              | - 입금기한 :
+              span.text-red.ml-1 예약 후 1시간 이내 (2018년 1월 31일 오후 6시 45분)
+              br
+              | - 무통장입금(가상계좌)는 입금 확인 후 예약이 완료됩니다.
+              br
+              | - 입금기한 내 입금 확인이 되지 않으면, 예약은 자동으로 취소됩니다.
+
+    //-- 입금완료
+    .purchase-box
+      h5.px-4.py-3 결제 정보
+      table.table.text-center.mb-0
+        thead
+          tr
+            th 객실
+            th
+            th 추가인원
+            th
+            th 부가서비스
+            th
+            th(style='width: 13rem')
+            th.text-right(style='width: 13rem') 최종 이용금액
+        tbody
+          tr
+            td(rowspan='3') 300,000
+            td(rowspan='3')
+              img(src='/assets/images/plus.svg')
+            td(rowspan='3') 30,000
+            td(rowspan='3')
+              img(src='/assets/images/plus.svg')
+            td(rowspan='3') 150,000
+            td(rowspan='3')
+              img(src='/assets/images/equal.svg')
+            td.text-left
+              .text-muted 총 금액
+            td.text-right
+              | 480,000
+          tr
+            td.text-left
+              .text-muted 현장결제(부가서비스)
+            td.text-right
+              .text-green 150,000
+          tr
+            td.text-left
+              .text-muted 즉시결제(객실)
+            td.text-right
+              h5.text-blue 330,000
+
+    //-- 미입금 취소
+    .purchase-box.dimed
+      h5.px-4.py-3 결제 정보
+      table.table.text-center.mb-0
+        thead
+          tr
+            th 객실
+            th
+            th 추가인원
+            th
+            th 부가서비스
+            th
+            th(style='width: 13rem')
+            th.text-right(style='width: 13rem') 최종 이용금액
+        tbody
+          tr
+            td(rowspan='3') 300,000
+            td(rowspan='3')
+              img(src='/assets/images/plus.svg')
+            td(rowspan='3') 30,000
+            td(rowspan='3')
+              img(src='/assets/images/plus.svg')
+            td(rowspan='3') 150,000
+            td(rowspan='3')
+              img(src='/assets/images/equal.svg')
+            td.text-left
+              .text-muted 총 금액
+            td.text-right
+              | 480,000
+          tr
+            td.text-left
+              .text-muted 현장결제(부가서비스)
+            td.text-right
+              .text-green 150,000
+          tr
+            td.text-left
+              .text-muted 즉시결제(객실)
+            td.text-right
+              h5.text-blue 330,000
+
+    //-- 환불
+    .purchase-box.dimed
+      h5.px-4.py-3 결제 정보
+      table.table.text-center.mb-0
+        thead
+          tr
+            th 객실
+            th
+            th 추가인원
+            th
+            th 부가서비스
+            th
+            th(style='width: 13rem')
+            th.text-right(style='width: 13rem') 최종 이용금액
+        tbody
+          tr
+            td(rowspan='3') 300,000
+            td(rowspan='3')
+              img(src='/assets/images/plus.svg')
+            td(rowspan='3') 30,000
+            td(rowspan='3')
+              img(src='/assets/images/plus.svg')
+            td(rowspan='3') 150,000
+            td(rowspan='3')
+              img(src='/assets/images/equal.svg')
+            td.text-left
+              .text-muted 총 금액
+            td.text-right
+              | 480,000
+          tr
+            td.text-left
+              .text-muted 현장결제(부가서비스)
+            td.text-right
+              .text-green 150,000
+          tr
+            td.text-left
+              .text-muted 즉시결제(객실)
+            td.text-right
+              h5.text-blue 330,000
+          tr.except-dimed
+            td
+            td
+            td
+            td
+            td
+            td
+            td.text-left(style='white-space: nowrap')
+              span.text-red 총 환불금액
+              span.text-muted (3일전 취소 50% 환불)
+            td.text-right
+              h5.text-red 330,000
+
+    .text-center.pt-5
+      a.btn.btn-dark.btn-lg(href='/bp-find-result') 예약목록
+
+    .py-5

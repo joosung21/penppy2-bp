@@ -44,6 +44,8 @@ $blocked: $light
   color: $red
 .text-blue
   color: $blue
+.text-green
+  color: #8BCE54
 .text-muted
   color: #bbb !important
 .text-info
@@ -80,6 +82,10 @@ a:focus, a:active, .btn:focus, .btn:active
 .btn
   &.btn-primary, &.btn-secondary, &.btn-warning
     color: white
+
+.btn.btn-small
+  font-size: .9rem
+  padding: .5rem .7rem
 
 .btn-close
   font-size: .9rem
@@ -269,6 +275,19 @@ hr.dark
   td, th
     padding: 1.5rem 0
 
+.table-bordered-list
+  td
+    border-right: 1px solid $border-color
+    &:last-child
+      border-right: none
+
+.table-dl
+  border-top: 1px solid #929292
+  .title
+    width: 10rem
+    padding-left: 2rem
+
+
 // Custom Checkbox & Radio
 .custom-control
   margin-left: .25rem
@@ -404,6 +423,15 @@ hr.dark
     tbody
       td
         border-bottom: none
+  &.dimed
+    table
+      tr:not(.except-dimed) *
+        color: #bbb
+      img
+        opacity: .4
+      .except-dimed
+        td
+          background-color: white
 
 // PC Body
 .pc-body

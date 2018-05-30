@@ -23,7 +23,10 @@ app.get('/cart', function (req, res){res.render('cart')})
 //- 공통
 app.get('/bp-book', function (req, res){res.render('bp-book')})
 app.get('/bp-find', function (req, res){res.render('bp-find')})
+
+// 예약확인 PC
 app.get('/bp-find-result', function (req, res){res.render('bp-find-result')})
+app.get('/bp-find-result-detail', function (req, res){res.render('bp-find-result-detail')})
 
 //- 모바일
 app.get('/bp-mobile-summary', function (req, res){res.render('bp-mobile-summary')})
