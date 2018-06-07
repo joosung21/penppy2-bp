@@ -100,187 +100,328 @@
   //-- 입금대기
   .purchase-box
     h5.px-4.py-3 결제 정보
-    table.table.text-center.mb-0
-      thead
+    table.table.text-center
+      thead.bg-light
         tr
-          th 객실
-          th
-          th 추가인원
-          th
-          th 부가서비스
-          th
-          th(style='width: 13rem')
-          th.text-right(style='width: 13rem') 최종 이용금액
+          th 상품구분
+          th 상품명
+          th 수량
+          th 결제방법
+          th(style='width: 15em') 요금
       tbody
         tr
-          td(rowspan='3') 300,000
-          td(rowspan='3')
-            img(src='/assets/images/plus.svg')
-          td(rowspan='3') 30,000
-          td(rowspan='3')
-            img(src='/assets/images/plus.svg')
-          td(rowspan='3') 150,000
-          td(rowspan='3')
-            img(src='/assets/images/equal.svg')
-          td.text-left
-            .text-muted 총 금액
+          td(rowspan='2') 객실
+          td.text-left 라일락
+          td 1개
+          td 즉시결제
           td.text-right
-            | 480,000
+            .text-green 100,000원
         tr
-          td.text-left
-            .text-muted 현장결제(부가서비스)
+          td.text-left 추가인원 성인 1명, 아동 1명
+          td 2명
+          td 즉시결제
           td.text-right
-            .text-green 150,000
+            .text-green 20,000원
         tr
-          td.text-left
-            .text-muted 즉시결제(객실)
+          td(rowspan='2') 객실
+          td.text-left 라벤더
+          td 1개
+          td 즉시결제
           td.text-right
-            h5.text-blue 330,000
-    .px-2.py-4
-      .row
-        .col-md-5.offset-md-3
-          | 436902-04-039112, 국민은행, 조영수
-          p
-            | - 입금기한 :
-            span.text-red.ml-1 예약 후 1시간 이내 (2018년 1월 31일 오후 6시 45분)
-            br
-            | - 무통장입금(가상계좌)는 입금 확인 후 예약이 완료됩니다.
-            br
-            | - 입금기한 내 입금 확인이 되지 않으면, 예약은 자동으로 취소됩니다.
+            .text-green 100,000원
+        tr
+          td.text-left 추가인원 성인 1명, 아동 1명
+          td 2명
+          td 즉시결제
+          td.text-right
+            .text-green 20,000원
+        tr
+          td 부가서비스
+          td.text-left 조식
+          td 2개
+          td 현장결제
+          td.text-right
+            .text-blue 50,000원
+        tr
+          td 부가서비스
+          td.text-left 바베큐
+          td 1개
+          td 현장결제
+          td.text-right
+            .text-blue 50,000원
+        tr.summary
+          td
+          td
+          td
+          td.text-right
+            h5 총금액
+          td.text-right
+            h5 500,000원
+        tr.summary
+          td
+          td
+          td
+          td.text-right
+            | 현장결제(부가서비스)
+          td.text-right
+            .text-blue 150,000원
+        tr.summary
+          td
+          td
+          td
+          td.text-right
+            | 즉시결제(객실,추가인원)
+          td.text-right
+            .text-green 350,000원
+    .px-2.py-3.text-center
+      | 국민은행, 110-23244-234556, 이용훈
+      br
+      .text-red ( 2018년 오후 3시 32분 안으로 입금 하시지 않으면, 예약이 자동취소 됩니다.)
+      br
+      | ※ 자세한 문의는 010-3817-4375 로 연락 주세요.
+
 
   //-- 입금완료
   .purchase-box
     h5.px-4.py-3 결제 정보
-    table.table.text-center.mb-0
-      thead
+    table.table.text-center
+      thead.bg-light
         tr
-          th 객실
-          th
-          th 추가인원
-          th
-          th 부가서비스
-          th
-          th(style='width: 13rem')
-          th.text-right(style='width: 13rem') 최종 이용금액
+          th 상품구분
+          th 상품명
+          th 수량
+          th 결제방법
+          th(style='width: 15em') 요금
       tbody
         tr
-          td(rowspan='3') 300,000
-          td(rowspan='3')
-            img(src='/assets/images/plus.svg')
-          td(rowspan='3') 30,000
-          td(rowspan='3')
-            img(src='/assets/images/plus.svg')
-          td(rowspan='3') 150,000
-          td(rowspan='3')
-            img(src='/assets/images/equal.svg')
-          td.text-left
-            .text-muted 총 금액
+          td(rowspan='2') 객실
+          td.text-left 라일락
+          td 1개
+          td 즉시결제
           td.text-right
-            | 480,000
+            .text-green 100,000원
         tr
-          td.text-left
-            .text-muted 현장결제(부가서비스)
+          td.text-left 추가인원 성인 1명, 아동 1명
+          td 2명
+          td 즉시결제
           td.text-right
-            .text-green 150,000
+            .text-green 20,000원
         tr
-          td.text-left
-            .text-muted 즉시결제(객실)
+          td(rowspan='2') 객실
+          td.text-left 라벤더
+          td 1개
+          td 즉시결제
           td.text-right
-            h5.text-blue 330,000
+            .text-green 100,000원
+        tr
+          td.text-left 추가인원 성인 1명, 아동 1명
+          td 2명
+          td 즉시결제
+          td.text-right
+            .text-green 20,000원
+        tr
+          td 부가서비스
+          td.text-left 조식
+          td 2개
+          td 현장결제
+          td.text-right
+            .text-blue 50,000원
+        tr
+          td 부가서비스
+          td.text-left 바베큐
+          td 1개
+          td 현장결제
+          td.text-right
+            .text-blue 50,000원
+        tr.summary
+          td
+          td
+          td
+          td.text-right
+            h5 총금액
+          td.text-right
+            h5 500,000원
+        tr.summary
+          td
+          td
+          td
+          td.text-right
+            | 현장결제(부가서비스)
+          td.text-right
+            .text-blue 150,000원
+        tr.summary
+          td
+          td
+          td
+          td.text-right
+            | 즉시결제(객실,추가인원)
+          td.text-right
+            .text-green 350,000원
 
   //-- 미입금 취소
   .purchase-box.dimed
     h5.px-4.py-3 결제 정보
-    table.table.text-center.mb-0
-      thead
+    table.table.text-center
+      thead.bg-light
         tr
-          th 객실
-          th
-          th 추가인원
-          th
-          th 부가서비스
-          th
-          th(style='width: 13rem')
-          th.text-right(style='width: 13rem') 최종 이용금액
+          th 상품구분
+          th 상품명
+          th 수량
+          th 결제방법
+          th(style='width: 15em') 요금
       tbody
         tr
-          td(rowspan='3') 300,000
-          td(rowspan='3')
-            img(src='/assets/images/plus.svg')
-          td(rowspan='3') 30,000
-          td(rowspan='3')
-            img(src='/assets/images/plus.svg')
-          td(rowspan='3') 150,000
-          td(rowspan='3')
-            img(src='/assets/images/equal.svg')
-          td.text-left
-            .text-muted 총 금액
+          td(rowspan='2') 객실
+          td.text-left 라일락
+          td 1개
+          td 즉시결제
           td.text-right
-            | 480,000
+            .text-green 100,000원
         tr
-          td.text-left
-            .text-muted 현장결제(부가서비스)
+          td.text-left 추가인원 성인 1명, 아동 1명
+          td 2명
+          td 즉시결제
           td.text-right
-            .text-green 150,000
+            .text-green 20,000원
         tr
-          td.text-left
-            .text-muted 즉시결제(객실)
+          td(rowspan='2') 객실
+          td.text-left 라벤더
+          td 1개
+          td 즉시결제
           td.text-right
-            h5.text-blue 330,000
+            .text-green 100,000원
+        tr
+          td.text-left 추가인원 성인 1명, 아동 1명
+          td 2명
+          td 즉시결제
+          td.text-right
+            .text-green 20,000원
+        tr
+          td 부가서비스
+          td.text-left 조식
+          td 2개
+          td 현장결제
+          td.text-right
+            .text-blue 50,000원
+        tr
+          td 부가서비스
+          td.text-left 바베큐
+          td 1개
+          td 현장결제
+          td.text-right
+            .text-blue 50,000원
+        tr.summary
+          td
+          td
+          td
+          td.text-right
+            h5 총금액
+          td.text-right
+            h5 500,000원
+        tr.summary
+          td
+          td
+          td
+          td.text-right
+            | 현장결제(부가서비스)
+          td.text-right
+            .text-blue 150,000원
+        tr.summary
+          td
+          td
+          td
+          td.text-right
+            | 즉시결제(객실,추가인원)
+          td.text-right
+            .text-green 350,000원
 
   //-- 환불
   .purchase-box.dimed
     h5.px-4.py-3 결제 정보
-    table.table.text-center.mb-0
-      thead
+    table.table.text-center
+      thead.bg-light
         tr
-          th 객실
-          th
-          th 추가인원
-          th
-          th 부가서비스
-          th
-          th(style='width: 13rem')
-          th.text-right(style='width: 13rem') 최종 이용금액
+          th 상품구분
+          th 상품명
+          th 수량
+          th 결제방법
+          th(style='width: 15em') 요금
       tbody
         tr
-          td(rowspan='3') 300,000
-            td(rowspan='3')
-              img(src='/assets/images/plus.svg')
-            td(rowspan='3') 30,000
-            td(rowspan='3')
-              img(src='/assets/images/plus.svg')
-            td(rowspan='3') 150,000
-            td(rowspan='3')
-              img(src='/assets/images/equal.svg')
-            td.text-left
-              .text-muted 총 금액
-            td.text-right
-              | 480,000
-          tr
-            td.text-left
-              .text-muted 현장결제(부가서비스)
-            td.text-right
-              .text-green 150,000
-          tr
-            td.text-left
-              .text-muted 즉시결제(객실)
-            td.text-right
-              h5.text-blue 330,000
-          tr.except-dimed
-            td
-            td
-            td
-            td
-            td
-            td
-            td.text-left(style='white-space: nowrap')
-              span.text-red 총 환불금액
-              span.text-muted (3일전 취소 50% 환불)
-            td.text-right
-              h5.text-red 330,000
+          td(rowspan='2') 객실
+          td.text-left 라일락
+          td 1개
+          td 즉시결제
+          td.text-right
+            .text-green 100,000원
+        tr
+          td.text-left 추가인원 성인 1명, 아동 1명
+          td 2명
+          td 즉시결제
+          td.text-right
+            .text-green 20,000원
+        tr
+          td(rowspan='2') 객실
+          td.text-left 라벤더
+          td 1개
+          td 즉시결제
+          td.text-right
+            .text-green 100,000원
+        tr
+          td.text-left 추가인원 성인 1명, 아동 1명
+          td 2명
+          td 즉시결제
+          td.text-right
+            .text-green 20,000원
+        tr
+          td 부가서비스
+          td.text-left 조식
+          td 2개
+          td 현장결제
+          td.text-right
+            .text-blue 50,000원
+        tr
+          td 부가서비스
+          td.text-left 바베큐
+          td 1개
+          td 현장결제
+          td.text-right
+            .text-blue 50,000원
+        tr.summary
+          td
+          td
+          td
+          td.text-right
+            h5 총금액
+          td.text-right
+            h5 500,000원
+        tr.summary
+          td
+          td
+          td
+          td.text-right
+            | 현장결제(부가서비스)
+          td.text-right
+            .text-blue 150,000원
+        tr.summary
+          td
+          td
+          td
+          td.text-right
+            | 즉시결제(객실,추가인원)
+          td.text-right
+            .text-green 350,000원
+        tr.except-dimed.summary
+          td
+          td
+          td
+          td.text-left.text-right
+            span.text-red 총 환불금액
+            span.text-muted (3일전 취소 50% 환불)
+          td.text-right
+            h5.text-red 750,000
 
-    .text-center.pt-5
-      a.btn.btn-dark.btn-lg(href='/bp-find-result') 예약목록
+  .text-center.pt-5
+    a.btn.btn-dark.btn-lg(href='/bp-find-result') 예약목록
 
-    .py-5
+  .py-5

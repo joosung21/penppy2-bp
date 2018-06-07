@@ -411,9 +411,8 @@ hr.dark
 // Purshase Box
 .purchase-box
   border: 1px solid #222
+  padding-bottom: 1rem
   .table
-    background-color: $white-gray
-    border-bottom: 1px solid $border-color
     th:last-child, td:last-child
       padding-right: 3rem
     thead
@@ -422,7 +421,11 @@ hr.dark
         border-bottom: 1px solid $border-color
     tbody
       td
+        border-bottom: 1px solid $border-color
+    .summary
+      td
         border-bottom: none
+        padding-bottom: 0
   &.dimed
     table
       tr:not(.except-dimed) *
