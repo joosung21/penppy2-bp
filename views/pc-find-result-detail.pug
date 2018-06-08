@@ -80,8 +80,8 @@
   .py-5
 
   //-- 입금대기
+  h5.mb-3 결제정보
   .purchase-box
-    h5.px-4.py-3 결제 정보
     .d-flex
       .ml-auto 총 금액
       .w-25.text-right.font-weight-bold 430,000원
@@ -95,14 +95,14 @@
     .mt-5.text-center
       | 국민은행, 110-23244-234556, 이용훈
       br
-      .text-red ( 2018년 오후 3시 32분 안으로 입금 하시지 않으면, 예약이 자동취소 됩니다.)
-      br
-      | ※ 자세한 문의는 010-3817-4375 로 연락 주세요.
+      .text-red 2018년 오후 3시 32분까지 입금하지 않으면 예약이 자동취소됩니다.
 
+
+  .py-3
 
   //-- 입금완료
+  h5.mb-3 결제정보
   .purchase-box
-    h5.px-4.py-3 결제 정보
     .d-flex
       .ml-auto 총 금액
       .w-25.text-right.font-weight-bold 430,000원
@@ -112,10 +112,12 @@
     .d-flex
       .ml-auto 카드(7058)
       .w-25.text-right.text-green 280,000원
+
+  .py-3
 
   //-- 미입금 취소
+  h5.mb-3 결제 정보
   .purchase-box.dimed
-    h5.px-4.py-3 결제 정보
     .d-flex.dimed
       .ml-auto 총 금액
       .w-25.text-right.font-weight-bold 430,000원
@@ -126,9 +128,11 @@
       .ml-auto 카드(7058)
       .w-25.text-right.text-green 280,000원
 
+  .py-3
+
   //-- 환불
+  h5.mb-3 결제 정보
   .purchase-box.dimed
-    h5.px-4.py-3 결제 정보
     .d-flex.dimed
       .ml-auto 총 금액
       .w-25.text-right.font-weight-bold 430,000원
@@ -147,5 +151,3 @@
 
   .text-center.pt-5
     a.btn.btn-dark.btn-lg(href='/bp-find-result') 예약목록
-
-  .py-5
