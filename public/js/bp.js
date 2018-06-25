@@ -70,10 +70,16 @@ $( document ).ready(function() {
     $(this).parent().children('.daterange-layer').addClass('show');
   });
 
+  // 모바일 환경 줌아웃 설정
+  var windowWidth = $(window).width();
+  if(windowWidth < 600){
+    $('head').append('<meta name="viewport" content="width=device-width, initial-scale=0.4, maximum-scale=1.0, user-scalable=1">');
+  }
 });
 
 // 예약안내 펼침
 $(document).on('click', '#book-description .btn', function(){
   $('#book-description').toggleClass('show');
 });
+
 
