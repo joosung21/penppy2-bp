@@ -20,6 +20,7 @@ app.get('/bp-calendar-select', function (req, res){res.render('bp-calendar-selec
 app.get('/bp-responsive', function (req, res){res.render('bp-responsive')})
 app.get('/cart', function (req, res){res.render('cart')})
 
+
 //- 공통
 app.get('/bp-book', function (req, res){res.render('bp-book')})
 app.get('/bp-find', function (req, res){res.render('bp-find')})
