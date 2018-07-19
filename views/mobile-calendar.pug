@@ -8,6 +8,13 @@
         img(src='/assets/images/arrow_left_g.svg')
       button.next.btn.btn-white.btn-sm.mr-3(type='button')
         img(src='/assets/images/arrow_right_g.svg')
+
+  .alert.alert-primary.alert-dismissible.fade.show(role='alert')
+    strong 터치하세요!
+    |  원하는 객실과 날짜의 가격을 터치하면 선택됩니다.
+    button.close(type='button', data-dismiss='alert', aria-label='Close')
+      span(aria-hidden='true') ×
+
   table.table-mobile-calendar.text-center
     thead
       tr
