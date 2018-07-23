@@ -7,8 +7,23 @@ body
     .board
       .room-title
         div
+          .name 산토리니
+      .group-wrapper
+        .group-label.pt-1 객실수
+        .group-content
+          .wrapper
+            .value-coloumn
+              select.custom-select
+                option 1
+                option(selected) 2
+                option 3
+                option 4
+
+      hr
+
+      .room-title
+        div
           .text-blue 2017-03-20(1박) - 비수기
-          .name 사랑채 하늘방(패밀리스파)
         button.btn.btn-white.btn-x.ml-auto(type='button')
           img(src='/assets/images/del.svg')
       .group-wrapper
@@ -63,7 +78,6 @@ body
       .room-title
         div
           .text-blue 2017-03-20(1박) - 비수기
-          .name 온돌
         button.btn.btn-white.btn-x.ml-auto(type='button')
           img(src='/assets/images/del.svg')
       .group-wrapper
@@ -112,6 +126,76 @@ body
             small.text-muted 최종 이용금액
             .value-coloumn
               .text-blue.font-weight-bold 115,000
+
+    .board
+      .room-title
+        div
+          .name 부다페스트
+      .group-wrapper
+        .group-label.pt-1 객실수
+        .group-content
+          .wrapper
+            .value-coloumn
+              select.custom-select
+                option(selected) 1
+                option 2
+                option 3
+                option 4
+
+      hr
+
+      .room-title
+        div
+          .text-blue 2017-03-20(1박) - 비수기
+        button.btn.btn-white.btn-x.ml-auto(type='button')
+          img(src='/assets/images/del.svg')
+      .group-wrapper
+        .group-label.pt-1 인원
+          small.text-muted.ml-2 (기준 2명/최대 4명)
+        .group-content
+          .wrapper
+            small.text-muted 성인
+            .value-coloumn
+              select.custom-select
+                option 1
+                option(selected) 2
+                option 3
+                option 4
+          .wrapper
+            small.text-muted 아동
+            .value-coloumn
+              select.custom-select
+                option 0
+                option(selected) 1
+                option 2
+                option 3
+                option 4
+          .wrapper
+            small.text-muted 유아
+            .value-coloumn
+              select.custom-select
+                option 0
+                option 1
+                option 2
+                option 3
+                option 4
+      .group-wrapper.mt-4
+        .group-label 금액
+        .group-content
+          .wrapper
+            small.text-muted 객실
+            .value-coloumn 120,000
+          .wrapper
+            small.text-muted 객실
+            .value-coloumn -5,000
+          .wrapper
+            small.text-muted 추가인원
+            .value-coloumn +10,000
+          .wrapper
+            small.text-muted 최종 이용금액
+            .value-coloumn
+              .text-blue.font-weight-bold 125,000
+
     .board.mb-0
       .group-wrapper
         .group-label.font-weight-bold 총 결제금액
