@@ -735,10 +735,7 @@ hr.dark
 //- Mobile View Only --//
 
 .mobile-calendar-controler
-  position: relative
   padding: 2rem 0
-  z-index: 10
-  background: white
   .date
     text-align: center
     font-size: 1.3rem
@@ -751,8 +748,6 @@ hr.dark
     padding: .15rem .8rem .4rem .7rem
   button.next
     padding: .15rem .7rem .4rem .8rem
-  &.sticky
-    border-bottom: 2px solid #222222
 
 .table-mobile-calendar
   width: 100%
@@ -809,6 +804,11 @@ hr.dark
         text-decoration: none
         color: #4c4c4c
 
+.table-mobile-calendar-header
+  position: relative
+  z-index: 10
+  th, td
+    background: white
 
 .mobile-footbutton
   border-radius: 0
