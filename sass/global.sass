@@ -1,14 +1,13 @@
-//----------- Variables -----------//
-
-$onda: #51a7ff
-$navy-blue: #4274c1
-$blue: #4B95FF
-$red: #F4516C
-$orange: #f17517
-$light: #C4C4C4
-$white-gray: #f1f3f8
+// Variables
 $border-color: #E5E5E5
+$light: #C4C4C4
+$blue: #4B95FF
+$onda: #4B95FF
+$red: #F4516C
+$white-gray: #f8f9fb
 $washed-navy: #7D90A8
+$dark: #56627B
+$border-color: #e5e5e5
 
 $available: #A1CFFF
 $waiting: $blue
@@ -16,292 +15,49 @@ $complete: $red
 $callonly: #FFB822
 $blocked: $light
 
-$left-side-width: 14rem
-$left-side-padding: 2rem
-
-
-// ngx-chart
-body
-  .ngx-charts-tooltip-content
-    &.type-tooltip
-      background-color: #53627E
-      padding: 8px 10px
-    .tooltip-caret
-      &.position-left
-        border-top: 7px solid transparent
-        border-bottom: 7px solid transparent
-        border-left: 7px solid #53627E !important
-      &.position-top
-       border-left: 7px solid transparent
-       border-right: 7px solid transparent
-       border-top: 7px solid #53627E !important
-
-      &.position-right
-        border-top: 7px solid transparent
-        border-bottom: 7px solid transparent
-        border-right: 7px solid #53627E !important
-
-      &.position-bottom
-        border-left: 7px solid transparent
-        border-right: 7px solid transparent
-        border-bottom: 7px solid #53627E !important
-
-
-//------------ Extends -------------//
-%box-shadow
-  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, .05)
-
-%cover-image
-  background: url('/assets/images/no-image.png') no-repeat center center
-  -webkit-background-size: cover
-  -moz-background-size: cover
-  -o-background-size: cover
-  background-size: cover
-
+// Extends
 %display-flex
   display: table-cell // ie9
   display: -ms-flexbox // ie10
   display: -webkit-box
   display: flex
 
-//------------ Bootstrap Overides ----------//
-.btn
-  font-weight: 400
-.btn-light:not(:disabled):not(.disabled):active, .btn-light:not(:disabled):not(.disabled).active, .show>.btn-light.dropdown-toggle
-  color: white
-  background-color: $navy-blue
-  border-color: $navy-blue
-.btn-light
-  background-color: #F2F3F8
+%thumbnail-image
+  position: relative
+  background: no-repeat center center scroll
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+  cursor: pointer
+  &:after
+    position: absolute
+    right: 0
+    bottom: 0
+    content: ''
+    width: 27px
+    height: 27px
+    background: rgba(black, .2) url('/assets/images/search-w.svg') center no-repeat
 
-.btn-red:not(:disabled):not(.disabled):active, .btn-red:not(:disabled):not(.disabled).active, .show>.btn-red.dropdown-toggle
-  color: white
-  background-color: $red
-  border-color: $red
-.btn-red
-  color: white
-  background-color: $red
-  &:hover
-    background-color: #cb3837
-
-.btn-outline-primary
-  border-color: #4275C4
-  color: #4275C4
-  &:hover, &:active
-    color: white
-
-label
-  &.custom-control-inline
-    margin-bottom: 0
-
-.table-bordered
-  thead
-    th, td
-      border: 1px solid $border-color !important
-      border-bottom: none !important
-
-.input-group-text
-  color: #929292
-  background-color: #f8f9fb
-.border
-  border: 1px solid $border-color !important
-.btn
-  &.btn-primary, &.btn-secondary
-    color: white
-.btn.btn-small
-  font-size: .9rem
-  font-weight: 300
-  padding: .5rem .7rem
-.btn.btn-lg
-  font-size: 1.15rem
-  padding: .5rem 2.3rem
-
-.btn.btn-outline-navy.btn-large
-  padding: .75rem 1rem
-
-.table
-  td
-    padding: 1rem .5rem
-    &.dimed
-      opacity: .4
-  thead th
-    border: 0
-    padding: 1.2rem .5rem
-    font-weight: 600
-  tbody
-    td, th
-      border-top: 0
-      border-bottom: 1px solid $border-color
-  &.align-middle
-    td, th
-      vertical-align: middle
-  tr.dimed
-    td
-      opacity: .4
-  .checkbox
-    .custom-control
-      width: 1rem
-      padding: 0 .2rem
-      margin: 0 auto
-      .custom-control-label
-        &:after
-  tr.link
-    cursor: pointer
-  tr.move
-    cursor: move
-    cursor: grab
-    cursor: -moz-grab
-    cursor: -webkit-grab
-
-.table.table-comfort
-  td, th
-    padding: 1rem
-
-.form-control
-  &.dirty
-    background-color: #FFF5DB
-  &:disabled, &[readonly]
-    background-color: #f8f9fb
-    color: #929292
-
-.table.table-hover
-  tbody
-    tr
-      &:hover
-        td
-          background-color: #FBFBFC
-          cursor: pointer
-
-.nav.nav-tabs
-  .nav-item
-    .nav-link
-      font-weight: 400
-      border-bottom: none
-      color: #4f4f4f
-      border-color: #eee
-      padding: .8rem 1.4rem
-      &.active
-        color: $navy-blue
-        background-color: white
-
-
-input::placeholder, textarea::placeholder
-  color: #bbb !important
-
-.bg-light
-  background-color: #f1f3f8 !important
-
-select.custom-select
-  background: #fff url('/assets/images/angle-down.svg') no-repeat right .75rem center
-
-.modal-header .close
-  padding: 0 1.5rem
-  opacity: 1
-  margin: -.12rem 0
-
-.modal-body
-  .form-group
-    margin-bottom: 30px
-
-.modal-tail
-  margin-left: -2.5rem
-  margin-right: -2.5rem
-  margin-bottom: -2.7rem
-  margin-top: 5rem
-  padding: .75rem 2.5rem .25rem 2.5rem
-
-.form-inline
-  .custom-select
-    width: auto
-
-.text-muted
-  color: #aaa !important
-
-.dropdown-menu.bordered-menu
-  .dropdown-item
-    padding: 1.2rem 1.5rem
-    border-bottom: 1px solid #eee
-    &:last-child
-      border: none
-
-.badge
-  font-weight: 300
-
-.badge-dark
-  background-color: $washed-navy
-
-.pagination
-  .page-link
-    height: 2.7rem
-    padding: .7rem .9rem
-  .page-link.icon
-    padding: 7px 8px
-    img
-      width: 1.2rem
-  .page-item.disabled
-    .page-link.icon
-      img
-        opacity: .4
-
-//------------ CSS Style Utilities ----------//
+// Utilities
 .text-red
   color: $red
 .text-blue
   color: $blue
-.text-onda
-  color: $onda
-.text-dark
-  color: #4f4f4f
 .text-green
   color: #8BCE54
-.text-emerald
-  color: #64C2D0
-.font-xsmall
-  font-size: 0.85rem
-.font-small
-  font-size: 0.9rem
-a.link
-  color: #4C4C4C
-  text-decoration: none
+.text-muted
+  color: #bbb !important
+.text-info
+  color: #64C2D0 !important
 
-//----------- Initiate -----------//
+// Initiates
 html
   font-size: 14px
+
 body
-.form-group
-  margin-bottom: 40px
-  label:not(.custom-control)
-    font-weight: 600
-.btn-group-toggle
-  label
-    font-weight: 400 !important
-
-label.label-necessary
-  &:after
-    content: '*'
-    color: $red
-    padding-left: .4rem
-    position: relative
-    top: .4rem
-    font-size: 1.2rem
-    line-height: 1rem
-a
-  cursor: pointer
-
-a:focus, a:active, .btn:focus, .btn:active
-  outline: none !important
-  box-shadow: none
-
-.btn.warning-mark
-  position: relative
-  &:after
-    position: absolute
-    top: -10px
-    right: -10px
-    content: ' '
-    width: 20px
-    height: 20px
-    background: url('/assets/images/notice_circle.svg') 0 0 no-repeat
+  background-color: white
+  padding: 0
 
 .btn-white
   border-color: $border-color
@@ -319,306 +75,83 @@ a:focus, a:active, .btn:focus, .btn:active
     outline: none !important
     box-shadow: none
 
+a:focus, a:active, .btn:focus, .btn:active
+  outline: none !important
+  box-shadow: none
+
+.btn
+  &.btn-primary, &.btn-secondary, &.btn-warning
+    color: white
+
+.btn.btn-small
+  font-size: .9rem
+  padding: .5rem .7rem
+
 .btn-close
   font-size: .9rem
   height: 1.6rem
   line-height: 1rem
   padding: .1rem .1rem
 
-.btn-group-radio
-  .btn-white
-    &.active
-      background-color: $white-gray
-      color: #4F4F4F
-      + .btn-white
-        border-left: 1px solid $washed-navy
+small, .small
+  font-size: 85%
 
-.btn-group-toggle
-  label
-    font-weight: 400
+.modal-header .close
+  padding: 0 1.5rem
+  opacity: 1
+  margin: -.12rem 0
 
-.grabbable
-  cursor: move
-  cursor: -webkit-grab
+.pre-wrap
+  white-space: pre-wrap
 
-hr.table-devider
-  border-top: 1px solid #929292
-  margin: 0
+.cursor-pointer
+  cursor: pointer
 
-// Custom Checkbox & Radio
-.custom-control
-  margin-left: .25rem
-  .custom-control-label
-    padding-left: 1px
-  .custom-control-input[disabled]
-    + .custom-control-label
-        &:after
-          background-color: #E5E5E5 !important
-  &.custom-checkbox
-    margin-left: .2em
-    .custom-control-label
-      &:after
-        width: 1.43em
-        height: 1.43em
-        background-color: white
-        border: 1px solid #bbb
-        border-radius: 3px
-        left: -.2em
-        top: .05em
-    .custom-control-input:checked
-      + .custom-control-label
-        &:after
-          background: white url('/assets/images/checkbox_check.svg') center center no-repeat
-          border-color: #AAAAAA
-    .custom-control-input:checked[disabled]
-      + .custom-control-label
-        &:after
-          background: #E5E5E5 url('/assets/images/checkbox_check_gray.svg') center center no-repeat
-          border-color: #AAAAAA
+input::placeholder, textarea::placeholder
+  color: #bbb !important
 
-  &.custom-radio
-    .custom-control-label
-      &:after
-        width: 1.45rem
-        height: 1.45rem
-        background-color: white
-        border: 1px solid #bbb
-        border-radius: 1.4rem
-        left: -.2em
-        top: .1em
-    .custom-control-input:checked
-      + .custom-control-label
-        &:after
-          background: white url('/assets/images/Oval.svg') center center no-repeat
-          border-color: #AAAAAA
-    .custom-control-input:checked[disabled]
-      + .custom-control-label
-        &:after
-          background: #E5E5E5 url('/assets/images/Oval-gray.svg') center center no-repeat
-          border-color: #AAAAAA
+table
+  border-collapse: collapse
 
-// Checkbox group
-.check-group
-  .custom-checkbox
-    display: inline-block
-    width: 128px
-    margin: .4rem 0 .4rem .2rem
-    font-size: .9rem
-    .custom-control-label
-      padding-top: 1px
+label
+  font-weight: 400
 
-// Dragula Styles
-.gu-mirror
-  display: flex
-  justify-content: space-around
-  background-color: white
-  align-items: center
-  border: 1px solid $border-color
-  opacity: .9
-  th
-    display: none
-  .name
-    width: 45%
+.form-inline
+  .custom-select
+    width: auto
 
-// Datepicker
-.theme-onda
-  &.bs-datepicker
-    .bs-datepicker-container
-      padding: 0
-      .bs-datepicker-head
-        height: 60px
-        padding: 15px 0
-        background-color: #fff
-        text-align: center
-        button
-          font-size: 14px
-        .previous
-          > span
-            color: $onda
-        .next
-          > span
-            color: $onda
-        .current
-          > span
-            color: #222
-      .bs-datepicker-body
-        border: 0
-        padding: 0
-        margin: 0 20px 20px
-        table
-          border-collapse: collapse
-          thead
-            border-top: 1px solid #000
-            border-bottom: 1px solid #000
-            th
-              padding: 8px 0
-              color: #222
-              font-size: 12px
-              font-weight: 300
-            th.saturday
-              color: #157FFC
-            th.holiday
-              color: #d0021b
-          tbody
-            td
-              &.selected
-                span
-                  background-color: $onda
-              span
-                display: inline-block
-                width: 100%
-                height: 100%
-                -webkit-border-radius: 0
-                -moz-border-radius: 0
-                border-radius: 0
-                text-align: center
-                line-height: 40px
-                &.is-other-month
-                  display: none
-                &:not(.selected):not(.disabled)
-                  color: #222
-              span.disabled
-                background-color: #efefef
-                color: rgba(0, 0, 0, .25)
-              span.selected
-                background-color: $onda
-              span.today
-                &:after
-                  content: ""
-                  position: absolute
-                  top: 6px
-                  left: 18px
-                  width: 4px
-                  height: 4px
-                  border-radius: 2px
-                  background-color: #222
-                &.is-other-month
-                  &:after
-                    background-color: #bfbfbf
-                &.selected
-                  &:after
-                    background-color: #fff
-              span.saturday:not(.disabled)
-                color: #157FFC
-              span.holiday:not(.disabled)
-                color: #d0021b
-
-// Image Upload
-.image-upload
-  margin-bottom: 1rem
-  .unit
+label.label-necessary
+  &:after
+    content: '*'
+    color: $red
+    padding-left: .4rem
     position: relative
-    padding-bottom: .8rem
-    .img-thumbnail.ratio-4-3
-      width: 100%
-      position: relative
-      background: 50% 50% no-repeat
-      background-size: contain
-      background-clip: content-box
-      &:before
-        display: block
-        content: ""
-        padding-top: 75%
+    top: .4rem
+    font-size: 1.2rem
+    line-height: 1rem
 
-      .reload-container
-        position: absolute
-        top: 0
-        width: 100%
-        height: 100%
-        .reload-box
-          position: absolute
-          top: 50%
-          left: 50%
-          transform: translate(-50%, -50%)
-          .reload
-            color: #79C732
-            font-size: 2.5rem
-            &.active
-              -webkit-animation: rotate-loading .5s linear 0s infinite normal
-              animation: rotate-loading .5s linear 0s infinite normal
-      img
-        position: absolute
-        max-width: calc(100% - .5rem)
-        max-height: calc(100% - .5rem)
-        top: 50%
-        left: 50%
-        margin-right: -50%
-        transform: translate(-50%, -50%)
-      + button.delete
-        position: absolute
-        right: 0.4rem
-        bottom: 3.7rem
-        display: inline-block
-        width: 40px
-        height: 40px
-        padding: .375rem 0.6rem
-        border: 0
-        background-color: rgba(black, .2)
-        border-radius: 0
-    &.first-image:after
-      content: "대표사진"
-      position: absolute
-      width: 60px
-      height: 28px
-      line-height: 28px
-      left: 5px
-      top: 0
-      color: white
-      background-color: #384C67
-      font-size: 0.8rem
-      text-align: center
-  &.bulk-delete-abled
-    .unit
-      .img-thumbnail
-        opacity: .4
-        &.check-deleted
-          opacity: 1
-          border: 1px solid $red
+.custom-select.inline
+  width: auto
 
-// Slider ui
-.slider-ui
-  box-sizing: border-box
+.bg-light
+  background-color: #F5F5F5 !important
+
+.badge-primary
+  background: #4b95ff
   color: white
-  width: 100vw
-  z-index: 1005
-  position: fixed
-  bottom: 0
-  left: 0
-  background-color: #53627E
-  padding: 40px
-  height: 10rem
-  white-space: nowrap
-  color: white
-  transition: all .5s
-  .close
-    position: absolute
-    right: 1rem
-    top: 1.5rem
-    transition: all .3s
-    &:hover
-      filter: brightness(1)
-  &.show
-    bottom: 0
-  &.hidden
-    bottom: -10rem
-  table
-    th
-      font-weight: 300
-  &.slider-ui-white
-    background-color: rgba(white, .8)
 
-.slider-ui.slider-top
-  top: 0
-  &.show
-    top: 0
-  &.hidden
-    top: -10rem
+hr.dark
+  border-color: #929292
 
 .form-control-datepicker
   background: url('/assets/images/ic-calendar-gray.svg') center right .5rem no-repeat
 
+.input-group-text
+  color: #929292
+  background-color: #f8f9fb
+
 .info
-  color: $onda
+  color: $blue
   font-size: .85rem
   font-weight: 400
   padding: .5rem 0
@@ -632,7 +165,7 @@ hr.table-devider
       height: 100px !important
       -webkit-animation-duration: .85s !important
       animation-duration: .85s !important
-      background: url('/assets/images/rolling.png') center center no-repeat !important
+      background: red url('/assets/images/Rolling.png') center center no-repeat !important
       margin: 0 !important
       border: 0 !important
 
@@ -700,648 +233,223 @@ hr.table-devider
       button
         border-radius: 2px
 
-// Link List
-ul.link-list
-  li
-    padding: 1.2rem 0
-    border-bottom: 1px solid $border-color
+// Table
+.table
+  td
+    padding: 1rem .25rem
+  thead th
+    border: 0
+    padding: 1rem .25rem
+    font-weight: 600
+  tbody
+    td, th
+      border-top: 0
+      border-bottom: 1px solid $border-color
+  &.align-middle
+    td, th
+      vertical-align: middle
+  tr.dimed
+    td
+      opacity: .4
+  tr.border-bottom
+    th, td
+      border-bottom: 1px solid $border-color !important
+  .checkbox
+    .custom-control
+      display: inline-block
+      width: 2.5rem
+      padding: 0 .2rem
+      margin: 0 auto
+  tr.link
     cursor: pointer
 
-// order list
-ul.order-list
-  li
-    padding: 1rem
-    border-radius: 3px
-    border: 1px solid $border-color
-    margin: .5rem 0
-    cursor: move
-    cursor: grab
-    cursor: -moz-grab
-    cursor: -webkit-grab
-    user-select: none
-
-// Reservation-modal
-.reservation-modal
-  margin: 0
-  max-width: 100vw
-
-//----------- Layout -----------//
-#main-nav
-  @extend %display-flex
-  position: fixed
-  left: 0
-  top: 0
-  width: $left-side-width
-  height: 100vh
-  background-color: $onda
-  z-index: 1002
-  color: white
-  // transition: width .3s
-  .first-dapth
-    @extend %display-flex
-    flex-direction: column
-    flex-shrink: 1
-    transition: all .7s
-  .top-wrapper
-    height: 83px
-  .brand
-    display: block
-    padding: 1.5rem $left-side-padding
-    padding-bottom: 0
-    text-align: center
-    font-size: 1.5rem
-    word-break: keep-all
-    color: white
-    text-decoration: none
-    transition: opacity .1s
-  nav
-    margin-top: 2.5rem
-    position: relative
-    .nav-link
-      @extend %display-flex
-      align-items: center
-      padding: 1.2rem $left-side-padding
-      color: white
-      text-decoration: none
-      width: 100%
-      transition: background .3s
-      img
-        margin-right: .75rem
-      span
-        white-space: nowrap
-        display: inline-block
+.table.table-hover
+  tbody
+    tr
       &:hover
-        background-color: darken($onda, 3%)
-      &.active
-        background-color: $navy-blue
-    .nav-dropdown
-      .nav-link
-        transition: none
-    a.home
-      display: none
-    .foldOpt
-      position: fixed
-      bottom: 0
-      background-color: transparent
-      width: $left-side-width
-      &:hover
-        background-color: transparent
-      img
-        transition: all .3s
-        transform: rotate(1deg)
-  .first-depth-top
-    display: none
-    align-items: center
-    .brand
-      padding: 0 0 0 1rem
-      margin-right: auto
-    nav
-      margin: 0
-      display: flex
-      .nav-link
-        width: auto
-        flex-shrink: 0
-        font-size: 1.1rem
+        td
+          background-color: #FBFBFC
+          cursor: pointer
 
-    .nav-dropdown
-      position: relative
-      display: inline-block
-    .dropdown-content
-      display: none
-      position: absolute
-      background-color: white
-      min-width: 160px
-      box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1)
-      z-index: 1
-      padding: 1rem 1rem 1.5rem 1rem
-      .small
-        color: #bbb
-        margin: 1rem 1rem 1rem 1rem
-      a
-        color: #4C4C4C
-        padding: .35rem 1rem
-        text-decoration: none
-        display: block
-        font-weight: 400
-        &:hover
-          color: $blue
-      &.setting
-        right: 0
-        width: 44rem
-        padding: 1rem 2rem 2rem 2rem
-    .nav-dropdown:hover
-      .dropdown-content
-        display: block
-      .dropbtn
-        background-color: white
-        color: #4c4c4c
-        font-weight: 400
-
-
-// Two Depth Nav
-#main-nav
-  .first-depth
-    width: $left-side-width
-    flex-shrink: 0
-  .second-depth
-    width: $left-side-width
-    background-color: $navy-blue
-    vertical-align: center
-    flex-shrink: 0
-    .wrapper
-      @extend %display-flex
-      flex-direction: column
-      justify-content: flex-start
-      height: 100vh
-
-#main-nav.two-depth
-  width: calc(#{$left-side-width} * 2)
-  .nav-group
-    padding: 1.5rem $left-side-padding
-    .group-title
-      font-size: .85rem
-      opacity: .5
-      margin-bottom: 1rem
-      font-weight: 100
-    a
-      display: block
-      color: white
-      text-decoration: none
-      padding: .3rem 0
-      &.active
-        color: #A3F2BF
-  hr
-    border-color: lighten($navy-blue, 7%)
-    margin: 0 1.8rem
-  #nav-rateplan
-    .nav-group
-      margin-top: 19.6rem
-  #nav-payment
-    .nav-group
-      margin-top: 27.4rem
-
-// Sub Nav
-#sub-nav
-  position: fixed
-  top: 0
-  left: 0
-  width: 100%
-  height: 4.5rem
-  padding-left: $left-side-width
-  padding-right: 1.5rem
-  background-color: white
-  @extend %box-shadow
-  z-index: 1001
-  min-width: 950px
-  .navs
-    text-align: right
+.table.table-comfort
+  td, th
     padding: 1.5rem 0
-  a
-    color: #4f4f4f
-    padding: 1rem
-    text-decoration: none
-    flex-shrink: 0
-  .searchbox
-    margin-right: auto
-    input
-      outline: none !important
-      box-shadow: none
-      padding: 1.4rem
-      padding-left: 4.5rem
-      width: 3rem
-      transition: width .3s
-      background: url('/assets/images/search.svg') 2.2rem center no-repeat
-      cursor: pointer
-      &:focus
-        width: 20vw
-        background-position: right 1.5rem center
-        padding-left: 2.2rem
-        border-right: 1px solid lighten($border-color, 5%)
 
-// Content Container
-.content-container
-  @extend %display-flex
-  flex-direction: column
-  background-color: #f2f3f8
-  min-height: 100vh
-  width: 100%
-  padding: 6.7rem 2.2rem 0 calc(#{$left-side-width} + 2.2rem)
-  overflow-x: auto
-  overflow-y: hidden
-
-// Folded: Main Nav, Sub Nav, Container
-#main-nav.folded
-  width: 5.6rem
-  overflow: hidden
-  .first-depth
-    width: 5.6rem
-    .brand
-      display: none
-    .widget-timer
-      opacity: 0
-    nav
-      > a
-          span
-            visibility: hidden
-      a.home
-        display: block
-        margin-top: 3px
-        &.active
-          background: none
-      .foldOpt
-        img
-          transform: rotate(180deg)
-
-#sub-nav.folded
-  // transition: padding .3s
-  padding-left: 5.4rem !important
-
-.content-container.folded
-  // transition: padding .3s
-  padding-left: 7.6rem !important
-
-// Artboard
-.artboard
-  min-width: 950px
-  min-height: 600px
-  background-color: white
-  padding: 3rem 3rem 4rem 3rem
-  @extend %box-shadow
-  margin-bottom: 3rem
-  .board-title
-    font-weight: 600
-    font-size: 1.3rem
-    border-bottom: 1px solid $border-color
-    padding: 0 3rem 1.5rem 3rem
-    margin: -1.5rem -3rem 3rem -3rem
-  .board-container
-    max-width: 900px
-  .section-board
-    background-color: white
-    padding: 3rem
-    @extend %box-shadow
-    margin-bottom: 2.2rem
-    h4
-      font-weight: 600
-      font-size: 1.3rem
-
-// Two Depth Layout
-.two-depth
-  &#sub-nav
-    padding-left: calc(#{$left-side-width} * 2)
-  &.content-container
-    padding-left: calc(#{$left-side-width} * 2 + 2.2rem)
-
-// Footer
-footer
-  @extend %display-flex
-  align-items: center
-  justify-content: space-between
-  padding: 1.2rem 2.2rem
-  margin: auto -2.2rem 0 -2.2rem
-  font-size: .9rem
-  border-top: 1px solid $border-color
-
-
-//----------- 로그인 ---------------//
-.login
-  @extend %display-flex
-  flex-direction: column
-  justify-content: space-between
-  width: 100vw
-  height: 100vh
-  background: url('/assets/images/login-bg-01.png') no-repeat center bottom 20%
-  -webkit-background-size: cover
-  -moz-background-size: cover
-  -o-background-size: cover
-  background-size: cover
-  padding: 2rem
-  .login-box
-    background-color: white
-    border-radius: 5px
-    padding: 3rem 7vw
-    margin: 2rem 0 7rem 0
-  .btn-login
-    font-size: 1.4rem
-    padding: .7rem 0
-
-.hotel
-  background: url('/assets/images/login-bg-02.png') no-repeat center bottom 40%
-  -webkit-background-size: cover
-  -moz-background-size: cover
-  -o-background-size: cover
-  background-size: cover
-
-.search-select-modal
-  padding-top: 0
-  .search
-    background-color: $white-gray
-    padding: 1.5rem 2.2rem
-    margin: 0 -2.2rem
-  ul
-    margin: 0
-    li
-      padding: 1rem
-      border-bottom: 1px solid $border-color
-      cursor: pointer
-      transition: all .3s
-      &:hover
-        background-color: #FAFAFA
-
-.agreement-modal
-  h6
-    margin-bottom: 1.5rem
-    small
-      margin-left: .25rem
-      color: #64C2D0
-      font-weight: bold
-
-
-//----------- 대쉬보드 ---------------//
-.artboard.transparent
-  background-color: transparent
-  box-shadow: none
-  padding: 0
-
-.dashboard-unit
-  background-color: white
-  padding: 1.8rem 2.2rem
-  @extend %box-shadow
-  margin-bottom: 2.2rem
-  .title
-    font-size: 1.2rem
-    line-height: 1.2rem
-    font-weight: 600
-    margin-bottom: 1.5rem
-    span
-      font-weight: 300
-      font-size: 1rem
-      margin: 0 .25rem
-  table
-    td.empty
-      height: 20rem
-.dashboard-right
-  padding-left: 2.2rem !important
-
-
-.dashboard-summary, .dashboard-weather
-  height: 17rem
-
-.dashboard-summary
-  transition: all .7s
-  overflow: hidden
-  color: #222222
-  .date
-    text-align: center
-    margin-bottom: 1rem
-    .head
-      font-weight: 600
-      color: $blue
-      line-height: 1rem
-    .text
-      font-size: 2.1rem
-      font-weight: 400
-      color: #222222
-  .big-numbers
-    @extend %display-flex
-    width: 60%
-    margin: 0 auto
-    justify-content: space-between
-    .unit
-      text-align: center
-      cursor: pointer
-      .number
-        font-size: 4.1rem
-        font-weight: 400
-        color: #222222
-        &.zero
-          color: #E5E5E5
-      .text
-        line-height: 1rem
-
-.dashboard-summary.hidden
-  flex: 0 1 0 !important
-  padding: 0
-  *
-    transition: all .3s
-    opacity: 0
-
-.dashboard-weather
-  position: relative
-  margin-left: 2.2rem
-  background-color: $onda
-  color: white
-  transition: all .7s
-  .area
-    text-align: center
-    margin-top: 0
-    margin-bottom: -1rem
-    width: 15rem
-  .weather-wrapper
-    @extend %display-flex
-    height: calc(100% - 1.2rem)
-    justify-content: space-between
-    .weather-day
-      @extend %display-flex
-      flex-direction: column
-      transition: all .5s
-      width: 15rem
-      .day
-        font-size: 1.8rem
-        text-align: center
-        margin-top: 1rem
-      .weather-icon
-        @extend %display-flex
-        width: 100%
-        height: 6rem
-        align-items: center
-        justify-content: center
-        flex-shrink: 0
-      .text
-        text-align: center
-.dashboard-weather:after
-  position: absolute
-  content: ''
-  right: 2rem
-  bottom: 2rem
-  background: url('/assets/images/plus-box.svg') 0 0 no-repeat
-  width: 36px
-  height: 35px
-
-.dashboard-weather-expend
-  position: absolute
-  right: -100%
-  top: 0
-  width: 29rem
-  margin-left: 0
-  transition: all .4s
-  // transition-delay: .2s
-  &:after
-    display: none
-  .weather-day
-    opacity: 0
-
-.dashboard-weather-expend.show
-  display: block
-  right: 0
-  width: 100%
-  .weather-day
-    opacity: 1
-
-.dashboard-occupancy
-  .header
-    @extend %display-flex
-    align-items: center
-    margin-bottom: 2rem
-    .year-month
-      font-size: 1.3rem
-      color: #222222
-    .text
-      margin-right: 2rem
-      span
-        vertical-align: middle
-      .big
-        margin-left: .5rem
-        font-size: 2rem
-.dashboard-manual
-  flex: 0 0 20rem
-  margin-left: 2.2rem
-
-.logo-list
-  margin-top: -2rem
-  li
-    text-align: center
-    padding-top: 1rem
-    img
-      width: 8.5rem
-
-
-
-//----------- 예약목록 --------------------//
-.list-top-filter
-  border: 1px solid #929292
-  padding: 1.5rem 2.2rem
-  margin-bottom: 3rem
-
-
-//----------- 객실달력, 일별요금 달력, 방막기 달력 -----------//
-.calendar-controler
-  .year-month
-    color: #222222
-    font-size: 2rem
-    font-weight: 400
-  .btn-white
-    padding-bottom: .5rem
-.status-model
-  align-items: flex-end
-  font-size: 0.85rem
-  .status-badge
-    padding: .15rem
-    margin-right: .3rem
-    flex-shrink: 0
-    &.callonly
-      background-position: 3px 3px
-    &.blocked
-      background-position: 2px 2px
-    &:before
-      left: calc(50% - 5px)
-      top: calc(50% - 5px)
-      font-size: 10px
-      line-height: 10px
-  .color-amended, .color-eve
-    display: inline-block
-    width: 1.2rem
-    height: 1.2rem
-    margin-right: .25rem
-    position: relative
-    top: 1px
-  .color-amended
-    background-color: #dcdcff
-  .color-eve
-    background-color: #f9d6d6
-
-.table-calendar
-  width: 100%
-  min-width: 900px
-  th, td
-    padding: .8rem
-    width: 14.29%
-    vertical-align: top
-    z-index: 1
-  .dimed
-    opacity: .4
-  .today
-    box-shadow: inset 1px 1px 0 0 #222222
-    border-color: #222222
-    z-index: 20
-    .room
-      margin-right: -.7rem
-      margin-left: -.7rem
-      padding-right: .7rem
-      padding-left: .7rem
-  thead
-    th
-      text-align: center
-      font-weight: 400
-  tbody
-    td.past-day
-      .day-header, .room, .price
-        opacity: .4
-
-    td.other-month
-      background-color: $white-gray
-    .day-header
-      @extend %display-flex
-      align-items: center
-      margin-bottom: .5rem
-      .season
-        margin-left: auto
-        font-size: .9rem
-    .room
-      @extend %display-flex
-      align-items: center
-      margin: 0 -.8rem
-      padding: .4rem .8rem
-      cursor: pointer
-      .name
-        padding: 0 5px
-        line-height: 1rem
-      .stock
-        margin-left: auto
-        font-size: .85rem
-      &.dimed
-        color: $light
-    .price
-      @extend %display-flex
-      margin: .4rem 0
-      align-items: flex-end
-      .channel
-        font-size: .85rem
-      .value
-        margin-left: auto
-        text-align: right
-
-  tbody
-    .status-badge
-      cursor: pointer
-      transition: all .3s
-      &:hover
-        box-shadow: inset 0 0 0 1rem rgba(0, 0, 0, .05)
-    th
-      font-weight: 300
-    td
-      line-height: 1rem
-
-.table-calendar-daily
+.table-bordered-list
   td
-    padding-bottom: 1.5rem
-  .custom-control
-    margin-top: .7rem
-  td.amended
-    background-color: #EAEAFF
-  td.eve
-    background-color: #FCE6E6
+    border-right: 1px solid $border-color
+    &:last-child
+      border-right: none
 
+.table-dl
+  border-top: 1px solid #929292
+  .title
+    width: 10rem
+    padding-left: 2rem
+
+
+// Custom Checkbox & Radio
+.custom-control
+  margin-left: .25rem
+  .custom-control-label
+    font-weight: 300
+    padding-left: 1px
+  &.custom-checkbox
+    margin-left: .2em
+    .custom-control-label
+      &:after
+        width: 1.43em
+        height: 1.43em
+        background-color: white
+        border: 1px solid #bbb
+        border-radius: 3px
+        left: -.2em
+        top: .05em
+    .custom-control-input:checked
+      + .custom-control-label
+        &:after
+          background: $dark url('/assets/images/checkbox_check.svg') center center no-repeat
+          border-color: $dark
+  &.custom-radio
+    .custom-control-label
+      &:after
+        width: 20px
+        height: 20px
+        background-color: white
+        border: 1px solid #bbb
+        border-radius: 1.4rem
+        left: -3px
+        top: 1px
+    .custom-control-input:checked
+      + .custom-control-label
+        &:after
+          background: $dark url('/assets/images/Oval.svg') center center no-repeat
+          border-color: $dark
+
+// Datepicker
+.theme-onda
+  &.bs-datepicker
+    .bs-datepicker-container
+      padding: 0
+      .bs-datepicker-head
+        height: 60px
+        padding: 15px 0
+        background-color: #fff
+        text-align: center
+        button
+          font-size: 14px
+        .previous
+          > span
+            color: $blue
+        .next
+          > span
+            color: $blue
+        .current
+          > span
+            color: #222
+      .bs-datepicker-body
+        border: 0
+        padding: 0
+        margin: 0 20px 20px
+        table
+          border-collapse: collapse
+          thead
+            border-top: 1px solid #000
+            border-bottom: 1px solid #000
+          th
+            padding: 8px 0
+            color: #222
+            font-size: 12px
+            font-weight: 300
+          th.saturday
+            color: #157FFC
+          th.holiday
+            color: #d0021b
+        td
+          &.selected
+            span
+              background-color: $blue
+          span
+            display: inline-block
+            width: 100%
+            height: 100%
+            -webkit-border-radius: 0
+            -moz-border-radius: 0
+            border-radius: 0
+            text-align: center
+            line-height: 40px
+            &:not(.is-other-month, .selected)
+              color: #222
+          span.disabled
+            background-color: #efefef
+          span.selected
+            background-color: $blue
+          span.today
+            &:after
+              content: ""
+              position: absolute
+              top: 6px
+              left: 18px
+              width: 4px
+              height: 4px
+              border-radius: 2px
+              background-color: #222
+            &.is-other-month
+              &:after
+                background-color: #bfbfbf
+            &.selected
+              &:after
+                background-color: #fff
+          span.saturday:not(.is-other-month)
+            color: #157FFC
+          span.holiday:not(.is-other-month)
+            color: #d0021b
+        td.week
+          span
+            color: $blue
+
+// Purshase Box
+.purchase-box
+  border-top: 1px solid $border-color
+  border-bottom: 1px solid $border-color
+  padding: 2rem 0
+  .d-flex
+    font-size: 1.2rem
+  .dimed
+    *
+      color: #bbb
+    .except-dimed
+      background-color: white
+
+// PC Body
+.pc-body
+  max-width: 1200px
+  margin: 0 auto
+  padding: 0
+
+.find-ui
+  max-width: 300px
+  margin: 5rem auto 0 auto
+
+// Global Footer
+.bp-footer
+  padding: 2rem 0
+  margin-top: 8rem
+  border-top: 1px solid $border-color
+  font-size: .8rem
+  color: #bbb
+  line-height: 1.5rem
+  b
+    color: #929292
+    margin-right: .25rem
+  h6
+    color: #929292 !important
+    margin-bottom: 1rem !important
+  .col-sm
+    .mr-3
+      float: left
+
+//- Status Badge
 .status-badge
   position: relative
   display: inline-block
@@ -1351,14 +459,13 @@ footer
   width: 12px
   height: 12px
   box-sizing: content-box
-  padding: 8px
-  border-radius: 2px
+  padding: 5px
   &:before
     position: absolute
-    left: calc(50% - 7px)
-    top: calc(50% - 7px)
-    font-size: 14px
-    line-height: 14px
+    left: center
+    top: center
+    font-size: 12px
+    line-height: 12px
     font-weight: 400
   &.available
     background-color: $available
@@ -1374,786 +481,647 @@ footer
     &:before
       content: '대'
   &.callonly
-    background: $callonly url('/assets/images/callonly.svg') 8px 9px no-repeat
+    background: $callonly url('/assets/images/callonly.svg') center no-repeat
     background-size: 11px
   &.blocked
-    background: $blocked url('/assets/images/blocked.svg') 8px 8px no-repeat
+    background: $blocked url('/assets/images/blocked.svg') center no-repeat
     background-size: 13px
 
-.room-block-checkbox
-  &.custom-checkbox
-    .custom-control-label
-      &:before
-        top: 0.8rem !important
-      &:after
-        top: 0.5rem !important
+//- Topper --//
+.bp-topper
+  @extend %display-flex
+  align-items: center
+  border-bottom: 1px solid $border-color
+  padding: 0 0
+  .title
+    margin: 0
+    margin-right: auto
+    font-weight: 400
+  .tab
+    color: #4c4c4c
+    font-size: 1rem
+    padding: 1.5rem
+    line-height: 1rem
+    text-decoration: none
+    &.active
+      // border-bottom: 3px solid #4F4F4F
+      box-shadow: inset 0 -3px 0 0 #4f4f4f
+    .badge
+      font-size: 1rem
+      line-height: 1.1rem
+      padding: .3rem .6rem
+      margin: -.3rem 0
+      font-weight: normal
+  .btn-primary
+    background-color: #4275C4
 
-.calendar-dropdown
-  min-width: 21rem
+#menu
+  a
+    color: white
+    border-bottom: 1px solid $washed-navy
+    text-decoration: none
+
+//- Calendar Control
+.calendar-controler
+  margin-top: 3.5rem
+  .year-month
+    font-size: 2rem
+    font-weight: 400
+  .btn-white
+    padding-bottom: .5rem
+
+//- Status Model
+.status-model
+  align-items: flex-end
+  font-size: 0.85rem
   .status-badge
-    position: relative
-    top: 1px
     padding: .15rem
-    margin-right: .5rem !important
+    margin-left: 1.5rem
+    margin-right: .3rem
     flex-shrink: 0
     &.callonly
       background-position: 3px 3px
     &.blocked
       background-position: 2px 2px
-    &:before
-      left: calc(50% - 5px)
-      top: calc(50% - 5px)
-      font-size: 10px
-      line-height: 10px
-  .channel
-    width: 5rem
-    font-size: .85rem
-    color: $light
-    margin-left: auto
-    padding-left: 1rem
 
-//-- Slim Form
-.form-slim
-  position: relative
-  @extend %display-flex
-  justify-content: flex-end
-  margin-bottom: .75rem
-  .label
-    position: absolute
-    left: 0
-    bottom: .2rem
-  .input
-    background-color: transparent
-    border: none
-    border-bottom: 2px solid $border-color
-    box-sizing: border-box
-    padding: .5rem 0 .5rem 5rem
-    position: relative
-    width: 100%
-    text-align: right
-    line-height: 1em
-    &:focus
-      outline: none
-    &:read-only
-      border: none
-    &.pencil
-      padding-right: 1.5rem
-      background: url('/assets/images/pencil.svg') center right no-repeat
-      border-bottom: 2px solid $border-color
-    &.border-0
-      border: none !important
-  textarea.input
-    line-height: 1.5rem
-    text-align: left
-    padding-left: 0
-    padding-top: 0
-    min-height: 1.75rem
-  .input:focus + .underline
-    transform: scale(1)
-  .underline
-    background-color: $onda
-    display: inline-block
-    height: 2px
-    left: 0
-    margin-top: -4px
-    position: absolute
-    bottom: 0
-    -webkit-transform: scale(0, 1)
-    transform: scale(0, 1)
-    -webkit-transition: all .4s
-    transition: all .4s
-    width: 100%
-  select.custom-select
-    width: auto
-
-// PMS Slider
-.pms-slider
-  position: fixed
-  top: 0
-  left: 0
-  width: 100vw
-  height: 100vh
-  z-index: 10
-  .layover
-    width: 100%
-    height: 100%
-    background: rgba(0,0,0,.25)
-  .pms-slider-board
-    position: absolute
-    right: 0
-    top: 0
-    display: flex
-    flex-direction: column
-    width: 24.5rem
-    height: 100vh
-    background-color: white
-    box-shadow: 0 0 .7rem 0 rgba(0,0,0,.25rem)
-    .label
-      font-size: .85rem
-      color: #929292
-      margin-bottom: .45rem
-    .pms-slider-header
-      flex-shrink: 0
+//- 객실달력
+.table-calendar
+  width: 100%
+  // min-width: 900px
+  th, td
+    padding: .8rem
+    width: calc(100% / 7)
+    vertical-align: top
+  .dimed
+    opacity: .4
+  .today
+    box-shadow: inset 0 0 0 1px #222222
+    .room
+      margin-left: -.7rem
+      margin-right: -.7rem
+      padding-left: .7rem
+      padding-right: .7rem
+  thead
+    th
+      text-align: center
+      font-weight: 400
+  tbody
+    td.other-month
+      background-color: $white-gray
+    .day-header
       @extend %display-flex
       align-items: center
-      width: 100%
-      padding: 1.8rem 2.2rem
-      border-bottom: 1px solid $border-color
-      .x
+      margin-bottom: 19px
+      .season
         margin-left: auto
-        cursor: pointer
-    .pms-slider-body
-      padding: 1.5rem 1.5rem 2.2rem 2.2rem
-      margin-right: 1rem
-      overflow-y: scroll
-      overflow-x: visible
-    .pms-slider-footer
-      flex-shrink: 0
-      padding: 0rem 2.2rem 1rem 2.2rem
-      background-color: $white-gray
-      width: 100%
-      .form-slim
-
-        input:read-only
-          border-bottom: 2px solid $border-color
-    ::-webkit-scrollbar
-      -webkit-appearance: none
-      width: 6px
-    ::-webkit-scrollbar-thumb
-      background-color: rgba(black, .1)
-      -webkit-box-shadow: 0 0 1px rgba(black, .1)
-  .buttons
-    margin-top: 3rem
-    .btn
-      width: 100%
-      margin-bottom: .5rem
-      padding: .8rem
-  .toggle-btn
-    position: relative
-    background-color: #F2F3F8
-    padding: 1.5rem 2.2rem
-    cursor: pointer
-    transition: all .3s
-    font-size: .85rem
-    &:after
-      content: ''
-      position: absolute
-      right: 2rem
-      top: 47%
-      width: 20px
-      height: 20px
-      background: url('/assets/images/arrow-up.svg') 0 0 no-repeat
-      transition: all .3s
-  .toggle-btn[aria-expanded="true"]
-    &:after
-      background: url('/assets/images/arrow-down.svg') 0 0 no-repeat
-  .pms-btn
-    flex-shrink: 0
-    padding: .8rem 0
-    border-radius: 0
-
-
-
-//----------- 요금설정 Page -----------//
-.table-rate
-  td
-      padding: .5rem .25rem
-  tr.sub-header
-    th
-      font-weight: 300
-  input.form-control[type='text']
-    text-align: right
-    width: 6rem
-    margin: 0 auto
-  .percentage-form
-    @extend %display-flex
-    align-items: center
-    justify-content: center
-    input.form-control
-      width: 5rem
-    span
-      margin-left: .5rem
-      color: #aaa
-
-//---------- 할인요금 & 객실달력-차트보기 Pages --------------//
-.chart-row
-  @extend %display-flex
-  align-items: center
-  // border-bottom: 1px solid lighten($border-color, 2%)
-  .row-title
-    width: 12%
-    padding-left: 2rem
-  .dd-wrapper
-    @extend %display-flex
-    align-items: flex-end
-    width: calc(100% - 9rem)
-    .dd
+        color: $light
+        font-size: .9rem
+    .room
       position: relative
-      width: calc( 100% / 14)
-      text-align: center
-      padding: .7rem 0
-      height: 100%
-      *
-        text-align: center
-      .basic-price
-        padding-right: .75rem
-        text-align: right
-      .form-control
-        text-align: right
-        border-radius: 0
-        border-right: none
-        &:focus
-          outline: none !important
-          box-shadow: inset 0 0 0 1px $onda !important
-      &:last-child
-        input.form-control
-          border-right: 1px solid $border-color
-      .discount
-        color: $red
-        text-align: right
+      @extend %display-flex
+      align-items: center
+      margin: 0 -.8rem
+      padding: 5px .8rem
+      cursor: pointer
+      .name
+        padding: 0 5px
+        line-height: 1rem
+      .stock
+        margin-left: auto
         font-size: .85rem
-        padding-right: .9rem
-        padding-bottom: .25rem
-        margin-top: -.2rem
-      &.applied
-        background-color: #F3FAED
-        .discount
-          padding-bottom: .12rem
-        .form-control-plaintext
-          text-align: right
-          padding: 0 .9rem 0 0
-          height: 1rem
-  &.auto-discount
-    margin-top: -.7rem
-
-
-.chart-row.header
-  position: relative
-  align-items: stretch
-  margin-bottom: 1px
-  border-bottom: 1px solid #929292
-  border-top: 1px solid #929292
-  padding-right: 2px
-  z-index: 10
-  background-color: white
-  .dd
-    padding-top: 1.25rem
-    cursor: pointer
-    background-color: white
-    .date
-      font-size: 1.5rem
-      font-weight: 400
-      margin-top: .1rem
-    .remark
-      font-size: .85rem
-      margin-top: .1rem
-      margin-bottom: .4rem
-    &.today
-      box-shadow: 0 0 0 1px #222222
-      border-right: 1px solid #222222
-    &.active
-      background-color: $washed-navy
-      color: white
-      box-shadow: 0 0 0 1px darken($washed-navy, 5%)
-      .remark
-        color: white !important
-
-.chart-row.room-stock, .chart-row.basic-price
-  border-bottom: none
-  .row-title, .dd
-    background-color: $white-gray
-    padding-top: 1.1rem
-    padding-bottom: 1.1rem
-    border-top: 1px solid lighten($border-color, 2%)
-
-.chart-row.room-stock
-  margin-top: -1px
-  .row-title
-    font-weight: 400
-
-.chart-row.basic-price
-  .dd
-    text-align: right
-    padding-right: 0
-
-.set-start-day
-  position: relative
-  .toggle-datepicker
-    visibility: hidden
+      &.dimed
+        color: $light
+    .price
+      padding-left: 1.8rem
+      margin-top: -.4rem
+  .call-info
+    display: none
     position: absolute
-    top: 1rem
-    left: calc(-50% + 1rem)
-
-// 객실달력 - 차트보기
-.chart-row.header.chart-header
-  .row-title
-    width: calc(15% + 1px)
-  .dd-wrapper
-    width: 85%
-
-.bar-chart-row
-  display: table
-  width: 100% !important
-  .row-title
-    display: table-cell
-    width: 15%
-    vertical-align: middle
-    border-bottom: 1px solid #e5e5e5
-  .row-title, .dd
-    height: 4rem
-    line-height: 1rem
-  .row-title
-    padding-left: 1rem
-  .roomtype-wrapper
-    display: table-cell
-    width: 85%
-    padding-right: 1px
-    .chart-container
-      margin-bottom: 1px
-  .chart-container
-    position: relative
+    top: 2rem
+    left: 0
     width: 100%
-    .chart-base
-      display: grid
-      grid-template-columns: repeat(14, 1fr)
-      grid-gap: 1px
-      z-index: 0
-      .dd
+    background-color: white
+    border: 1px solid #929292
+    z-index: 10
+    padding: 1.2rem
+    h6
+      margin-bottom: 1rem
+    &.show
+      display: block
+
+.table-calendar-small
+  td
+    padding: 1rem 0
+    cursor: pointer
+    width: calc(100% / 7)
+    &.dimed
+      background-color: $white-gray
+      opacity: .5
+    &.active
+      box-shadow: inset 0 0 0 1px #222222
+
+.table-room-select
+  border-top: 1px solid #929292
+  .room-info
+    width: 10rem
+    text-align: left
+    .room-title
+      white-space: nowrap
+      text-overflow: ellipsis
+    .size
+      font-size: .8rem
+      padding: .3rem 0 .3rem 0
+    p
+      margin-bottom: 0
+  .thumbnail
+    width: 10rem
+    height: 6rem
+    @extend %thumbnail-image
+  .btn-callonly
+    background-color: #FFB822
+    color: white
+  .call-info2
+    display: none
+    position: absolute
+    top: 0
+    right: 9rem
+    width: 100%
+    background-color: white
+    border: 1px solid #929292
+    z-index: 10
+    padding: 1.2rem
+    h6
+      margin-bottom: 1rem
+    &.show
+      display: block
+
+  .unit-wrapper
+    @extend %display-flex
+    justify-content: space-between
+    padding-left: 2rem
+    .room-id
+      width: 2rem
+      font-size: .85rem
+      color: #bbb
+      align-self: flex-end
+      padding-bottom: .5rem
+    .value
+      padding-left: 1rem
+      min-width: 4rem
+      align-self: center
+      input[type='number']
+        text-align: center
+    .price
+      position: relative
+      width: 10rem
+      padding-left: 2rem
+      text-align: left
+      align-self: center
+    &.added
+      margin-top: 1rem
+      .room-id
+        align-self: center
+        padding-bottom: 0
+
+
+// Bootstrap Carousel
+.carousel-indicators
+  bottom: -3px
+  li
+    width: 5px
+    height: 5px
+    border-radius: 5px !important
+    margin-right: 3px
+    margin-left: 3px
+
+.carousel-item
+  min-height: 200px
+  background: no-repeat center center scroll
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+
+
+//- Daterange Layer
+.daterange
+  position: relative
+  .daterange-layer
+    display: none
+    padding: 2rem 1.5rem
+    position: absolute
+    left: 0
+    top: 2.35rem
+    z-index: 900
+    background: white
+    border: 1px solid $border-color
+    text-align: center
+    width: 550px
+    box-shadow: 0 .3rem 1rem 0 rgba(black, .2)
+    .period
+      font-size: 1.2rem
+      margin-bottom: 1rem
+    .datepicker
+    .buttons
+      margin-top: 2rem
+      .btn
+        font-size: 1.2rem
+        font-weight: normal
+        margin: 0 1px
+    &.show
+      display: block
+
+
+//- Mobile View Only --//
+.mobile-body
+  display: none
+.mobile-calendar-controler
+  padding: 2rem 0
+  .date
+    text-align: center
+    font-size: 1.3rem
+    img
+      vertical-align: middle
+      margin-left: .5rem
+      position: relative
+      top: -2px
+  button.pre
+    padding: .15rem .8rem .4rem .7rem
+  button.next
+    padding: .15rem .7rem .4rem .8rem
+.table-mobile-calendar
+  width: 100%
+  border-top: 1px solid #929292
+  margin-bottom: 5rem
+  th,td
+    border-right: 1px inset $border-color
+    border-bottom: 1px inset $border-color
+    padding: 0 .25rem
+    width: 5rem
+  th:last-child, td:last-child
+    border-right: none
+  td.title
+    background-color: $white-gray
+    width: 5rem
+    a
+      text-decoration: none
+      color: #4c4c4c
+  thead
+    th,td
+      border-bottom: 1px solid #929292
+    th
+      padding: 1rem 0
+      .day
+        font-weight: normal
+      .date
+        font-size: 1.3rem
+        font-weight: normal
+  tbody
+    td
+      user-select: none
+      height: 7.5rem
+      &.dimed
+        opacity: .4
+      &.selected
+        background-color: #ecf5ff
+      .price
+        @extend %display-flex
+        flex-direction: column
+        justify-content: flex-end
+        height: 4.5rem
+        padding-top: 1rem
+      .status
         @extend %display-flex
         align-items: center
         justify-content: center
-        box-shadow: 0 0 0 1px #e5e5e5
-        cursor: pointer
-        z-index: 0
-      .block
-        align-items: center
-        grid-row: 1
-        padding: 1.5rem 0rem 1.5rem 1rem
-        height: calc(4rem - 1px)
-        line-height: 1rem
-        color: white
-        transition: all .3s
-        text-overflow: ellipsis
-        white-space: nowrap
-        overflow: hidden
-        z-index: 1
-        &.complete
-          background-color: $complete
-          box-shadow: 0 0 0 1px #CA445A
-        &.waiting
-          background-color: $waiting
-          box-shadow: 0 0 0 1px #3D7AD1
-        &.callonly
-          background-color: $callonly
-          box-shadow: 0 0 0 1px #DD9F1B
-        &.blocked
-          background-color: $light
-          box-shadow: 0 0 0 1px #A4A4A4
-        .ic
-          height: 1.3rem
-        &:hover
-          cursor: pointer
-          &.complete
-            background-color: darken($complete, 3%)
-          &.waiting
-            background-color: darken($waiting, 3%)
-          &.callonly
-            background-color: darken($callonly, 3%)
-          &.blocked
-            background-color: darken($light, 3%)
-
-.warning
-  &:before
-    content: "!"
-    display: block
-    position: absolute
-    z-index: 1
-    left: .35rem
-    top: 2.75rem
-    width: 12px
-    height: 12px
-    border-radius: 12px
-    background-color: $orange
-    color: white
-    font-size: .5rem
-    text-align: center
-    line-height: .85rem
-
-
-//---------- 업체설정 Pages --------------//
-.image-upload
-  .unit
-    padding-bottom: .75rem
-    .image
-      position: relative
-      height: 130px
-      border: 1px solid $border-color
-      @extend %cover-image
-    &.first-image
-      .image:before
-        position: absolute
-        left: 0
-        top: 0
-        content: '대표사진'
-        padding: .25rem .5rem
-        background-color: #384C67
-        color: white
+        height: 3rem
         font-size: .85rem
-    .delete
-      position: absolute
-      right: 0
-      bottom: 0
-      background-color: rgba(black, .2)
-      color: white
-      text-decoration: none
-      padding: .25rem
-      transition: all .3s
+        line-height: .85rem
+        .status-badge
+          margin-right: .25rem
+          padding: .25rem
+      a
+        text-decoration: none
+        color: #4c4c4c
 
-//----------- 시즌달력 page -----------------//
 
-// 비수기
-$cal-season01: white
-// 준성수기
-$cal-season02: #86A9E9
-// 성수기
-$cal-season03: #F16C6C
-// 커스텀 시즌스
-$cal-season04: #F2BC48
-$cal-season05: #8BCE54
-$cal-season06: #8F85F4
-$cal-season07: #D288DB
-$cal-season08: #64C2D0
+.mobile-footbutton
+  border-radius: 0
+  font-size: 1.1rem
+  padding: 1rem 0
+#bookSelectedBtn
+  display: none
+  position: fixed
+  bottom: 0
 
-.rectangle
-  width: 1.5rem
-  height: 1.5rem
-  background: $white-gray
-  display: block
-  &.season01
-    background-color: $cal-season01
-    box-shadow: inset 0 0 0 1px $border-color
-  &.season02
-    background-color: $cal-season02
-  &.season03
-    background-color: $cal-season03
-  &.season04
-    background-color: $cal-season04
-  &.season05
-    background-color: $cal-season05
-  &.season06
-    background-color: $cal-season06
-  &.season07
-    background-color: $cal-season07
-  &.season08
-    background-color: $cal-season08
+#viewPictureModal
+  overflow-y: hidden
+  .modal-dialog
+    margin: 0
+    .modal-content
+      background-color: $dark
+      height: 100vh
+      .modal-header
+        border-bottom: none
+      .modal-body
+        color: white
+        padding: 0
+        &.d-flex
+          flex-direction: column
+          justify-content: flex-end
+        .carousel
+          .carousel-item
+            height: 33vh
+        .detail
+          height: 33vh
+          padding: 1.5rem
+          font-weight: lighter
+          font-size: .85rem
+          word-break: keep-all
+          .room-name
+            font-size: 1.2rem
+            margin-bottom: .5rem
 
-table
-  .rectangle
-    margin: 0 auto
+#viewPictureModal-pc
+  .modal-dialog
+    margin-top: 0
+    margin-bottom: 0
+    .modal-content
+      background-color: $dark
+      height: 100vh
+      .modal-header
+        border-bottom: none
+      .modal-body
+        color: white
+        padding: 0
+        &.d-flex
+          flex-direction: column
+          justify-content: flex-end
+        .carousel
+          .carousel-item
+            height: 35rem
+        .detail
+          height: 15rem
+          padding: 1.5rem
+          font-weight: lighter
+          font-size: .85rem
+          word-break: keep-all
+          .room-name
+            font-size: 1.2rem
+            margin-bottom: .5rem
 
-.calendar-group
-  .month-wrapper
-    float: left
-    height: 18rem
-    margin-left: 3rem
-    .month-title
-      font-size: 1.1rem
-      font-weight: 400
+#viewPictureModal-responsive
+  .modal-dialog
+    margin-top: 0
+    margin-bottom: 0
+    .modal-content
+      background-color: $dark
+      height: 100vh
+      .modal-header
+        border-bottom: none
+      .modal-body
+        color: white
+        padding: 0
+        &.d-flex
+          flex-direction: column
+          justify-content: flex-end
+        .carousel
+          .carousel-item
+            height: 35rem
+        .detail
+          height: 15rem
+          padding: 1.5rem
+          font-weight: lighter
+          font-size: .85rem
+          word-break: keep-all
+          .room-name
+            font-size: 1.2rem
+            margin-bottom: .5rem
+
+.mobile-container
+  background-color: $white-gray
+  .board
+    background-color: white
+    margin-bottom: 1rem
+    padding: 1.5rem
+    p
+      line-height: 1.5rem
+    hr
+      margin-top: 1.8rem
+      margin-bottom: 1.8rem
+    .form-row
       margin-bottom: .5rem
-    .tabel-calendar-small
-      // border: 1px solid $border-color
-      th, td
-        // border: 1px solid $border-color
-        text-align: center
-        width: 2rem
-        height: 2rem
-        vertical-align: middle
-      th
-        font-weight: 300
-      tbody
-        td
-          position: relative
-          overflow: hidden
-          cursor: default
-          &.today
-            box-shadow: inset 0 0 0 2px #222222
-          &.holiday
-            &:after
-              position: absolute
-              right: -6px
-              top: -6px
-              content: ''
-              width: 12px
-              height: 12px
-              transform: rotate(45deg)
-              background-color: #222222
-          &.season02, &.season03, &.season04, &.season05, &.season06, &.season07, &.season08
-            color: white
-          &.season01
-            background-color: $cal-season01
-          &.season02
-            background-color: $cal-season02
-          &.season03
-            background-color: $cal-season03
-          &.season04
-            background-color: $cal-season04
-          &.season05
-            background-color: $cal-season05
-          &.season06
-            background-color: $cal-season06
-          &.season07
-            background-color: $cal-season07
-          &.season08
-            background-color: $cal-season08
-
-// 문자발송 정보
-.sms-form
-  background-color: #F0F7FF
-  border-radius: 10px
-  width: 85%
-  margin: .5rem auto 0 auto
-  padding: 1.25rem
-.text-length
-  text-align: right
-  width: 85%
-  margin: .5rem auto 0 auto
-  font-size: .85rem
-  color: #4f4f4f
-
-// 판매사 연동신청
-.bi-wrapper
-  border: 1px solid $border-color
-  float: left
-  margin: 0 .5rem 1rem .5rem
-  .image
-    @extend %display-flex
-    align-items: center
-    justify-content: center
-    width: 120px
-    height: 60px
-  .view-detail
-    display: block
-    text-align: center
-    padding: .5rem 0
-    border-top: 1px solid $border-color
-
-// 판매사 연동현황
-.table-gds-status
-  margin-bottom: -1px
-  border-top: 0
-  td
-    padding: 1rem 1.5rem
-  td.title
-    width: 15%
-  .channel
-    @extend %display-flex
-    align-items: center
-    .bi
-      max-width: 75px
-      max-height: 25px
-      margin-right: .5rem
-
-// 통계
-.summary
-  .revenue
-    font-size: 2.2rem
-    .number
-      font-size: 3.5rem
-      line-height: 3.5rem
-      color: $blue
-      font-weight: 600
-      margin-right: .3rem
-  table
-    width: 90%
-    margin: .75rem 0 .2rem 0
-    td
-      padding: .75rem 1.2rem
-
-.brief
-  text-align: center
-  border-left: 1px solid $border-color
-  padding: 0 3%
-  &:first-child
-    border: none
-  h4
-    margin-bottom: .3rem
-    white-space: nowrap
-  .value
-    padding: 2.4rem 0
-    font-size: 1.3rem
-    white-space: nowrap
-    .number
-      font-size: 2rem
-      color: $blue
-      margin-right: .3rem
-      font-weight: 400
-      position: relative
-      top: .1rem
-  .seperate
-    margin-top: 1rem
-    div
+    .room-title
       @extend %display-flex
-      justify-content: space-between
-      line-height: 1.7rem
+      align-items: flex-start
+      margin-bottom: 1.5rem
+      .name
+        font-size: 1.3rem
+    .group-wrapper
+      @extend %display-flex
+      .group-label
+        line-height: 1em
+      .group-content
+        margin-left: auto
+        > .wrapper
+          @extend %display-flex
+          justify-content: flex-end
+          align-items: center
+          margin-bottom: .5rem
+          &:last-child
+            margin-bottom: 0
+      .value-coloumn
+        min-width: 6rem
+        padding-left: 1rem
+        text-align: right
+        line-height: 1em
+        .custom-select
+          width: calc(100% - 1rem)
+    .agreement-box
+      border: none
+      background-color: $white-gray
+      font-size: .85rem
+      padding: .25rem
 
-// 직원관리 페이지
-.custom-control-label
-  .outer-link
-    margin-left: .5rem
-    text-decoration: none
-    color: #929292
+.btn-x
+  box-sizing: content-box
+  padding: .35rem
+  line-height: 0
 
-
-
-//---------- Error Pages --------------//
-.error
-  @extend %display-flex
-  justify-content: center
-  align-items: center
-  width: 100vw
-  height: 100vh
-  background-color: #A1CFFF
-  color: white
-  .title
-    font-size: 4.2rem
-    font-weight: 600
+#book-description
+  position: relative
+  border-bottom: 1px solid $border-color
   p
-    font-size: 1.2rem
-    margin-bottom: 2.2rem
+    height: 16.8rem
+    overflow: hidden
   .btn
-    padding: .75rem 10rem
-
-
-// 영수증 도장
-.stamp
-  position: absolute
-  right: -12rem
-  top: -.5rem
-  height: 97px
-  width: 200px
-  color: #bf304B
-  font-weight: bold
-  transform: rotate(-5deg)
-  .background
     position: absolute
-    left: 0
-    top: 0
-    width: 100%
-  .name
-    position: absolute
-    left: 0
-    top: 35px
-    width: 100%
-
-
-//---------- Responsive: Smaller than 1500px ----------//
-@media only screen and (max-width: 1499px)
-  html
-    font-size: 13px
-  .content-container
-    padding: 1.5rem !important
-  .status-badge
-    padding: .15rem
-    &:before
-      left: calc(50% - 5px)
-      top: calc(50% - 5px)
-      font-size: 10px
-      line-height: 10px
-    &.callonly
-      background-position: 3px 3px
-    &.blocked
-      background-position: 2px 2px
-
-  // Responsive Navigation
-  #main-nav
-    position: relative
-    display: block
-    width: 100%
-    min-width: 950px
-    height: auto
-    .first-depth
-      display: none !important
-    .first-depth-top
-      display: flex
-
-  // Two Depth Nav
-  #main-nav
-    &.two-depth
-      width: 100%
-    .second-depth
-      display: none !important
-
-  // Sub Nav
-  #sub-nav
-    position: relative
-    padding-left: 0 !important
-
-  // 방막기 체크박스
-  .room-block-checkbox
-    .custom-control-label
-      &:before
-        top: 0.3rem !important
-      &:after
-        top: 0.1rem !important
-
-  // 할인요금 페이지
-  .chart-row
-    .row-title
-      width: 11rem
-    .dd-wrapper
-      .dd
-        .form-control
-          min-width: 4.5rem
-        .form-control, .form-control-plaintext, .discount
-          padding-right: .25rem !important
-          padding-left: .25rem !important
-          font-size: .9rem
-
-  // 객실달력 페이지
-  .table-calendar tbody .price
-    // padding-left: 1.7rem
-
-  // Dashboard
-  .dashboard-right
-    padding-left: .9rem !important
-  .dashboard-checkout
-    min-height: 26.2rem !important
-  .dashboard-unit
-    margin-bottom: .9rem
-    padding: 2rem
-  .dashboard-weather
-    margin-left: .9rem
-  .dashboard-manual
-    margin-left: .9rem
-  .dashboard-right-bottom
-    min-height: 28.7rem !important
-
-  // footer
-  footer
-    padding: 1rem 1rem 0 1rem
-    margin: auto 0 0 0
-
-
-// Media Print Only
-@media print
-  .receipt-date
+    right: 0
+    bottom: -1rem
     border: none
+  &.show
+    p
+      height: auto
+    .btn
+      img
+        transform: rotate(180deg)
+
+// 날짜 겸색형(반응형)
+.bp-responsive-body
+  max-width: 1000px
+  margin: 0 auto
+  padding: 4rem 0 0 0
+.bp-room-list
+  .room-wrapper
+    .thumbnail
+      width: 100%
+      height: 14rem
+      @extend %thumbnail-image
+    .content
+      position: relative
+      .title
+        font-size: 1.6rem
+        line-height: 1.6rem
+        margin-bottom: .75rem
+      .summary
+        font-size: .85rem
+        margin: .25rem 0
+      .price
+        margin-bottom: .5rem
+        .number
+          font-size: 1.3rem
+          color: $blue
+      .foot-btn
+        width: 8rem
+        &:disabled
+          opacity: 1
+      .around-day
+        font-size: .85rem
+        margin-top: .5rem
+        line-height: 1.5rem
+      .call-info-click
+        display: none
+        position: absolute
+        top: 1rem
+        left: 7rem
+        background-color: white
+        border: 1px solid #929292
+        z-index: 10
+        padding: 1.2rem
+        h6
+          margin-bottom: 1rem
+        &.show
+          display: block
+  hr
+    margin: 2.5rem 0
 
 
 
+//-------- Responsive: Mobile(xs) --------//
+@media screen and (max-width: 575px)
+  .bp-topper
+    height: 4rem
+    .title
+      font-size: 1.5rem
+    .tab
+      width: 50vw
+      text-align: center
+    .badge
+      font-size: .9rem
+      line-height: 1.1rem
+      padding: .15rem .6rem .3rem .6rem
+      margin: -.3rem .8rem -.3rem -.8rem
+      font-weight: normal
+  .pc-body
+    display: none
+  .mobile-body
+    display: block
+  .bp-room-list
+    .room-wrapper
+      .content
+        .call-info-click
+          width: 100%
+          left: 0
+          top: 2.3rem
+          text-align: center
+  .modal-header
+    padding-left: 1rem
+  .modal-body
+    padding: 1rem
 
-// Temporary: Mobile BP Prototype
-.mobile-bp-prototype
-  width: 100vw
-  min-width: 816px
-  height: calc(100vh - 4rem)
-  @extend %display-flex
-  align-items: center
-  justify-content: space-around
-  .device
-    box-sizing: content-box
-    background-color: #333333
-    padding: 3rem .5rem
-    border-radius: 1rem
-    margin-bottom: 2rem
+  .bp-responsive-body
+    padding-left: 1rem
+    padding-right: 1rem
+
+  #viewPictureModal-responsive
+    overflow-y: hidden
+    .modal-dialog
+      margin: 0
+      .modal-content
+        background-color: $dark
+        height: 100vh
+        .modal-header
+          border-bottom: none
+        .modal-body
+          color: white
+          padding: 0
+          &.d-flex
+            flex-direction: column
+            justify-content: flex-end
+          .carousel
+            .carousel-item
+              height: 33vh
+          .detail
+            height: 33vh
+            padding: 1.5rem
+            font-weight: lighter
+            font-size: .85rem
+            word-break: keep-all
+            .room-name
+              margin-bottom: .5rem
+  .daterange
+    .daterange-layer
+      width: 100%
+      padding: 1rem 0
+
+//---------- Responsive: sm ----------//
+@media only screen and (min-width: 576px)
+  .bp-room-list
+    .room-wrapper
+      .thumbnail
+        height: 30rem
+  .table-calendar
+    font-size: .8rem
+    td
+      padding-right: .25rem
+      padding-left: .25rem
+
+//---------- Responsive: md ----------//
+@media only screen and (min-width: 768px)
+  .bp-room-list
+    .room-wrapper
+      .thumbnail
+        height: 14rem
+  .bp-responsive-body
+    padding-left: 0
+    padding-right: 0
+
+//---------- Responsive: lg ----------//
+@media only screen and (min-width: 992px)
+  html
+  .table-calendar
+    font-size: 1rem
+    td
+      padding: .8rem
+
+//---------- Responsive: xl ----------//
+@media only screen and (min-width: 1200px)
+  html
+
+
+
+//-------- Responsive: XXSmall Mobiles --------//
+@media screen and (max-width: 400px)
+  .xxsm-hidden
+    display: none
 
