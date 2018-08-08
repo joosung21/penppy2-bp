@@ -37,7 +37,7 @@ $blocked: $light
     content: ''
     width: 27px
     height: 27px
-    background: rgba(black, .2) url('/assets/images/search-w.svg') center no-repeat
+    background: rgba(black, .2) url('assets/images/search-w.svg') center no-repeat
 
 // Utilities
 .text-red
@@ -144,7 +144,7 @@ hr.dark
   border-color: #929292
 
 .form-control-datepicker
-  background: url('/assets/images/ic-calendar-gray.svg') center right .5rem no-repeat
+  background: url('assets/images/ic-calendar-gray.svg') center right .5rem no-repeat
 
 .input-group-text
   color: #929292
@@ -165,7 +165,7 @@ hr.dark
       height: 100px !important
       -webkit-animation-duration: .85s !important
       animation-duration: .85s !important
-      background: red url('/assets/images/Rolling.png') center center no-repeat !important
+      background: url('/../assets/images/rolling.png') center center no-repeat !important
       margin: 0 !important
       border: 0 !important
 
@@ -308,7 +308,7 @@ hr.dark
     .custom-control-input:checked
       + .custom-control-label
         &:after
-          background: $dark url('/assets/images/checkbox_check.svg') center center no-repeat
+          background: $dark url('assets/images/checkbox_check.svg') center center no-repeat
           border-color: $dark
   &.custom-radio
     .custom-control-label
@@ -323,7 +323,7 @@ hr.dark
     .custom-control-input:checked
       + .custom-control-label
         &:after
-          background: $dark url('/assets/images/Oval.svg') center center no-repeat
+          background: $dark url('assets/images/Oval.svg') center center no-repeat
           border-color: $dark
 
 // Datepicker
@@ -481,10 +481,10 @@ hr.dark
     &:before
       content: '대'
   &.callonly
-    background: $callonly url('/assets/images/callonly.svg') center no-repeat
+    background: $callonly url('assets/images/callonly.svg') center no-repeat
     background-size: 11px
   &.blocked
-    background: $blocked url('/assets/images/blocked.svg') center no-repeat
+    background: $blocked url('assets/images/blocked.svg') center no-repeat
     background-size: 13px
 
 //- Topper --//
@@ -492,7 +492,7 @@ hr.dark
   @extend %display-flex
   align-items: center
   border-bottom: 1px solid $border-color
-  padding: 0 0
+  padding: 0 1rem
   .title
     margin: 0
     margin-right: auto
@@ -733,10 +733,12 @@ hr.dark
 
 
 //- Mobile View Only --//
-.mobile-body
-  display: none
+
 .mobile-calendar-controler
+  position: relative
   padding: 2rem 0
+  z-index: 10
+  background: white
   .date
     text-align: center
     font-size: 1.3rem
@@ -749,6 +751,9 @@ hr.dark
     padding: .15rem .8rem .4rem .7rem
   button.next
     padding: .15rem .7rem .4rem .8rem
+  &.sticky
+    border-bottom: 2px solid #222222
+
 .table-mobile-calendar
   width: 100%
   border-top: 1px solid #929292
@@ -814,89 +819,86 @@ hr.dark
   position: fixed
   bottom: 0
 
-#viewPictureModal
+.viewPictureModal
   overflow-y: hidden
-  .modal-dialog
-    margin: 0
-    .modal-content
-      background-color: $dark
-      height: 100vh
-      .modal-header
-        border-bottom: none
-      .modal-body
-        color: white
-        padding: 0
-        &.d-flex
-          flex-direction: column
-          justify-content: flex-end
-        .carousel
-          .carousel-item
-            height: 33vh
-        .detail
+  margin: 0
+  .modal-content
+    background-color: $dark
+    height: 100vh
+    .modal-header
+      border-bottom: none
+    .modal-body
+      color: white
+      padding: 0
+      &.d-flex
+        flex-direction: column
+        justify-content: flex-end
+      .carousel
+        .carousel-item
           height: 33vh
-          padding: 1.5rem
-          font-weight: lighter
-          font-size: .85rem
-          word-break: keep-all
-          .room-name
-            font-size: 1.2rem
-            margin-bottom: .5rem
+      .detail
+        height: 33vh
+        padding: 1.5rem
+        font-weight: lighter
+        font-size: .85rem
+        word-break: keep-all
+        .room-name
+          font-size: 1.2rem
+          margin-bottom: .5rem
 
-#viewPictureModal-pc
-  .modal-dialog
-    margin-top: 0
-    margin-bottom: 0
-    .modal-content
-      background-color: $dark
-      height: 100vh
-      .modal-header
-        border-bottom: none
-      .modal-body
-        color: white
-        padding: 0
-        &.d-flex
-          flex-direction: column
-          justify-content: flex-end
-        .carousel
-          .carousel-item
-            height: 35rem
-        .detail
-          height: 15rem
-          padding: 1.5rem
-          font-weight: lighter
-          font-size: .85rem
-          word-break: keep-all
-          .room-name
-            font-size: 1.2rem
-            margin-bottom: .5rem
+.viewPictureModal-pc
+  margin-top: 0
+  margin-bottom: 0
+  .modal-content
+    background-color: $dark
+    height: 100vh
+    .modal-header
+      border-bottom: none
+    .modal-body
+      color: white
+      padding: 0
+      &.d-flex
+        flex-direction: column
+        justify-content: flex-end
+      .carousel
+        .carousel-item
+          height: 20rem
+      .detail
+        height: 15rem
+        padding: 1.5rem
+        font-weight: lighter
+        font-size: .85rem
+        word-break: keep-all
+        .room-name
+          font-size: 1.2rem
+          margin-bottom: .5rem
 
-#viewPictureModal-responsive
-  .modal-dialog
-    margin-top: 0
-    margin-bottom: 0
-    .modal-content
-      background-color: $dark
-      height: 100vh
-      .modal-header
-        border-bottom: none
-      .modal-body
-        color: white
-        padding: 0
-        &.d-flex
-          flex-direction: column
-          justify-content: flex-end
-        .carousel
-          .carousel-item
-            height: 35rem
-        .detail
-          height: 15rem
-          padding: 1.5rem
-          font-weight: lighter
-          font-size: .85rem
-          word-break: keep-all
-          .room-name
-            font-size: 1.2rem
-            margin-bottom: .5rem
+.viewPictureModal-responsive
+  margin-top: 0
+  margin-bottom: 0
+  .modal-content
+    background-color: $dark
+    height: 100vh
+    .modal-header
+      border-bottom: none
+    .modal-body
+      color: white
+      padding: 0
+      &.d-flex
+        flex-direction: column
+        justify-content: flex-end
+      .carousel
+        .carousel-item
+          height: 35rem
+      .detail
+        height: 15rem
+        padding: 1.5rem
+        font-weight: lighter
+        font-size: .85rem
+        word-break: keep-all
+        .room-name
+          font-size: 1.2rem
+          margin-bottom: .5rem
 
 .mobile-container
   background-color: $white-gray
@@ -1015,7 +1017,8 @@ hr.dark
   hr
     margin: 2.5rem 0
 
-
+.modal-mt
+  margin-top: calc(50vh - 10rem)
 
 //-------- Responsive: Mobile(xs) --------//
 @media screen and (max-width: 575px)
@@ -1032,8 +1035,8 @@ hr.dark
       padding: .15rem .6rem .3rem .6rem
       margin: -.3rem .8rem -.3rem -.8rem
       font-weight: normal
-  .pc-body
-    display: none
+  // .pc-body
+  //   display: none
   .mobile-body
     display: block
   .bp-room-list
@@ -1053,36 +1056,36 @@ hr.dark
     padding-left: 1rem
     padding-right: 1rem
 
-  #viewPictureModal-responsive
+  .viewPictureModal-responsive
     overflow-y: hidden
-    .modal-dialog
-      margin: 0
-      .modal-content
-        background-color: $dark
-        height: 100vh
-        .modal-header
-          border-bottom: none
-        .modal-body
-          color: white
-          padding: 0
-          &.d-flex
-            flex-direction: column
-            justify-content: flex-end
-          .carousel
-            .carousel-item
-              height: 33vh
-          .detail
+    margin: 0
+    .modal-content
+      background-color: $dark
+      height: 100vh
+      .modal-header
+        border-bottom: none
+      .modal-body
+        color: white
+        padding: 0
+        &.d-flex
+          flex-direction: column
+          justify-content: flex-end
+        .carousel
+          .carousel-item
             height: 33vh
-            padding: 1.5rem
-            font-weight: lighter
-            font-size: .85rem
-            word-break: keep-all
-            .room-name
-              margin-bottom: .5rem
+        .detail
+          height: 33vh
+          padding: 1.5rem
+          font-weight: lighter
+          font-size: .85rem
+          word-break: keep-all
+          .room-name
+            margin-bottom: .5rem
   .daterange
     .daterange-layer
       width: 100%
       padding: 1rem 0
+
 
 //---------- Responsive: sm ----------//
 @media only screen and (min-width: 576px)
@@ -1113,6 +1116,20 @@ hr.dark
     font-size: 1rem
     td
       padding: .8rem
+
+  .viewPictureModal-pc
+    .modal-content
+      .modal-body
+        .carousel
+          .carousel-item
+            height: 35rem
+
+  .viewPictureModal-responsive
+    .modal-content
+      .modal-body
+        .carousel
+          .carousel-item
+            height: 20rem
 
 //---------- Responsive: xl ----------//
 @media only screen and (min-width: 1200px)
